@@ -126,7 +126,7 @@ html{
 
     <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <h2 class="text-4xl lg:text-6xl font-black">Want To Visit Our Campus?</h2>
-        <p class="mt-6 text-slate-600 text-lg">Connect with us and experience our school environment personally.</p>
+        <p class="mt-6 text-black text-lg">Connect with us and experience our school environment personally.</p>
         <a href="contact.php" class="inline-flex mt-10 px-10 py-5 rounded-full bg-slate-950 text-white font-black hover:bg-cyan-500 hover:text-slate-950 hover:-translate-y-2 transition duration-500">
             Contact School
         </a>

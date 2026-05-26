@@ -84,7 +84,7 @@ include 'header.php';
                             <img src="images/student1.jpg" alt="Student" class="w-24 h-24 rounded-[26px] object-cover border-4 border-white shadow-2xl">
 
                             <div>
-                                <span class="inline-flex px-4 py-2 rounded-full bg-cyan-400 text-slate-900 font-black text-xs uppercase tracking-widest">
+                                <span class="inline-flex px-4 py-2 rounded-full bg-cyan-400 text-black font-black text-xs uppercase tracking-widest">
                                     School Topper
                                 </span>
 
@@ -103,7 +103,7 @@ include 'header.php';
 
                 </div>
 
-                <div class="absolute -top-8 -left-8 p-6 rounded-[30px] bg-white text-slate-900 shadow-[0_25px_80px_rgba(0,0,0,0.25)] animate-bounce">
+                <div class="absolute -top-8 -left-8 p-6 rounded-[30px] bg-white text-black shadow-[0_25px_80px_rgba(0,0,0,0.25)] animate-bounce">
 
                     <div class="flex items-center gap-4">
 
@@ -141,11 +141,11 @@ include 'header.php';
                 Top Performers
             </span>
 
-            <h2 class="mt-4 text-3xl lg:text-6xl font-black text-slate-900 leading-tight">
+            <h2 class="mt-4 text-3xl lg:text-6xl font-black text-black leading-tight">
                 Student Result Showcase
             </h2>
 
-            <p class="mt-5 text-slate-600 leading-8 text-lg">
+            <p class="mt-5 text-black leading-8 text-lg">
                 Replace these images and student details with your actual school topper records.
             </p>
         </div>
@@ -177,7 +177,7 @@ include 'header.php';
 
                     <div class="flex items-center justify-between border-b border-slate-100 pb-5">
                         <span class="font-bold text-slate-500">Roll No</span>
-                        <span class="font-black text-slate-900">1025</span>
+                        <span class="font-black text-black">1025</span>
                     </div>
 
                     <div class="flex items-center justify-between pt-5">
@@ -214,7 +214,7 @@ include 'header.php';
 
                     <div class="flex items-center justify-between border-b border-slate-100 pb-5">
                         <span class="font-bold text-slate-500">Roll No</span>
-                        <span class="font-black text-slate-900">1030</span>
+                        <span class="font-black text-black">1030</span>
                     </div>
 
                     <div class="flex items-center justify-between pt-5">
@@ -251,7 +251,7 @@ include 'header.php';
 
                     <div class="flex items-center justify-between border-b border-slate-100 pb-5">
                         <span class="font-bold text-slate-500">Roll No</span>
-                        <span class="font-black text-slate-900">1045</span>
+                        <span class="font-black text-black">1045</span>
                     </div>
 
                     <div class="flex items-center justify-between pt-5">
@@ -309,7 +309,7 @@ include 'header.php';
 
                         <tr class="hover:bg-blue-50 transition">
                             <td class="px-6 py-5 font-black text-blue-700">1</td>
-                            <td class="px-6 py-5 font-bold text-slate-900">Aarav Sharma</td>
+                            <td class="px-6 py-5 font-bold text-black">Aarav Sharma</td>
                             <td class="px-6 py-5">1025</td>
                             <td class="px-6 py-5">490 / 500</td>
                             <td class="px-6 py-5 font-black">98%</td>
@@ -322,7 +322,7 @@ include 'header.php';
 
                         <tr class="hover:bg-blue-50 transition">
                             <td class="px-6 py-5 font-black text-blue-700">2</td>
-                            <td class="px-6 py-5 font-bold text-slate-900">Sakshi Thakur</td>
+                            <td class="px-6 py-5 font-bold text-black">Sakshi Thakur</td>
                             <td class="px-6 py-5">1030</td>
                             <td class="px-6 py-5">485 / 500</td>
                             <td class="px-6 py-5 font-black">97%</td>
@@ -335,7 +335,7 @@ include 'header.php';
 
                         <tr class="hover:bg-blue-50 transition">
                             <td class="px-6 py-5 font-black text-blue-700">3</td>
-                            <td class="px-6 py-5 font-bold text-slate-900">Kunal Deshmukh</td>
+                            <td class="px-6 py-5 font-bold text-black">Kunal Deshmukh</td>
                             <td class="px-6 py-5">1045</td>
                             <td class="px-6 py-5">480 / 500</td>
                             <td class="px-6 py-5 font-black">96%</td>

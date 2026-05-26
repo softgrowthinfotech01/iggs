@@ -54,14 +54,14 @@ html{
 
         </span>
 
-        <h1 class="mt-7 text-4xl lg:text-7xl font-black text-slate-900 leading-tight">
+        <h1 class="mt-7 text-4xl lg:text-7xl font-black text-black leading-tight">
 
             Building Future  
             <span class="text-blue-700">Leaders With Values</span>
 
         </h1>
 
-        <p class="mt-6 text-slate-600 text-lg leading-8 max-w-3xl mx-auto">
+        <p class="mt-6 text-black text-lg leading-8 max-w-3xl mx-auto">
 
             Indira Gandhi School Chandrapur provides quality education,
             discipline, creativity and complete student development.
@@ -100,11 +100,11 @@ html{
 
                     <div class="absolute left-6 right-6 bottom-6 bg-white/90 backdrop-blur-xl rounded-[28px] p-6 shadow-2xl">
 
-                        <h3 class="text-3xl font-black text-slate-900">
+                        <h3 class="text-3xl font-black text-black">
                             25+ Years Of Excellence
                         </h3>
 
-                        <p class="mt-2 text-slate-600 font-semibold">
+                        <p class="mt-2 text-black font-semibold">
                             Trusted education with modern learning.
                         </p>
 
@@ -125,14 +125,14 @@ html{
                 Who We Are
             </span>
 
-            <h3 class="mt-5 text-2xl lg:text-6xl font-black text-slate-900 leading-tight">
+            <h3 class="mt-5 text-2xl lg:text-6xl font-black text-black leading-tight">
 
                 A School Designed For  
                 <span class="text-blue-700">Complete Development</span>
 
             </h3>
 
-            <p class="mt-7 text-slate-600 leading-9 text-lg text-justify">
+            <p class="mt-7 text-black leading-9 text-lg text-justify">
 
                 Indira Gandhi School Chandrapur is dedicated to quality education,
                 discipline, innovation and complete student growth.
@@ -141,7 +141,7 @@ html{
 
             </p>
 
-            <p class="mt-6 text-slate-600 leading-9 text-lg text-justify">
+            <p class="mt-6 text-black leading-9 text-lg text-justify">
 
                 Our mission is to prepare students with academic excellence,
                 communication skills and future-ready thinking while maintaining
@@ -162,11 +162,11 @@ html{
 
                     </div>
 
-                    <h3 class="mt-5 text-2xl font-black text-slate-900">
+                    <h3 class="mt-5 text-2xl font-black text-black">
                         Expert Teachers
                     </h3>
 
-                    <p class="mt-3 text-slate-600 leading-7">
+                    <p class="mt-3 text-black leading-7">
                         Experienced faculty with modern teaching methods.
                     </p>
 
@@ -182,11 +182,11 @@ html{
 
                     </div>
 
-                    <h3 class="mt-5 text-2xl font-black text-slate-900">
+                    <h3 class="mt-5 text-2xl font-black text-black">
                         Smart Learning
                     </h3>
 
-                    <p class="mt-3 text-slate-600 leading-7">
+                    <p class="mt-3 text-black leading-7">
                         Interactive and digital learning environment.
                     </p>
 
@@ -202,11 +202,11 @@ html{
 
                     </div>
 
-                    <h3 class="mt-5 text-2xl font-black text-slate-900">
+                    <h3 class="mt-5 text-2xl font-black text-black">
                         Activities
                     </h3>
 
-                    <p class="mt-3 text-slate-600 leading-7">
+                    <p class="mt-3 text-black leading-7">
                         Sports, culture and confidence-building activities.
                     </p>
 
@@ -222,11 +222,11 @@ html{
 
                     </div>
 
-                    <h3 class="mt-5 text-2xl font-black text-slate-900">
+                    <h3 class="mt-5 text-2xl font-black text-black">
                         Safe Campus
                     </h3>
 
-                    <p class="mt-3 text-slate-600 leading-7">
+                    <p class="mt-3 text-black leading-7">
                         Secure and disciplined environment for students.
                     </p>
 
@@ -306,7 +306,7 @@ html{
                 Core Values
             </span>
 
-            <h2 class="mt-5 text-4xl lg:text-5xl font-black text-slate-900">
+            <h2 class="mt-5 text-4xl lg:text-5xl font-black text-black">
                 What Makes Us Different
             </h2>
 
@@ -325,11 +325,11 @@ html{
 
                 </div>
 
-                <h3 class="mt-7 text-3xl font-black text-slate-900">
+                <h3 class="mt-7 text-3xl font-black text-black">
                     Discipline
                 </h3>
 
-                <p class="mt-5 text-slate-600 leading-8">
+                <p class="mt-5 text-black leading-8">
                     Building responsibility, manners and strong character.
                 </p>
 
@@ -346,11 +346,11 @@ html{
 
                 </div>
 
-                <h3 class="mt-7 text-3xl font-black text-slate-900">
+                <h3 class="mt-7 text-3xl font-black text-black">
                     Creativity
                 </h3>
 
-                <p class="mt-5 text-slate-600 leading-8">
+                <p class="mt-5 text-black leading-8">
                     Encouraging innovation, ideas and creative thinking.
                 </p>
 
@@ -367,11 +367,11 @@ html{
 
                 </div>
 
-                <h3 class="mt-7 text-3xl font-black text-slate-900">
+                <h3 class="mt-7 text-3xl font-black text-black">
                     Excellence
                 </h3>
 
-                <p class="mt-5 text-slate-600 leading-8">
+                <p class="mt-5 text-black leading-8">
                     Maintaining high-quality education and achievements.
                 </p>
 

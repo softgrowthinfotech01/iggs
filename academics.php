@@ -44,12 +44,12 @@ html{
                 Academics
             </span>
 
-            <h1 class="mt-7 text-4xl lg:text-7xl font-black text-slate-900 leading-tight">
+            <h1 class="mt-7 text-4xl lg:text-7xl font-black text-black leading-tight">
                 Modern Education With
                 <span class="text-blue-700">Strong Fundamentals</span>
             </h1>
 
-            <p class="mt-6 text-slate-600 text-lg leading-8 max-w-2xl">
+            <p class="mt-6 text-black text-lg leading-8 max-w-2xl">
                 Our academic system focuses on concept clarity, discipline,
                 smart learning, practical knowledge and complete student growth.
             </p>
@@ -88,11 +88,11 @@ html{
                 Learning System
             </span>
 
-            <h2 class="mt-5 text-4xl lg:text-5xl font-black text-slate-900">
+            <h2 class="mt-5 text-4xl lg:text-5xl font-black text-black">
                 What We Focus On
             </h2>
 
-            <p class="mt-5 text-slate-600 text-lg leading-8">
+            <p class="mt-5 text-black text-lg leading-8">
                 A balanced academic approach with classroom learning,
                 practical activities and digital education.
             </p>
@@ -104,8 +104,8 @@ html{
                 <div class="w-20 h-20 rounded-[26px] bg-gradient-to-br from-blue-700 to-cyan-500 flex items-center justify-center text-white text-4xl shadow-2xl group-hover:rotate-6 transition duration-500">
                     <i class="fa-solid fa-book-open"></i>
                 </div>
-                <h3 class="mt-7 text-3xl font-black text-slate-900">Curriculum</h3>
-                <p class="mt-4 text-slate-600 leading-8">
+                <h3 class="mt-7 text-3xl font-black text-black">Curriculum</h3>
+                <p class="mt-4 text-black leading-8">
                     Strong academic planning with regular assessment,
                     revision and continuous improvement.
                 </p>
@@ -115,8 +115,8 @@ html{
                 <div class="w-20 h-20 rounded-[26px] bg-gradient-to-br from-orange-500 to-amber-400 flex items-center justify-center text-white text-4xl shadow-2xl group-hover:rotate-6 transition duration-500">
                     <i class="fa-solid fa-flask"></i>
                 </div>
-                <h3 class="mt-7 text-3xl font-black text-slate-900">Practical Learning</h3>
-                <p class="mt-4 text-slate-600 leading-8">
+                <h3 class="mt-7 text-3xl font-black text-black">Practical Learning</h3>
+                <p class="mt-4 text-black leading-8">
                     Projects, experiments and activities that help students
                     understand concepts clearly.
                 </p>
@@ -126,8 +126,8 @@ html{
                 <div class="w-20 h-20 rounded-[26px] bg-gradient-to-br from-cyan-500 to-blue-700 flex items-center justify-center text-white text-4xl shadow-2xl group-hover:rotate-6 transition duration-500">
                     <i class="fa-solid fa-laptop-code"></i>
                 </div>
-                <h3 class="mt-7 text-3xl font-black text-slate-900">Digital Education</h3>
-                <p class="mt-4 text-slate-600 leading-8">
+                <h3 class="mt-7 text-3xl font-black text-black">Digital Education</h3>
+                <p class="mt-4 text-black leading-8">
                     Smart and interactive classroom content for better
                     learning experience.
                 </p>
@@ -155,7 +155,7 @@ html{
                 Academic Journey
             </span>
 
-            <h2 class="mt-6 text-4xl lg:text-6xl font-black text-slate-900 leading-tight">
+            <h2 class="mt-6 text-4xl lg:text-6xl font-black text-black leading-tight">
                 Learning Designed
                 <span class="text-blue-700">For Every Stage</span>
             </h2>
@@ -166,8 +166,8 @@ html{
             <div class="group relative rounded-[40px] bg-white p-8 shadow-[0_30px_80px_rgba(15,23,42,0.10)] border border-white hover:-translate-y-3 transition duration-500">
                 <span class="text-[90px] font-black text-blue-50 absolute right-6 top-4">01</span>
                 <i class="fa-solid fa-pencil text-5xl text-blue-700 relative z-10"></i>
-                <h3 class="mt-8 text-3xl font-black text-slate-900 relative z-10">Primary School</h3>
-                <p class="mt-4 text-slate-600 leading-8 relative z-10">
+                <h3 class="mt-8 text-3xl font-black text-black relative z-10">Primary School</h3>
+                <p class="mt-4 text-black leading-8 relative z-10">
                     Strong foundation with joyful learning, creativity,
                     reading, writing and basic skills.
                 </p>
@@ -176,8 +176,8 @@ html{
             <div class="group relative rounded-[40px] bg-white p-8 shadow-[0_30px_80px_rgba(15,23,42,0.10)] border border-white hover:-translate-y-3 transition duration-500 lg:mt-10">
                 <span class="text-[90px] font-black text-orange-50 absolute right-6 top-4">02</span>
                 <i class="fa-solid fa-flask text-5xl text-orange-500 relative z-10"></i>
-                <h3 class="mt-8 text-3xl font-black text-slate-900 relative z-10">Middle School</h3>
-                <p class="mt-4 text-slate-600 leading-8 relative z-10">
+                <h3 class="mt-8 text-3xl font-black text-black relative z-10">Middle School</h3>
+                <p class="mt-4 text-black leading-8 relative z-10">
                     Concept clarity, experiments, communication skills,
                     projects and practical learning.
                 </p>
@@ -186,8 +186,8 @@ html{
             <div class="group relative rounded-[40px] bg-white p-8 shadow-[0_30px_80px_rgba(15,23,42,0.10)] border border-white hover:-translate-y-3 transition duration-500">
                 <span class="text-[90px] font-black text-cyan-50 absolute right-6 top-4">03</span>
                 <i class="fa-solid fa-graduation-cap text-5xl text-cyan-600 relative z-10"></i>
-                <h3 class="mt-8 text-3xl font-black text-slate-900 relative z-10">High School</h3>
-                <p class="mt-4 text-slate-600 leading-8 relative z-10">
+                <h3 class="mt-8 text-3xl font-black text-black relative z-10">High School</h3>
+                <p class="mt-4 text-black leading-8 relative z-10">
                     Board-focused preparation with discipline,
                     regular practice and career guidance.
                 </p>

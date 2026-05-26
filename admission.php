@@ -62,7 +62,7 @@ body{font-family:'Inter',sans-serif;}
         <div class="relative">
             <div class="bg-white/10 backdrop-blur-xl border border-white/10 rounded-[40px] p-6 shadow-2xl">
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="rounded-[28px] bg-white text-slate-900 p-6">
+                    <div class="rounded-[28px] bg-white text-black p-6">
                         <h3 class="text-4xl font-black text-blue-700">25+</h3>
                         <p class="font-bold text-slate-500 mt-2">Years Excellence</p>
                     </div>
@@ -91,7 +91,7 @@ body{font-family:'Inter',sans-serif;}
 
         <div class="text-center max-w-3xl mx-auto">
             <span class="text-blue-700 font-black uppercase tracking-widest">Admission Process</span>
-            <h2 class="mt-5 text-4xl lg:text-5xl font-black text-slate-900">Simple Steps To Admission</h2>
+            <h2 class="mt-5 text-4xl lg:text-5xl font-black text-black">Simple Steps To Admission</h2>
         </div>
 
         <div class="mt-16 grid lg:grid-cols-4 gap-6">
@@ -100,7 +100,7 @@ body{font-family:'Inter',sans-serif;}
                 <span class="text-6xl font-black text-blue-100">01</span>
                 <i class="fa-solid fa-file-signature text-4xl text-blue-700 mt-6 block"></i>
                 <h3 class="mt-5 text-2xl font-black">Submit Enquiry</h3>
-                <p class="mt-3 text-slate-600 leading-7">Fill student and parent details.</p>
+                <p class="mt-3 text-black leading-7">Fill student and parent details.</p>
             </div>
 
             <div class="relative p-8 rounded-[34px] bg-blue-700 text-white hover:-translate-y-3 transition duration-500 lg:mt-10">
@@ -114,7 +114,7 @@ body{font-family:'Inter',sans-serif;}
                 <span class="text-6xl font-black text-cyan-100">03</span>
                 <i class="fa-solid fa-clipboard-check text-4xl text-cyan-600 mt-6 block"></i>
                 <h3 class="mt-5 text-2xl font-black">Document Check</h3>
-                <p class="mt-3 text-slate-600 leading-7">Submit required documents.</p>
+                <p class="mt-3 text-black leading-7">Submit required documents.</p>
             </div>
 
             <div class="relative p-8 rounded-[34px] bg-cyan-500 text-white hover:-translate-y-3 transition duration-500 lg:mt-10">
@@ -143,8 +143,8 @@ body{font-family:'Inter',sans-serif;}
         <div class="bg-white rounded-[40px] p-8 lg:p-10 shadow-[0_35px_90px_rgba(15,23,42,0.12)] border border-blue-100">
 
             <span class="text-blue-700 font-black uppercase tracking-widest">Admission Form</span>
-            <h2 class="mt-4 text-4xl lg:text-5xl font-black text-slate-900">Send Admission Enquiry</h2>
-            <p class="mt-4 text-slate-600 leading-8">Fill the form below. You can connect it with PHP backend later.</p>
+            <h2 class="mt-4 text-4xl lg:text-5xl font-black text-black">Send Admission Enquiry</h2>
+            <p class="mt-4 text-black leading-8">Fill the form below. You can connect it with PHP backend later.</p>
 
             <form class="mt-10 space-y-5">
 
