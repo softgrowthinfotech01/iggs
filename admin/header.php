@@ -79,7 +79,7 @@
                 <!-- TITLE -->
                 <div>
 
-                    <h1 class="text-xl lg:text-2xl font-bold text-blue-900">
+                    <h1 class="text-lg lg:text-2xl font-bold text-blue-900">
                         Indira Gandhi Garden School
                     </h1>
 
@@ -88,23 +88,27 @@
             </div>
 
             <!-- RIGHT -->
-            <!-- RIGHT -->
             <div class="relative">
 
                 <!-- ADMIN BOX -->
                 <div
                     onclick="toggleProfileMenu()"
-                    class="bg-gray-300 hover:bg-gray-200 px-4 py-1 rounded-xl flex items-center gap-3 cursor-pointer transition">
+                    class="bg-gray-400 hover:bg-gray-300 px-3 md:px-4 py-1 rounded-xl flex items-center gap-5 cursor-pointer transition">
 
+                    <!-- IMAGE -->
                     <img
-                        src=""
-                        class="w-12 h-12 rounded-full border-2 border-blue-900 object-cover"
+                        src="<?php echo !empty($admin['profile_image'])
+                                    ? 'images/' . $admin['profile_image']
+                                    : 'images/default-profile.webp'; ?>"
+
+                        class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-blue-900 object-contain"
                         alt="">
 
-                    <div>
+                    <!-- TEXT -->
+                    <div class="hidden md:block">
 
-                        <h4 class="font-semibold text-gray-800">
-                            Admin User
+                        <h4 class="font-semibold text-gray-700">
+                            Admin
                         </h4>
 
                     </div>
@@ -114,7 +118,7 @@
                 <!-- DROPDOWN -->
                 <div
                     id="profileMenu"
-                    class="hidden absolute right-0 mt-3 w-48 bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden z-50">
+                    class="hidden absolute right-0 top-14 w-48 bg-white rounded-xl shadow-lg border border-slate-200 z-[9999]">
 
                     <a
                         href="profile"
@@ -141,26 +145,24 @@
     </header>
 
     <script>
+        function toggleProfileMenu() {
 
-    function toggleProfileMenu() {
+            const profileMenu = document.getElementById('profileMenu');
 
-        const profileMenu = document.getElementById('profileMenu');
-
-        profileMenu.classList.toggle('hidden');
-
-    }
-
-    // CLOSE DROPDOWN WHEN CLICKING OUTSIDE
-    window.addEventListener('click', function (e) {
-
-        const profileMenu = document.getElementById('profileMenu');
-
-        if (!e.target.closest('.relative')) {
-
-            profileMenu.classList.add('hidden');
+            profileMenu.classList.toggle('hidden');
 
         }
 
-    });
+        // CLOSE DROPDOWN WHEN CLICKING OUTSIDE
+        window.addEventListener('click', function(e) {
 
-</script>
+            const profileMenu = document.getElementById('profileMenu');
+
+            if (!e.target.closest('.relative')) {
+
+                profileMenu.classList.add('hidden');
+
+            }
+
+        });
+    </script>
