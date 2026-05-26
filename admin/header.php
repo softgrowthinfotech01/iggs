@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indira Gandhi College</title>
 
-    <link rel="stylesheet" href="output.css">
+<link rel="stylesheet" href="../dist/output.css">   
 
-    <script>
+ <script>
         let sidebarOpen = true;
 
         function toggleSidebar() {
@@ -101,7 +101,7 @@
                                     ? 'images/' . $admin['profile_image']
                                     : 'images/default-profile.webp'; ?>"
 
-                        class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-blue-900 object-contain"
+                        class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-blue-900 object-cover"
                         alt="">
 
                     <!-- TEXT -->
