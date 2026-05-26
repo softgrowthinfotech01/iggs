@@ -255,13 +255,13 @@ section{
     <div class="absolute -top-8 -left-8 w-32 h-32 bg-blue-400/20  blur-3xl"></div>
     <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-cyan-400/20 rounded-full blur-3xl"></div>
 
-    <div class="relative bg-white rounded-[4px] shadow-[0_40px_90px_rgba(15,23,42,0.18)] border border-slate-200 p-5 overflow-hidden">
+    <div class="relative bg-white  mt-10 rounded-[4px] shadow-[0_40px_90px_rgba(15,23,42,0.18)] border border-slate-200 p-5 overflow-hidden">
 
         <div class="absolute top-6 left-6 z-20 px-5 py-3 rounded-full bg-white/80 backdrop-blur-xl shadow-lg text-blue-700 font-black text-sm">
             <i class="fa-solid fa-circle-play mr-2"></i> Campus Highlights
         </div>
 
-<div class="relative h-[500px] mt-20  max-md:h-[240px] max-sm:h-[200px] rounded-[35px] max-md:rounded-[20px] overflow-hidden bg-gradient-to-br from-blue-50 to-white">            <div id="uniqueSlider" class="relative w-full h-full">
+            <div class="relative h-[500px] mt-20  max-md:h-[280px] max-sm:h-[200px] rounded-[35px] max-md:rounded-[20px] overflow-hidden bg-gradient-to-br from-blue-50 to-white">            <div id="uniqueSlider" class="relative w-full h-full">
 
                 <!-- SLIDE 1 -->
                 <div class="unique-slide absolute inset-0 opacity-100 scale-100 transition-all duration-1000 ease-in-out">

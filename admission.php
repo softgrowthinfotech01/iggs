@@ -19,7 +19,7 @@ body{font-family:'Inter',sans-serif;}
 <?php include 'header.php'; ?>
 
 <!-- ADMISSION HERO -->
-<section class="relative min-h-[85vh] flex items-center overflow-hidden bg-slate-950 text-white">
+<section class="relative min-h-[85vh] flex mt-10 items-center overflow-hidden bg-slate-950 text-white">
 
     <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1400&q=80"
@@ -30,7 +30,7 @@ body{font-family:'Inter',sans-serif;}
     <div class="absolute top-20 right-20 w-80 h-80 border-[12px] border-white/10 rotate-12 rounded-[50px]"></div>
     <div class="absolute bottom-10 left-10 w-72 h-72 border-[12px] border-cyan-300/10 -rotate-12 rounded-[45px]"></div>
 
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center relative z-10">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 mt-20 items-center relative z-10">
 
         <div>
             <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/10 text-cyan-300 font-black uppercase tracking-widest text-sm">

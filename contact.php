@@ -25,14 +25,14 @@ body{
 <main>
 
 <!-- UNIQUE CONTACT HERO -->
-<section class="relative min-h-auto lg:min-h-screen bg-white overflow-hidden flex items-center py-24 lg:py-0">
+<section class="relative min-h-auto lg:min-h-screen bg-white overflow-hidden mt-10 flex items-center py-24 lg:py-0">
 
     <div class="absolute inset-y-0 right-0 w-[42%] bg-gradient-to-br from-blue-700 to-cyan-500 rounded-l-[90px] hidden lg:block"></div>
 
     <div class="absolute top-20 left-10 w-72 h-72 border-[12px] border-blue-700/10 rotate-12 rounded-[50px] hidden sm:block"></div>
     <div class="absolute bottom-10 left-1/3 w-52 h-52 border-[10px] border-cyan-500/10 -rotate-12 rounded-[35px] hidden sm:block"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[1fr_.9fr] gap-10 lg:gap-16 items-center relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[1fr_.9fr] gap-10 mt-20 lg:gap-16 items-center relative z-10">
 
         <!-- LEFT -->
         <div class="text-center lg:text-left">

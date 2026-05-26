@@ -29,13 +29,13 @@ html{
 <main class="overflow-hidden bg-[#050816] text-white">
 
 <!-- UNIQUE GALLERY HERO -->
-<section class="relative min-h-screen flex items-center overflow-hidden">
+<section class="relative min-h-screen flex items-center mt-10 overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#38bdf8,transparent_35%),radial-gradient(circle_at_bottom_right,#f97316,transparent_30%)] opacity-30"></div>
     <div class="absolute inset-0 bg-[#050816]/90"></div>
 
-    <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 mt-20 gap-14 items-center">
         <div>
-            <span class="inline-flex px-5 py-3 rounded-full bg-white/10 border border-white/10 text-cyan-300 font-black tracking-widest uppercase">
+            <span class="inline-flex px-5 py-3 rounded-full bg-white/40 border border-white/10 text-cyan-300 font-black tracking-widest uppercase">
                 <i class="fa-solid fa-camera-retro mr-2"></i> School Memories
             </span>
 

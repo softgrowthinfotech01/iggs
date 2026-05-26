@@ -19,7 +19,7 @@ include 'header.php';
 <main class="overflow-hidden bg-white">
 
 <!-- RESULT BANNER -->
-<section class="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-600">
+<section class="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br  mt-10 from-blue-900 via-blue-700 to-cyan-900">
 
     <div class="absolute -top-24 -left-24 w-[420px] h-[420px] bg-cyan-300/20 blur-[120px] rounded-full"></div>
     <div class="absolute bottom-0 right-0 w-[420px] h-[420px] bg-white/10 blur-[120px] rounded-full"></div>
@@ -29,11 +29,11 @@ include 'header.php';
 
     <div class="max-w-7xl mx-auto px-6 relative z-10">
 
-        <div class="grid lg:grid-cols-[1fr_.9fr] gap-14 items-center">
+        <div class="grid lg:grid-cols-[1fr_.9fr] mt-20 gap-14 items-center">
 
             <div>
 
-                <span class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-cyan-100 font-black uppercase tracking-widest text-sm">
+                <span class="inline-flex items-center gap-2 mt-4 px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-cyan-100 font-black uppercase tracking-widest text-sm">
                     <i class="fa-solid fa-award"></i>
                     Academic Excellence
                 </span>
@@ -71,7 +71,7 @@ include 'header.php';
 
             <div class="relative">
 
-                <div class="relative rounded-[40px] overflow-hidden border border-white/10 shadow-[0_40px_120px_rgba(0,0,0,0.35)]">
+                <div class="relative rounded-[40px] overflow-hidden border border-whiite shadow-[0_40px_120px_rgba(0,0,0,0.35)]">
 
                     <img src="images/result-banner.jpg" alt="Result Banner" class="w-full h-[620px] object-cover">
 
