@@ -85,36 +85,65 @@
 </section>
 
 <!-- UNIQUE MASONRY GALLERY -->
+<!-- UNIQUE MASONRY GALLERY -->
 <section id="gallery" class="py-24 bg-[#050816]">
+
     <div class="max-w-7xl mx-auto px-6">
+
+        <!-- HEADING -->
         <div class="text-center max-w-3xl mx-auto">
-            <span class="text-cyan-300 font-black uppercase tracking-widest">Photo Wall</span>
-            <h2 class="mt-5 text-4xl lg:text-6xl font-black">Our Beautiful Campus Stories</h2>
+
+            <span class="text-cyan-300 font-black uppercase tracking-widest">
+                Photo Wall
+            </span>
+
+            <h2 class="mt-5 text-4xl lg:text-6xl font-black">
+                Our Beautiful Campus Stories
+            </h2>
+
         </div>
 
-        <div class="mt-16 columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+        <!-- GALLERY -->
+        <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
             <?php
-            $gallery = [
-                ["https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=900&q=80","Classroom Learning"],
-                ["https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80","Campus Life"],
-                ["https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=900&q=80","Library"],
-                ["https://images.unsplash.com/photo-1544717297-fa95b6ee9643?auto=format&fit=crop&w=900&q=80","Activities"],
-                ["https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&q=80","Reading Time"],
-                ["https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80","Celebrations"]
-            ];
 
-            foreach($gallery as $item){
+            include 'admin/conn.php';
+
+            $stmt = $pdo->query("SELECT * FROM gallery ORDER BY id DESC");
+
+            $galleryItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach($galleryItems as $item){
+
             ?>
-            <div class="group break-inside-avoid relative overflow-hidden rounded-[35px] bg-white/10 border border-white/10 shadow-2xl">
-                <img src="<?php echo $item[0]; ?>" class="w-full object-cover group-hover:scale-110 transition duration-[1200ms]">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-3 group-hover:translate-y-0 transition duration-500">
-                    <h3 class="text-2xl font-black"><?php echo $item[1]; ?></h3>
-                    <p class="mt-2 text-slate-300">Indira Gandhi School Chandrapur</p>
-                </div>
-            </div>
-        </section>
+
+            <!-- CARD -->
+            <div class="group break-inside-avoid relative overflow-hidden rounded-[35px] bg-white/10 border border-white/10 shadow-2xl h-[200px]">
+
+                            <img
+                                src="admin/images/<?php echo $item['image']; ?>"
+                                class="w-full h-full object-cover group-hover:scale-110 transition duration-[1200ms]">
+
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+
+                            <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-3 group-hover:translate-y-0 transition duration-500">
+
+                                <h3 class="text-lg font-black">
+                                    <?php echo $item['title']; ?>
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+            <?php } ?>
+
+        </div>
+
+    </div>
+
+</section>
 
         <!-- CATEGORY STRIP -->
         <section class="py-12 bg-white text-slate-950">
@@ -146,18 +175,7 @@
                     <h2 class="mt-5 text-4xl lg:text-6xl font-black">Our Beautiful Campus Stories</h2>
                 </div>
 
-<<<<<<< HEAD
                 <div class="mt-16 columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-=======
-    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <h2 class="text-4xl lg:text-6xl font-black">Want To Visit Our Campus?</h2>
-        <p class="mt-6 text-black text-lg">Connect with us and experience our school environment personally.</p>
-        <a href="contact.php" class="inline-flex mt-10 px-10 py-5 rounded-full bg-slate-950 text-white font-black hover:bg-cyan-500 hover:text-slate-950 hover:-translate-y-2 transition duration-500">
-            Contact School
-        </a>
-    </div>
-</section>
->>>>>>> a95e8eb3c15226499074f1b6eaf7e1ee5a214712
 
                     <?php
 
