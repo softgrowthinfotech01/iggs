@@ -53,10 +53,10 @@ html{
         </div>
 
         <div class="grid grid-cols-2 gap-5 rotate-2">
-            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=700&q=80" class="h-72 w-full object-cover rounded-[40px] shadow-2xl hover:scale-105 transition duration-700">
+            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=700&q=80" class="h-72 w-full object-cover rounded-[40px] shadow-2xl hover:scale-105 transition duration-700 mt-10">
             <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=700&q=80" class="h-96 w-full object-cover rounded-[40px] shadow-2xl mt-14 hover:scale-105 transition duration-700">
-            <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=700&q=80" class="h-96 w-full object-cover rounded-[40px] shadow-2xl -mt-14 hover:scale-105 transition duration-700">
-            <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?auto=format&fit=crop&w=700&q=80" class="h-72 w-full object-cover rounded-[40px] shadow-2xl hover:scale-105 transition duration-700">
+            <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=700&q=80" class="h-96 w-full object-cover rounded-[40px] shadow-2xl -mt-14 hover:scale-105 transition duration-700 mb-6">
+            <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?auto=format&fit=crop&w=700&q=80" class="h-72 w-full object-cover rounded-[40px] shadow-2xl hover:scale-105 transition duration-700 ">
         </div>
     </div>
 </section>

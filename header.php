@@ -96,14 +96,18 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                     Gallery
                 </a>
 
+                <a class="<?= $currentPage == 'result.php' ? 'active' : '' ?>" href="result">
+                    Result
+                </a>
+
                 <a class="<?= $currentPage == 'contact.php' ? 'active' : '' ?>" href="contact">
                     Contact
                 </a>
 
-                <a class="igs-nav-cta" href="admission">
+                <!-- <a class="igs-nav-cta" href="admission">
                     Apply Now
                     <i class="fa-solid fa-arrow-right"></i>
-                </a>
+                </a> -->
 
             </div>
 
