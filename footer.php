@@ -1,4 +1,98 @@
-<footer class="igs-footer">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.glass-action-rail{
+    position:fixed;
+    right:18px;
+    bottom:24px;
+    z-index:999999;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.glass-action{
+    width:118px;
+    height:42px;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    gap:9px;
+    padding:0 12px;
+    color:#fff;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:900;
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.32);
+    box-shadow:0 14px 35px rgba(15,23,42,.28);
+    position:relative;
+    overflow:hidden;
+    transition:.35s ease;
+}
+
+.glass-action::before{
+    content:"";
+    position:absolute;
+    top:-60%;
+    left:-40%;
+    width:45px;
+    height:120px;
+    background:rgba(255,255,255,.35);
+    transform:rotate(25deg);
+    animation:glassShine 3s infinite;
+}
+
+.glass-action i{
+    width:28px;
+    height:28px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,.22);
+    font-size:15px;
+}
+
+.glass-action:hover{
+    transform:translateX(-8px) scale(1.05);
+}
+
+.whatsapp{background:linear-gradient(135deg,rgba(34,197,94,.95),rgba(6,95,70,.95));}
+.call{background:linear-gradient(135deg,rgba(37,99,235,.95),rgba(8,145,178,.95));}
+.enquiry{background:linear-gradient(135deg,rgba(249,115,22,.95),rgba(147,51,234,.95));}
+
+@keyframes glassShine{
+    0%{left:-60%;}
+    45%,100%{left:130%;}
+}
+
+@media(max-width:576px){
+    .glass-action-rail{
+        right:12px;
+        bottom:14px;
+    }
+
+    .glass-action{
+        width:42px;
+        height:42px;
+        padding:0;
+        justify-content:center;
+        border-radius:50%;
+    }
+
+    .glass-action span{
+        display:none;
+    }
+}
+    </style>
+</head>
+<body>
+    <footer class="igs-footer">
     <div class="igs-footer-glow"></div>
     <div class="igs-container igs-footer-grid">
         <div>
@@ -89,6 +183,24 @@
         <p>Admission enquiry for the new academic session is now open. Limited seats available.</p>
         <a href="admission">Enquire Now</a>
     </div>
+</div>
+<div class="glass-action-rail">
+
+    <a href="https://wa.me/917775883933?text=Hello%20Indira%20Gandhi%20Garden%20School,%20I%20want%20brochure%20details." target="_blank" class="glass-action whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
+
+    <a href="tel:+917775883933" class="glass-action call">
+        <i class="fa-solid fa-phone-volume"></i>
+        <span>Call</span>
+    </a>
+
+    <a href="admission" class="glass-action enquiry">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>Enquiry</span>
+    </a>
+
 </div>
 
 <script src="js/main.js"></script>

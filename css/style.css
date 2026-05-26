@@ -3,7 +3,11 @@
    Unique Color Combination + Professional Animations
    Replace your old css/style.css with this file
 ===================================================== */
-
+html,
+body{
+    overflow-x:hidden !important;
+    max-width:100%;
+}
 :root{
     --primary:#1e3a8a;
     --primary-2:#2563eb;
@@ -140,9 +144,9 @@ img{max-width:100%;display:block}
     /* box-shadow:0 14px 34px rgba(245,158,11,.28); */
 }
 .igs-nav-cta:hover{box-shadow:0 18px 45px rgba(245,158,11,.38);transform:translateY(-4px)!important}
-.igs-menu-btn{display:none;background:none;border:0;width:42px;cursor:pointer}
+.igs-menu-btn{display:none;background:none;border:0;width:28px;cursor:pointer}
 .igs-menu-btn span{display:block;height:3px;background:var(--primary);margin:7px 0;border-radius:20px;transition:.35s}
-.igs-menu-btn:hover span{background:var(--accent)}
+/* .igs-menu-btn:hover span{background:var(--accent)} */
 
 /* HERO WHITE PREMIUM */
 .igs-hero{
@@ -471,4 +475,13 @@ img{max-width:100%;display:block}
     .igs-cta h2{font-size:30px}
     .igs-experience{left:15px;bottom:15px}
     .igs-about-img img{height:380px}
+}
+.igs-header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:99999;
+    background:#fff;
+    transition:.4s ease;
 }

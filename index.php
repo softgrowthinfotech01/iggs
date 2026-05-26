@@ -17,7 +17,9 @@
 body{font-family:'Inter',sans-serif;}
 
 
-
+section{
+    overflow:hidden;
+}
 .facility-track{
     animation:facilityFlow 24s linear infinite;
     padding:20px 0 40px;
@@ -225,10 +227,22 @@ body{font-family:'Inter',sans-serif;}
     }
 }
 
+
+@media(max-width:768px){
+
+    *{
+        max-width:100vw;
+    }
+
+    body{
+        overflow-x:hidden !important;
+    }
+
+}
 </style>
 </head>
 
-<body class="bg-white text-slate-900 overflow-x-hidden">
+<body class="bg-white text-black overflow-x-hidden">
 
 
 <!-- HEADER -->
@@ -241,26 +255,24 @@ body{font-family:'Inter',sans-serif;}
     <div class="absolute -top-8 -left-8 w-32 h-32 bg-blue-400/20  blur-3xl"></div>
     <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-cyan-400/20 rounded-full blur-3xl"></div>
 
-    <div class="relative bg-white rounded-[4px] shadow-[0_40px_90px_rgba(15,23,42,0.18)] border border-slate-200 p-5 overflow-hidden">
+    <div class="relative bg-white  mt-10 rounded-[4px] shadow-[0_40px_90px_rgba(15,23,42,0.18)] border border-slate-200 p-5 overflow-hidden">
 
         <div class="absolute top-6 left-6 z-20 px-5 py-3 rounded-full bg-white/80 backdrop-blur-xl shadow-lg text-blue-700 font-black text-sm">
             <i class="fa-solid fa-circle-play mr-2"></i> Campus Highlights
         </div>
 
-        <div class="relative h-[500px] rounded-[35px] overflow-hidden bg-gradient-to-br from-blue-50 to-white">
-
-            <div id="uniqueSlider" class="relative w-full h-full">
+            <div class="relative h-[500px] mt-20  max-md:h-[280px] max-sm:h-[200px] rounded-[35px] max-md:rounded-[20px] overflow-hidden bg-gradient-to-br from-blue-50 to-white">            <div id="uniqueSlider" class="relative w-full h-full">
 
                 <!-- SLIDE 1 -->
                 <div class="unique-slide absolute inset-0 opacity-100 scale-100 transition-all duration-1000 ease-in-out">
                     <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-cyan-50"></div>
 
                     <img src="images/IG_GATE.png"
-                         class="absolute right-0 bottom-0 w-[100%] h-[100%] object-cover drop-shadow-2xl">
+                         class="absolute right-0 bottom-0 w-full h-full object-cover drop-shadow-2xl max-md:object-contain">
 
                     <!-- <div class="absolute left-8 bottom-8 right-8 bg-white/85 backdrop-blur-2xl rounded-[28px] p-6 shadow-2xl border border-white">
                         <span class="text-blue-700 font-black text-sm uppercase tracking-widest">01 / Campus</span>
-                        <h3 class="text-3xl font-black text-slate-900 mt-2">Modern School Campus</h3>
+                        <h3 class="text-3xl font-black text-black mt-2">Modern School Campus</h3>
                         <p class="text-slate-500 mt-2">Clean, safe and inspiring environment for students.</p>
                     </div> -->
                 </div>
@@ -270,11 +282,12 @@ body{font-family:'Inter',sans-serif;}
                     <div class="absolute inset-0 bg-gradient-to-br from-cyan-50 via-white to-blue-50"></div>
 
                     <img src="images/IG_TS.png"
-                         class="absolute right-0 bottom-0 w-[100%] h-[100%] object-cover drop-shadow-2xl">
+                         class="absolute right-0 bottom-0 w-full h-full object-cover drop-shadow-2xl max-md:object-contain">
+
 
                     <!-- <div class="absolute left-8 bottom-8 right-8 bg-white/85 backdrop-blur-2xl rounded-[28px] p-6 shadow-2xl border border-white">
                         <span class="text-blue-700 font-black text-sm uppercase tracking-widest">02 / Learning</span>
-                        <h3 class="text-3xl font-black text-slate-900 mt-2">Smart Learning</h3>
+                        <h3 class="text-3xl font-black text-black mt-2">Smart Learning</h3>
                         <p class="text-slate-500 mt-2">Digital classrooms with activity-based education.</p>
                     </div> -->
                 </div>
@@ -284,11 +297,11 @@ body{font-family:'Inter',sans-serif;}
                     <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-sky-50"></div>
 
                     <img src="images/IG_CAMPUS.png"
-                         class="absolute right-0 mt-8 bottom-0 w-[100%] h-[1000px] object-cover drop-shadow-2xl">
+                         class="absolute right-0 bottom-0 w-full h-full object-cover drop-shadow-2xl max-md:object-contain">
 
                     <!-- <div class="absolute left-8 bottom-8 right-8 bg-white/85 backdrop-blur-2xl rounded-[28px] p-6 shadow-2xl border border-white">
                         <span class="text-blue-700 font-black text-sm uppercase tracking-widest">03 / Activities</span>
-                        <h3 class="text-3xl font-black text-slate-900 mt-2">Sports & Activities</h3>
+                        <h3 class="text-3xl font-black text-black mt-2">Sports & Activities</h3>
                         <p class="text-slate-500 mt-2">Building confidence through culture and sports.</p>
                     </div> -->
                 </div>
@@ -296,10 +309,10 @@ body{font-family:'Inter',sans-serif;}
             </div>
 
             <!-- FLOATING DOTS -->
-            <div class="absolute top-1/2 right-5 -translate-y-1/2 z-30 flex flex-col gap-3">
-                <button class="unique-dot w-3 h-10 rounded-full bg-blue-700 transition-all"></button>
-                <button class="unique-dot w-3 h-3 rounded-full bg-slate-300 transition-all"></button>
-                <button class="unique-dot w-3 h-3 rounded-full bg-slate-300 transition-all"></button>
+<div class="absolute top-1/2 right-3 max-md:right-2 -translate-y-1/2 z-30 flex flex-col gap-2">     
+               <button class="unique-dot w-2 h-8 max-md:h-6 rounded-full bg-blue-700 transition-all"></button>
+                <button class="unique-dot w-2 h-2 rounded-full bg-slate-300 transition-all"></button>
+                <button class="unique-dot w-2 h-2 rounded-full bg-slate-300 transition-all"></button>
             </div>
 
         </div>
@@ -354,9 +367,9 @@ body{font-family:'Inter',sans-serif;}
 </div>
 
     <!-- GLOW -->
-    <div class="absolute top-0 left-0 w-[450px] h-[450px] bg-blue-200/30 blur-[120px] rounded-full"></div>
+    <div class="absolute top-0 left-0 w-[450px] max-md:w-[180px] max-md:w-[180px] max-md:w-[180px] max-md:w-[180px] h-[450px] bg-blue-200/30 blur-[120px] rounded-full"></div>
 
-    <div class="absolute bottom-0 right-0 w-[450px] h-[450px] bg-cyan-200/30 blur-[120px] rounded-full"></div>
+    <div class="absolute bottom-0 right-0 w-[450px] max-md:w-[180px] max-md:w-[180px] max-md:w-[180px] h-[450px] bg-cyan-200/30 blur-[120px] rounded-full"></div>
 
 
 
@@ -472,14 +485,14 @@ body{font-family:'Inter',sans-serif;}
 
                 </span>
 
-                <h2 class="mt-7 text-4xl lg:text-6xl font-black text-slate-900 leading-tight">
+                <h2 class="mt-7 text-4xl lg:text-6xl font-black text-black leading-tight">
 
                     A School Built For  
                     <span class="text-blue-700">Future Leaders</span>
 
                 </h2>
 
-                <p class="mt-8 text-slate-600 leading-9 text-lg  text-justify">
+                <p class="mt-8 text-black leading-9 text-lg  text-justify">
 
                     Indira Gandhi School Chandrapur provides a modern educational
                     environment focused on academic excellence, creativity,
@@ -487,7 +500,7 @@ body{font-family:'Inter',sans-serif;}
 
                 </p>
 
-                <p class="mt-6 text-slate-600 leading-9 text-justify text-lg">
+                <p class="mt-6 text-black leading-9 text-justify text-lg">
 
                     We combine smart learning, co-curricular activities,
                     communication skills and moral values to help students
@@ -510,11 +523,11 @@ body{font-family:'Inter',sans-serif;}
 
                         <div>
 
-                            <h4 class="text-2xl font-black text-slate-900">
+                            <h4 class="text-2xl font-black text-black">
                                 Smart Learning
                             </h4>
 
-                            <p class="mt-2 text-slate-600 leading-7">
+                            <p class="mt-2 text-black leading-7">
                                 Digital classrooms with interactive and activity-based teaching.
                             </p>
 
@@ -534,11 +547,11 @@ body{font-family:'Inter',sans-serif;}
 
                         <div>
 
-                            <h4 class="text-2xl font-black text-slate-900">
+                            <h4 class="text-2xl font-black text-black">
                                 Sports & Activities
                             </h4>
 
-                            <p class="mt-2 text-slate-600 leading-7">
+                            <p class="mt-2 text-black leading-7">
                                 Encouraging leadership, teamwork and confidence development.
                             </p>
 
@@ -558,11 +571,11 @@ body{font-family:'Inter',sans-serif;}
 
                         <div>
 
-                            <h4 class="text-2xl font-black text-slate-900">
+                            <h4 class="text-2xl font-black text-black">
                                 Safe Environment
                             </h4>
 
-                            <p class="mt-2 text-slate-600 leading-7">
+                            <p class="mt-2 text-black leading-7">
                                 A disciplined and secure campus for every student.
                             </p>
 
@@ -597,9 +610,9 @@ body{font-family:'Inter',sans-serif;}
     </div>
 
     <!-- GLOW -->
-    <div class="absolute top-0 left-0 w-[450px] h-[450px] bg-blue-200/30 blur-[120px] rounded-full"></div>
+    <div class="absolute top-0 left-0 w-[450px] max-md:w-[180px] max-md:w-[180px] max-md:w-[180px] h-[450px] bg-blue-200/30 blur-[120px] rounded-full"></div>
 
-    <div class="absolute bottom-0 right-0 w-[450px] h-[450px] bg-cyan-200/30 blur-[120px] rounded-full"></div>
+    <div class="absolute bottom-0 right-0 w-[450px] max-md:w-[180px] max-md:w-[180px] max-md:w-[180px] h-[450px] bg-cyan-200/30 blur-[120px] rounded-full"></div>
 
 
 
@@ -616,14 +629,14 @@ body{font-family:'Inter',sans-serif;}
 
             </span>
 
-            <h2 class="mt-6 text-4xl lg:text-6xl font-black text-slate-900 leading-tight">
+            <h2 class="mt-6 text-4xl lg:text-6xl font-black text-black leading-tight">
 
                 Future Focused  
                 <span class="text-blue-700">Learning Structure</span>
 
             </h2>
 
-            <p class="mt-5 text-slate-600 text-lg leading-8">
+            <p class="mt-5 text-black text-lg leading-8">
 
                 Modern academic programs designed for confidence,
                 discipline, creativity and innovation.
@@ -844,9 +857,9 @@ body{font-family:'Inter',sans-serif;}
     </div>
 
     <!-- GLOW -->
-    <!-- <div class="absolute top-0 left-0 w-[450px] h-[450px] bg-blue-200/30 blur-[120px] rounded-full"></div>
+    <!-- <div class="absolute top-0 left-0 w-[450px] max-md:w-[180px] max-md:w-[180px] max-md:w-[180px] h-[450px] bg-blue-200/30 blur-[120px] rounded-full"></div>
 
-    <div class="absolute bottom-0 right-0 w-[450px] h-[450px] bg-cyan-200/30 blur-[120px] rounded-full"></div> -->
+    <div class="absolute bottom-0 right-0 w-[450px] max-md:w-[180px] max-md:w-[180px] max-md:w-[180px] h-[450px] bg-cyan-200/30 blur-[120px] rounded-full"></div> -->
 
 
 
@@ -863,14 +876,14 @@ body{font-family:'Inter',sans-serif;}
 
             </span>
 
-            <h2 class="mt-6 text-4xl lg:text-6xl font-black text-slate-900 leading-tight">
+            <h2 class="mt-6 text-4xl lg:text-6xl font-black text-black leading-tight">
 
                 Smart Campus  
                 <span class="text-blue-700">Infrastructure</span>
 
             </h2>
 
-            <p class="mt-5 text-slate-600 text-lg leading-8">
+            <p class="mt-5 text-black text-lg leading-8">
 
                 Modern facilities designed for smart learning,
                 safety and student development.
@@ -1066,8 +1079,8 @@ body{font-family:'Inter',sans-serif;}
     <!-- SOFT BACKGROUND -->
     <div class="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-slate-100"></div>
 
-    <div class="absolute top-0 left-0 w-[450px] h-[450px] bg-blue-200/30 blur-[120px] rounded-full"></div>
-    <div class="absolute bottom-0 right-0 w-[450px] h-[450px] bg-cyan-200/30 blur-[120px] rounded-full"></div>
+    <div class="absolute top-0 left-0 w-[450px] max-md:w-[180px] max-md:w-[180px] max-md:w-[180px] h-[450px] bg-blue-200/30 blur-[120px] rounded-full"></div>
+    <div class="absolute bottom-0 right-0 w-[450px] max-md:w-[180px] max-md:w-[180px] max-md:w-[180px] h-[450px] bg-cyan-200/30 blur-[120px] rounded-full"></div>
 
     <!-- LIGHT SKETCH ICONS -->
     <div class="absolute top-10 right-10 opacity-[0.06] rotate-12">
@@ -1099,7 +1112,7 @@ body{font-family:'Inter',sans-serif;}
 
                         <div class="absolute left-6 right-6 bottom-6 bg-white/90 backdrop-blur-xl rounded-[28px] p-6 shadow-2xl">
 
-                            <h3 class="text-2xl font-black text-slate-900">
+                            <h3 class="text-2xl font-black text-black">
                                 Principal
                             </h3>
 
@@ -1143,12 +1156,12 @@ body{font-family:'Inter',sans-serif;}
                     Principal Message
                 </span>
 
-                <h2 class="mt-7 text-4xl lg:text-6xl font-black text-slate-900 leading-tight">
+                <h2 class="mt-7 text-4xl lg:text-6xl font-black text-black leading-tight">
                     Education With
                     <span class="text-blue-700">Values & Vision</span>
                 </h2>
 
-                <p class="mt-8 text-slate-600 leading-9 text-lg text-justify">
+                <p class="mt-8 text-black leading-9 text-lg text-justify">
                     Our aim is to create confident, responsible and successful students.
                     We believe every child has unique talent, and our duty is to guide,
                     support and inspire them with modern education and strong values.
@@ -1175,7 +1188,7 @@ body{font-family:'Inter',sans-serif;}
                     </div>
 
                     <div>
-                        <h3 class="text-2xl font-black text-slate-900">
+                        <h3 class="text-2xl font-black text-black">
                             Principal
                         </h3>
                         <p class="text-blue-700 font-bold">
@@ -1198,14 +1211,14 @@ body{font-family:'Inter',sans-serif;}
 <section class="relative py-28 overflow-hidden bg-gradient-to-br from-blue-900 via-slate-900 to-amber-700"><div class="absolute inset-0 overflow-hidden opacity-[0.07]">
 
     <!-- BIG CIRCLE -->
-    <div class="absolute -top-20 -left-20 w-[420px] h-[420px] border-[18px] border-white rounded-full"></div>
+    <div class="absolute -top-20 -left-20 w-[420px] max-md:w-[180px] max-md:w-[180px] h-[420px] border-[18px] border-white rounded-full"></div>
 
     <!-- DIAGONAL LINES -->
-    <div class="absolute top-32 left-1/4 w-[500px] h-[2px] bg-white rotate-[18deg]"></div>
+    <div class="hidden md:block absolute top-32 left-1/4 w-[500px] max-md:w-[220px] max-md:w-[220px] h-[2px] bg-white rotate-[18deg]"></div>
 
-    <div class="absolute top-52 right-0 w-[420px] h-[2px] bg-white -rotate-[22deg]"></div>
+    <div class="hidden md:block absolute top-52 right-0 w-[420px] max-md:w-[180px] max-md:w-[180px] h-[2px] bg-white -rotate-[22deg]"></div>
 
-    <div class="absolute bottom-32 left-0 w-[380px] h-[2px] bg-white rotate-[12deg]"></div>
+    <div class="hidden md:block absolute bottom-32 left-0 w-[380px] h-[2px] bg-white rotate-[12deg]"></div>
 
     <!-- ABSTRACT BOX -->
     <div class="absolute top-16 right-16 w-64 h-64 border-[14px] border-white rotate-12 rounded-[55px]"></div>
@@ -1237,9 +1250,9 @@ body{font-family:'Inter',sans-serif;}
 </div>
 
     <!-- GLOW -->
-    <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-300/20 blur-[120px] rounded-full"></div>
+    <div class="absolute top-0 left-0 w-[500px] max-md:w-[220px] max-md:w-[220px] max-md:w-[220px] h-[500px] bg-cyan-300/20 blur-[120px] rounded-full"></div>
 
-    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-300/20 blur-[120px] rounded-full"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] max-md:w-[220px] max-md:w-[220px] max-md:w-[220px] h-[500px] bg-blue-300/20 blur-[120px] rounded-full"></div>
 
 
 
@@ -1372,11 +1385,11 @@ body{font-family:'Inter',sans-serif;}
 
                                 <div>
 
-                                    <h3 class="text-3xl font-black text-slate-900">
+                                    <h3 class="text-3xl font-black text-black">
                                         Admissions Open
                                     </h3>
 
-                                    <p class="mt-2 text-slate-600 font-semibold">
+                                    <p class="mt-2 text-black font-semibold">
                                         Limited seats available for the new academic session.
                                     </p>
 
@@ -1407,7 +1420,7 @@ body{font-family:'Inter',sans-serif;}
 
                             <div>
 
-                                <h4 class="text-2xl font-black text-slate-900">
+                                <h4 class="text-2xl font-black text-black">
                                     Excellence
                                 </h4>
 
