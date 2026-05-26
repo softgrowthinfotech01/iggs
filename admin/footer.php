@@ -13,7 +13,7 @@
         <div class="text-sm text-gray-500 text-center md:text-right">
 
             <p>
-                © 2026 All Rights Reserved <a href="https://softgrowthinfotech.com/">Developed by Softgrowth Infotech</a>
+                © 2026 All Rights Reserved Developed by <a href="https://softgrowthinfotech.com/" style="color:blue">Softgrowth Infotech</a>
             </p>
 
         </div>

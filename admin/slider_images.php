@@ -19,10 +19,10 @@ if (!isset($_SESSION['admin'])) {
     <!-- MAIN -->
     <main class="p-6 pb-10 overflow-y-auto h-[calc(100vh-140px)]">
 
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-7xl mx-auto bg-slate-300 p-4 rounded-xl">
 
             <!-- PAGE CARD -->
-            <div class="bg-white rounded-xl shadow-md p-6">
+            <div class="p-6">
 
                 <!-- PAGE TITLE -->
                 <div class="mb-6">
@@ -32,12 +32,12 @@ if (!isset($_SESSION['admin'])) {
                 </div>
 
                 <!-- FORM -->
-                <form action="" method="POST" enctype="multipart/form-data" class=" bg-slate-300 p-4 rounded-xl">
+                <form action="" method="POST" enctype="multipart/form-data" class="">
 
                     <!-- TITLE -->
                     <div class="mb-6 ">
 
-                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                        <label class="text-sm font-medium block text-gray-700 mb-2">
                             Slider Title
                         </label>
 
@@ -54,7 +54,7 @@ if (!isset($_SESSION['admin'])) {
 
                         <div class="flex justify-between mb-2">
 
-                            <label class="block text-sm font-medium text-gray-700">
+                            <label class="text-sm font-medium flex items-center justify-center text-gray-700">
                                 Slider Images
                             </label>
 
@@ -141,7 +141,7 @@ if (!isset($_SESSION['admin'])) {
                 name="slider_images[]"
                 accept="image/*"
                 style="padding:4px;"
-                class="w-full border border-gray-300 rounded-lg px-4 py-2"
+                class="w-full border border-gray-600 rounded-lg px-4 py-2"
             >
 
             <button
