@@ -14,231 +14,7 @@
 <link rel="stylesheet" href="css/style.css">
 
 <style>
-body{font-family:'Inter',sans-serif;}
 
-
-section{
-    overflow:hidden;
-}
-.facility-track{
-    animation:facilityFlow 24s linear infinite;
-    padding:20px 0 40px;
-}
-
-.facility-track:hover{
-    animation-play-state:paused;
-}
-
-@keyframes facilityFlow{
-    0%{
-        transform:translateX(0);
-    }
-    100%{
-        transform:translateX(-50%);
-    }
-}
-
-.facility-item{
-    position:relative;
-    width:440px;
-    flex-shrink:0;
-    perspective:1000px;
-}
-
-.facility-glow{
-    position:absolute;
-    inset:20px;
-    filter:blur(55px);
-    border-radius:45px;
-    opacity:.8;
-    transition:.6s ease;
-}
-
-.facility-item:hover .facility-glow{
-    opacity:1;
-    transform:scale(1.08);
-}
-
-.facility-box{
-    position:relative;
-    min-height:360px;
-    background:
-        linear-gradient(145deg,rgba(255,255,255,.92),rgba(255,255,255,.62));
-    backdrop-filter:blur(24px);
-    border:1px solid rgba(255,255,255,.95);
-    border-radius:44px;
-    padding:36px;
-    overflow:hidden;
-    /* box-shadow:
-        0 35px 90px rgba(15,23,42,.12),
-        inset 0 1px 0 rgba(255,255,255,.9); */
-    transition:.7s cubic-bezier(.2,.8,.2,1);
-}
-
-.facility-box::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-        radial-gradient(circle at 20% 10%,rgba(255,255,255,.95),transparent 28%),
-        radial-gradient(circle at 90% 20%,rgba(59,130,246,.16),transparent 30%);
-    opacity:.9;
-    pointer-events:none;
-}
-
-.facility-box::after{
-    content:"";
-    position:absolute;
-    top:-80px;
-    left:-120px;
-    width:120px;
-    height:520px;
-    background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent);
-    transform:rotate(25deg);
-    transition:.8s ease;
-}
-
-.facility-box:hover{
-    transform:translateY(-16px) rotateX(4deg) rotateY(-4deg);
-    box-shadow:
-        0 45px 110px rgba(37,99,235,.20),
-        inset 0 1px 0 rgba(255,255,255,1);
-}
-
-.facility-box:hover::after{
-    left:120%;
-}
-
-.facility-icon{
-    position:relative;
-    width:108px;
-    height:108px;
-    border-radius:34px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:44px;
-    color:#fff;
-    box-shadow:
-        0 25px 70px rgba(37,99,235,.35),
-        inset 0 1px 0 rgba(255,255,255,.35);
-    transform:rotate(-6deg);
-    transition:.7s cubic-bezier(.2,.8,.2,1);
-    z-index:2;
-}
-
-.facility-icon::after{
-    content:"";
-    position:absolute;
-    inset:-8px;
-    border-radius:40px;
-    border:2px dashed rgba(182, 9, 9, 0.65);
-    animation:facilitySpin 9s linear infinite;
-}
-
-@keyframes facilitySpin{
-    100%{
-        transform:rotate(360deg);
-    }
-}
-
-.facility-box:hover .facility-icon{
-    transform:rotate(0deg) scale(1.12);
-}
-
-.facility-content{
-    position:relative;
-    margin-top:34px;
-    z-index:2;
-}
-
-.facility-content span{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-size:12px;
-    font-weight:900;
-    text-transform:uppercase;
-    letter-spacing:3px;
-}
-
-.facility-content span::before{
-    content:"";
-    width:28px;
-    height:3px;
-    border-radius:20px;
-    background:currentColor;
-}
-
-.facility-content h3{
-    margin-top:14px;
-    font-size:36px;
-    line-height:1.1;
-    font-weight:900;
-    color:#0f172a;
-    letter-spacing:-1px;
-}
-
-.facility-content p{
-    margin-top:18px;
-    color:#475569;
-    line-height:1.9;
-    font-size:17px;
-}
-
-.facility-content p::after{
-    content:"";
-    display:block;
-    width:70px;
-    height:5px;
-    margin-top:24px;
-    border-radius:20px;
-    background:linear-gradient(90deg,#2563eb,#06b6d4);
-    transition:.6s ease;
-}
-
-.facility-box:hover .facility-content p::after{
-    width:130px;
-}
-
-@media(max-width:768px){
-    .facility-item{
-        width:320px;
-    }
-
-    .facility-box{
-        min-height:330px;
-        padding:28px;
-        border-radius:34px;
-    }
-
-    .facility-icon{
-        width:88px;
-        height:88px;
-        font-size:36px;
-    }
-
-    .facility-content h3{
-        font-size:27px;
-    }
-
-    .facility-content p{
-        font-size:15px;
-    }
-}
-
-
-@media(max-width:768px){
-
-    *{
-        max-width:100vw;
-    }
-
-    body{
-        overflow-x:hidden !important;
-    }
-
-}
 </style>
 </head>
 
@@ -255,16 +31,17 @@ section{
     <div class="absolute -top-8 -left-8 w-32 h-32 bg-blue-400/20  blur-3xl"></div>
     <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-cyan-400/20 rounded-full blur-3xl"></div>
 
-    <div class="relative bg-white  mt-10 rounded-[4px] shadow-[0_40px_90px_rgba(15,23,42,0.18)] border border-slate-200 p-5 overflow-hidden">
+    <div class="relative bg-white mt-10 rounded-[4px] shadow-[0_40px_90px_rgba(15,23,42,0.18)] border border-slate-200 p-5 overflow-hidden">
 
-        <div class="absolute top-6 left-6 z-20 px-5 py-3 rounded-full bg-white/80 backdrop-blur-xl shadow-lg text-blue-700 font-black text-sm">
-            <i class="fa-solid fa-circle-play mr-2"></i> Campus Highlights
+        <div class="hidden absolute top-28 left-8 z-20 px-5 py-3 rounded-full bg-white/80 backdrop-blur-xl shadow-lg text-blue-700 font-black text-sm">
+            <i class="fa-solid fa-circle-play "></i> Campus Highlights
         </div>
 
-            <div class="relative h-[500px] mt-20  max-md:h-[280px] max-sm:h-[200px] rounded-[35px] max-md:rounded-[20px] overflow-hidden bg-gradient-to-br from-blue-50 to-white">            <div id="uniqueSlider" class="relative w-full h-full">
+            <div class="relative h-[500px] mt-10 md:mt-20  max-md:h-[280px] max-sm:h-[200px] rounded-[35px] max-md:rounded-[20px] overflow-hidden bg-gradient-to-br from-blue-50 to-white">     
+                      <div id="uniqueSlider" class="relative w-full h-full">
 
                 <!-- SLIDE 1 -->
-                <div class="unique-slide absolute inset-0 opacity-100 scale-100 transition-all duration-1000 ease-in-out">
+                <div class="unique-slide  absolute inset-0 opacity-100 scale-100 transition-all duration-1000 ease-in-out">
                     <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-cyan-50"></div>
 
                     <img src="images/IG_GATE.png"
@@ -309,7 +86,7 @@ section{
             </div>
 
             <!-- FLOATING DOTS -->
-<div class="absolute top-1/2 right-3 max-md:right-2 -translate-y-1/2 z-30 flex flex-col gap-2">     
+            <div class="absolute top-1/2 right-3 max-md:right-2 -translate-y-1/2 z-30 flex flex-col gap-2">     
                <button class="unique-dot w-2 h-8 max-md:h-6 rounded-full bg-blue-700 transition-all"></button>
                 <button class="unique-dot w-2 h-2 rounded-full bg-slate-300 transition-all"></button>
                 <button class="unique-dot w-2 h-2 rounded-full bg-slate-300 transition-all"></button>
@@ -367,7 +144,7 @@ section{
 </div>
 
     <!-- GLOW -->
-    <div class="absolute top-0 left-0 w-[450px] max-md:w-[180px] max-md:w-[180px] max-md:w-[180px] max-md:w-[180px] h-[450px] bg-blue-200/30 blur-[120px] rounded-full"></div>
+    <div class="absolute top-0 left-0 w-[450px] max-md:w-[180px] h-[450px] bg-blue-200/30 blur-[120px] rounded-full"></div>
 
     <div class="absolute bottom-0 right-0 w-[450px] max-md:w-[180px] max-md:w-[180px] max-md:w-[180px] h-[450px] bg-cyan-200/30 blur-[120px] rounded-full"></div>
 

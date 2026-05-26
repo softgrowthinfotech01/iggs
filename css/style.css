@@ -485,3 +485,232 @@ img{max-width:100%;display:block}
     background:#fff;
     transition:.4s ease;
 }
+
+
+
+
+body{font-family:'Inter',sans-serif;}
+
+
+section{
+    overflow:hidden;
+}
+.facility-track{
+    animation:facilityFlow 24s linear infinite;
+    padding:20px 0 40px;
+}
+
+.facility-track:hover{
+    animation-play-state:paused;
+}
+
+@keyframes facilityFlow{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(-50%);
+    }
+}
+
+.facility-item{
+    position:relative;
+    width:440px;
+    flex-shrink:0;
+    perspective:1000px;
+}
+
+.facility-glow{
+    position:absolute;
+    inset:20px;
+    filter:blur(55px);
+    border-radius:45px;
+    opacity:.8;
+    transition:.6s ease;
+}
+
+.facility-item:hover .facility-glow{
+    opacity:1;
+    transform:scale(1.08);
+}
+
+.facility-box{
+    position:relative;
+    min-height:360px;
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.92),rgba(255,255,255,.62));
+    backdrop-filter:blur(24px);
+    border:1px solid rgba(255,255,255,.95);
+    border-radius:44px;
+    padding:36px;
+    overflow:hidden;
+    /* box-shadow:
+        0 35px 90px rgba(15,23,42,.12),
+        inset 0 1px 0 rgba(255,255,255,.9); */
+    transition:.7s cubic-bezier(.2,.8,.2,1);
+}
+
+.facility-box::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 20% 10%,rgba(255,255,255,.95),transparent 28%),
+        radial-gradient(circle at 90% 20%,rgba(59,130,246,.16),transparent 30%);
+    opacity:.9;
+    pointer-events:none;
+}
+
+.facility-box::after{
+    content:"";
+    position:absolute;
+    top:-80px;
+    left:-120px;
+    width:120px;
+    height:520px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent);
+    transform:rotate(25deg);
+    transition:.8s ease;
+}
+
+.facility-box:hover{
+    transform:translateY(-16px) rotateX(4deg) rotateY(-4deg);
+    box-shadow:
+        0 45px 110px rgba(37,99,235,.20),
+        inset 0 1px 0 rgba(255,255,255,1);
+}
+
+.facility-box:hover::after{
+    left:120%;
+}
+
+.facility-icon{
+    position:relative;
+    width:108px;
+    height:108px;
+    border-radius:34px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:44px;
+    color:#fff;
+    box-shadow:
+        0 25px 70px rgba(37,99,235,.35),
+        inset 0 1px 0 rgba(255,255,255,.35);
+    transform:rotate(-6deg);
+    transition:.7s cubic-bezier(.2,.8,.2,1);
+    z-index:2;
+}
+
+.facility-icon::after{
+    content:"";
+    position:absolute;
+    inset:-8px;
+    border-radius:40px;
+    border:2px dashed rgba(182, 9, 9, 0.65);
+    animation:facilitySpin 9s linear infinite;
+}
+
+@keyframes facilitySpin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+.facility-box:hover .facility-icon{
+    transform:rotate(0deg) scale(1.12);
+}
+
+.facility-content{
+    position:relative;
+    margin-top:34px;
+    z-index:2;
+}
+
+.facility-content span{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:12px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:3px;
+}
+
+.facility-content span::before{
+    content:"";
+    width:28px;
+    height:3px;
+    border-radius:20px;
+    background:currentColor;
+}
+
+.facility-content h3{
+    margin-top:14px;
+    font-size:36px;
+    line-height:1.1;
+    font-weight:900;
+    color:#0f172a;
+    letter-spacing:-1px;
+}
+
+.facility-content p{
+    margin-top:18px;
+    color:#475569;
+    line-height:1.9;
+    font-size:17px;
+}
+
+.facility-content p::after{
+    content:"";
+    display:block;
+    width:70px;
+    height:5px;
+    margin-top:24px;
+    border-radius:20px;
+    background:linear-gradient(90deg,#2563eb,#06b6d4);
+    transition:.6s ease;
+}
+
+.facility-box:hover .facility-content p::after{
+    width:130px;
+}
+
+@media(max-width:768px){
+    .facility-item{
+        width:320px;
+    }
+
+    .facility-box{
+        min-height:330px;
+        padding:28px;
+        border-radius:34px;
+    }
+
+    .facility-icon{
+        width:88px;
+        height:88px;
+        font-size:36px;
+    }
+
+    .facility-content h3{
+        font-size:27px;
+    }
+
+    .facility-content p{
+        font-size:15px;
+    }
+}
+
+
+@media(max-width:768px){
+
+    *{
+        max-width:100vw;
+    }
+
+    body{
+        overflow-x:hidden !important;
+    }
+
+}
