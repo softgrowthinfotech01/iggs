@@ -57,7 +57,7 @@
             </a>
 
             <!-- Principal's Message -->
-            <a href="principal_msg" id="principal_msg-link"
+            <a href="principal_message" id="principal_msg-link"
                 class="flex items-center gap-3 hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition">
 
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -108,8 +108,8 @@
 
             </a>
 
-            <!-- Courses -->
-            <!-- <a href="#"
+            <!-- Contact Us -->
+            <a href="contact_us"
                 class="flex items-center gap-3 hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition">
 
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -121,16 +121,16 @@
                     <path stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="1.8"
-                        d="M12 6.253v13m0-13C10.832 5.483 9.246 5 7.5 5 5.754 5 4.168 5.483 3 6.253v13C4.168 18.483 5.754 18 7.5 18c1.746 0 3.332.483 4.5 1.253m0-13C13.168 5.483 14.754 5 16.5 5c1.746 0 3.332.483 4.5 1.253v13C19.832 18.483 18.246 18 16.5 18c-1.746 0-3.332.483-4.5 1.253" />
+                        d="M21 8V7l-3 2-2-2-4 4-2-2-5 5m16-6v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8m18 0l-9 6-9-6" />
 
                 </svg>
 
-                Courses
+                Contact Us
 
-            </a> -->
+            </a>
 
-            <!-- Reports -->
-            <!-- <a href="#"
+            <!-- Admission -->
+            <a href="admission"
                 class="flex items-center gap-3 hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition">
 
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -142,39 +142,47 @@
                     <path stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="1.8"
-                        d="M9 17v-6m4 6V7m4 10v-3M5 21h14" />
+                        d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m-6-3h12" />
 
                 </svg>
 
-                Reports
+                Admission Enquiry
 
-            </a> -->
+            </a>
 
-            <!-- Settings -->
-            <!-- <a href="#"
-                class="flex items-center gap-3 hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition">
+            <!-- Galley -->
+            <a href="gallery"
+    class="flex items-center gap-3 hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition">
 
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    class="w-5 h-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
+    <svg xmlns="http://www.w3.org/2000/svg"
+        class="w-5 h-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor">
 
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.8"
-                        d="M11.983 13.983a2 2 0 100-3.966 2 2 0 000 3.966z" />
+        <rect x="3"
+            y="5"
+            width="18"
+            height="14"
+            rx="2"
+            ry="2"
+            stroke-width="1.8" />
 
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.8"
-                        d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33h.09A1.65 1.65 0 0010 3.09V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51h.09a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v.09A1.65 1.65 0 0020.91 10H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z" />
+        <path stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.8"
+            d="M7 15l3-3 2 2 4-4 1 1" />
 
-                </svg>
+        <path stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.8"
+            d="M8 9h.01" />
 
-                Settings
+    </svg>
 
-            </a> -->
+    Gallery
+
+</a>
 
         </nav>
 

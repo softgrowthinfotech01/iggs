@@ -2,8 +2,8 @@
 module.exports = {
   content: [
     "./*.php",
-    "./pages/**/*.php",
-    "./js/**/*.js"
+    "./admin/*.php",
+    "./admin/**/*.php",
   ],
   theme: {
     extend: {},

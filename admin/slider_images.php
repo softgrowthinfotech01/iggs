@@ -45,7 +45,7 @@ if (!isset($_SESSION['admin'])) {
                             type="text"
                             name="title"
                             placeholder="Enter slider title"
-                            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            class="w-full border border-gray-600 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
 
                     </div>
 
