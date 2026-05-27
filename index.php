@@ -175,7 +175,6 @@ if ($slider) {
 
                             </div>
 
-                        <?php endforeach; ?>
 
                     <?php endif; ?>
 
