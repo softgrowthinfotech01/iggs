@@ -100,7 +100,7 @@ img{max-width:100%;display:block}
 }
 @keyframes logoGlow{50%,100%{transform:rotate(25deg) translateX(120%)}}
 .igs-logo strong,.igs-footer-logo strong{display:block;color:var(--primary);font-size:21px;line-height:1}
-.igs-logo small,.igs-footer-logo small{font-weight:800;color:var(--muted);letter-spacing:.6px}
+.igs-logo small,.igs-footer-logo small{font-weight:800;color:white;letter-spacing:.6px}
 
 /* MENU */
 .igs-menu{display:flex;align-items:center;gap:8px}
