@@ -199,14 +199,14 @@ html{
 </section>
 
 <!-- CTA -->
-<section class="relative py-24 overflow-hidden bg-gradient-to-r from-blue-700 via-cyan-600 to-blue-800">
+<section class="relative py-24 overflow-hidden bg-black">
 
     <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-        <h2 class="text-4xl lg:text-6xl font-black text-white">
+        <h2 class="text-4xl lg:text-6xl font-black text-black">
             Give Your Child A Strong Academic Future
         </h2>
 
-        <p class="mt-6 text-blue-100 text-lg leading-8">
+        <p class="mt-6 text-blue-800 text-lg leading-8">
             Admissions are open for the new academic session.
         </p>
 

@@ -71,10 +71,10 @@ body{
     <div class="absolute top-20 left-10 w-72 h-72 border-[12px] border-blue-700/10 rotate-12 rounded-[50px]"></div>
     <div class="absolute bottom-10 left-1/3 w-52 h-52 border-[10px] border-cyan-500/10 -rotate-12 rounded-[35px]"></div>
 
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-[1fr_.9fr] gap-16 items-center relative z-10">
+    <div class="max-w-7xl mt-20 mx-auto px-6 grid lg:grid-cols-[1fr_.9fr] gap-16 items-center relative z-10">
 
         <!-- LEFT -->
-        <div>
+        <div class="mt-20">
             <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-blue-50 text-blue-700 font-black uppercase tracking-widest text-sm">
                 <i class="fa-solid fa-paper-plane"></i>
                 Contact School Office
@@ -91,7 +91,7 @@ body{
             </p>
 
             <!-- QUICK CONTACT -->
-            <div class="mt-10 space-y-5">
+            <div class="mt-20 space-y-5 p-10">
 
                 <a href="tel:+919876543210" class="flex items-center gap-5 group">
                     <div class="w-16 h-16 rounded-full bg-blue-700 text-white flex items-center justify-center text-2xl group-hover:scale-110 transition">
@@ -121,7 +121,7 @@ body{
 
             <div class="relative bg-white rounded-[45px] p-8 shadow-[0_40px_100px_rgba(15,23,42,0.22)] border border-slate-100">
 
-                <div class="absolute -top-8 left-8 px-6 py-4 rounded-2xl bg-slate-950 text-white font-black shadow-xl">
+                <div class="absolute -top-8 mt-8 left-8 px-6 py-4 rounded-2xl bg-slate-950 text-white font-black shadow-xl">
                     <i class="fa-solid fa-message mr-2"></i> Send Message
                 </div>
 

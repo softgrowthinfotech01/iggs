@@ -170,31 +170,31 @@ if ($slider) {
 
             </div>
         </div>
-
+    </div>
 
 
             <!-- NOTICE STRIP -->
-            <section class="relative -mt-6 z-10">
+            <section class="relative -mt-4 z-10">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="bg-gradient-to-r from-[#0f172a] via-[#11255d] to-[#0c5b54] rounded-3xl shadow-2xl border-2 border-blue-600 p-6 grid md:grid-cols-3 gap-6 mt-4">
                         <div class="flex gap-4 items-center">
-                            <i class="fa-solid fa-calendar-check text-4xl text-white    "></i>
+                            <i class="fa-solid fa-calendar-check text-4xl text-black        "></i>
                             <div>
-                                <h3 class="font-black text-xl text-white">Admission Notice</h3>
+                                <h3 class="font-black text-xl text-black">Admission Notice</h3>
                                 <p class="text-slate-100">Forms available for 2026-27</p>
                             </div>
                         </div>
                         <div class="flex gap-4 items-center">
-                            <i class="fa-solid fa-award text-4xl text-white "></i>
+                            <i class="fa-solid fa-award text-4xl text-black "></i>
                             <div>
-                                <h3 class="font-black text-xl text-white ">Academic Excellence</h3>
+                                <h3 class="font-black text-xl text-black ">Academic Excellence</h3>
                                 <p class="text-slate-100">Result-oriented education</p>
                             </div>
                         </div>
                         <div class="flex gap-4 items-center">
-                            <i class="fa-solid fa-user-shield text-4xl text-white "></i>
+                            <i class="fa-solid fa-user-shield text-4xl text-black "></i>
                             <div>
-                                <h3 class="font-black text-xl text-white ">Safe Campus</h3>
+                                <h3 class="font-black text-xl text-black ">Safe Campus</h3>
                                 <p class="text-slate-100">Disciplined and secure atmosphere</p>
                             </div>
                         </div>
@@ -1352,13 +1352,5 @@ if ($slider) {
 
 </body>
 
-<<<<<<< HEAD
     </html>
-    =======
 
-</html>
->>>>>>> e8fbab2e34250ddc115940d8175d9f3eceeba667
-=======
-
-</html>
->>>>>>> 1e4c7029d04fdd6ec2b5ec66dc3fbbf0b2a88d85

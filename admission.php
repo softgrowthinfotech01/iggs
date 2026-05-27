@@ -78,10 +78,10 @@ if (isset($_POST['submit_admission'])) {
         <div class="absolute top-20 right-20 w-80 h-80 border-[12px] border-white/10 rotate-12 rounded-[50px]"></div>
         <div class="absolute bottom-10 left-10 w-72 h-72 border-[12px] border-cyan-300/10 -rotate-12 rounded-[45px]"></div>
 
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center relative z-10">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center relative mt-20 z-10">
 
             <div>
-                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/10 text-cyan-300 font-black uppercase tracking-widest text-sm">
+                <span class="inline-flex items-center mt-20 gap-2 px-5 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/10 text-cyan-300 font-black uppercase tracking-widest text-sm">
                     <i class="fa-solid fa-bell"></i>
                     Admission Open 2026-27
                 </span>

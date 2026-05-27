@@ -99,8 +99,8 @@ img{max-width:100%;display:block}
     animation:logoGlow 4.5s ease-in-out infinite;
 }
 @keyframes logoGlow{50%,100%{transform:rotate(25deg) translateX(120%)}}
-.igs-logo strong,.igs-footer-logo strong{display:block;color:var(--primary);font-size:21px;line-height:1}
-.igs-logo small,.igs-footer-logo small{font-weight:800;color:white;letter-spacing:.6px}
+.igs-logo strong,.igs-footer-logo strong{display:block;color:#AE1C21;line-height:1}
+.igs-logo small,.igs-footer-logo small{font-weight:800;color:#AE1C21;letter-spacing:.6px}
 
 /* MENU */
 .igs-menu{display:flex;align-items:center;gap:8px}
@@ -108,7 +108,7 @@ img{max-width:100%;display:block}
     position:relative;
     padding:12px 14px;
     font-weight:900;
-    color:#24364f;
+    color:#000000;
     transition:.35s ease;
     border-radius:999px;
 }
@@ -117,7 +117,7 @@ img{max-width:100%;display:block}
     position:absolute;
     inset:7px 6px;
     border-radius:999px;
-    background:linear-gradient(135deg,rgba(37,99,235,.09),rgba(20,184,166,.11));
+    /* background:linear-gradient(135deg,rgba(37,99,235,.09),rgba(20,184,166,.11)); */
     transform:scale(.65);
     opacity:0;
     transition:.35s ease;
@@ -130,12 +130,12 @@ img{max-width:100%;display:block}
     bottom:6px;
     height:3px;
     border-radius:50px;
-    background:linear-gradient(90deg,#2563eb,#14b8a6,#f59e0b);
+    background-color: #AE1C21;
     transform:scaleX(0);
     transform-origin:left;
     transition:.35s ease;
 }
-.igs-menu a:hover,.igs-menu a.active{color:var(--primary-2);transform:translateY(-2px)}
+.igs-menu a:hover,.igs-menu a.active{color:black;transform:translateY(-2px)}
 .igs-menu a:hover::before,.igs-menu a.active::before{transform:scale(1);opacity:1}
 .igs-menu a:hover::after,.igs-menu a.active::after{transform:scaleX(1)}
 .igs-nav-cta{
@@ -714,3 +714,4 @@ section{
     }
 
 }
+

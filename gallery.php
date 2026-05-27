@@ -93,7 +93,7 @@
         <!-- HEADING -->
         <div class="text-center max-w-3xl mx-auto">
 
-            <span class="text-cyan-300 font-black uppercase tracking-widest">
+            <span class="text-black font-black uppercase tracking-widest">
                 Photo Wall
             </span>
 
@@ -161,10 +161,10 @@
         </section>
 
         <!-- UNIQUE MASONRY GALLERY -->
-        <section id="gallery" class="py-24 bg-[#050816]">
+        <section id="gallery" class="py-24 bg-[#F27D00]">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-cyan-300 font-black uppercase tracking-widest">Photo Wall</span>
+                    <span class="text-black font-black uppercase tracking-widest">Photo Wall</span>
                     <h2 class="mt-5 text-4xl lg:text-6xl font-black">Our Beautiful Campus Stories</h2>
                 </div>
 
