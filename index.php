@@ -31,25 +31,26 @@
     <div class="absolute -top-8 -left-8 w-32 h-32 bg-blue-400/20  blur-3xl"></div>
     <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-cyan-400/20 rounded-full blur-3xl"></div>
 
-    <div class="relative bg-white mt-10 rounded-[4px] shadow-[0_40px_90px_rgba(15,23,42,0.18)] border border-slate-200 p-5 overflow-hidden">
+    <div class="relative bg-white mt-20 rounded-[4px] shadow-[0_40px_90px_rgba(15,23,42,0.18)] border border-slate-200 p-5 overflow-hidden">
 
-        <div class="hidden absolute top-28 left-8 z-20 px-5 py-3 rounded-full bg-white/80 backdrop-blur-xl shadow-lg text-blue-700 font-black text-sm">
-            <i class="fa-solid fa-circle-play "></i> Campus Highlights
-        </div>
+        <!-- <div class="absolute top-6 left-6 z-20 px-5 py-3 rounded-full bg-white/80 backdrop-blur-xl shadow-lg text-blue-700 font-black text-sm">
+            <i class="fa-solid fa-circle-play mr-2"></i> Campus Highlights
+        </div> -->
 
-            <div class="relative h-[500px] mt-10 md:mt-20  max-md:h-[280px] max-sm:h-[200px] rounded-[35px] max-md:rounded-[20px] overflow-hidden bg-gradient-to-br from-blue-50 to-white">     
-                      <div id="uniqueSlider" class="relative w-full h-full">
+        <div class="relative mt-10  h-[500px] rounded-[35px] overflow-hidden bg-gradient-to-br from-blue-50 to-white">
+
+            <div id="uniqueSlider" class="relative w-full h-full">
 
                 <!-- SLIDE 1 -->
-                <div class="unique-slide  absolute inset-0 opacity-100 scale-100 transition-all duration-1000 ease-in-out">
+                <div class="unique-slide absolute inset-0 opacity-100 scale-100 transition-all duration-1000 ease-in-out">
                     <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-cyan-50"></div>
 
                     <img src="images/IG_GATE.png"
-                         class="absolute right-0 bottom-0 w-full h-full object-cover drop-shadow-2xl max-md:object-contain">
+                         class="absolute right-0 bottom-0 w-[100%] h-[100%] object-cover drop-shadow-2xl">
 
                     <!-- <div class="absolute left-8 bottom-8 right-8 bg-white/85 backdrop-blur-2xl rounded-[28px] p-6 shadow-2xl border border-white">
                         <span class="text-blue-700 font-black text-sm uppercase tracking-widest">01 / Campus</span>
-                        <h3 class="text-3xl font-black text-black mt-2">Modern School Campus</h3>
+                        <h3 class="text-3xl font-black text-slate-900 mt-2">Modern School Campus</h3>
                         <p class="text-slate-500 mt-2">Clean, safe and inspiring environment for students.</p>
                     </div> -->
                 </div>
@@ -59,12 +60,11 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-cyan-50 via-white to-blue-50"></div>
 
                     <img src="images/IG_TS.png"
-                         class="absolute right-0 bottom-0 w-full h-full object-cover drop-shadow-2xl max-md:object-contain">
-
+                         class="absolute right-0 bottom-0 w-[100%] h-[100%] object-cover drop-shadow-2xl">
 
                     <!-- <div class="absolute left-8 bottom-8 right-8 bg-white/85 backdrop-blur-2xl rounded-[28px] p-6 shadow-2xl border border-white">
                         <span class="text-blue-700 font-black text-sm uppercase tracking-widest">02 / Learning</span>
-                        <h3 class="text-3xl font-black text-black mt-2">Smart Learning</h3>
+                        <h3 class="text-3xl font-black text-slate-900 mt-2">Smart Learning</h3>
                         <p class="text-slate-500 mt-2">Digital classrooms with activity-based education.</p>
                     </div> -->
                 </div>
@@ -74,11 +74,11 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-sky-50"></div>
 
                     <img src="images/IG_CAMPUS.png"
-                         class="absolute right-0 bottom-0 w-full h-full object-cover drop-shadow-2xl max-md:object-contain">
+                         class="absolute right-0 mt-8 bottom-0 w-[100%] h-[1000px] object-cover drop-shadow-2xl">
 
                     <!-- <div class="absolute left-8 bottom-8 right-8 bg-white/85 backdrop-blur-2xl rounded-[28px] p-6 shadow-2xl border border-white">
                         <span class="text-blue-700 font-black text-sm uppercase tracking-widest">03 / Activities</span>
-                        <h3 class="text-3xl font-black text-black mt-2">Sports & Activities</h3>
+                        <h3 class="text-3xl font-black text-slate-900 mt-2">Sports & Activities</h3>
                         <p class="text-slate-500 mt-2">Building confidence through culture and sports.</p>
                     </div> -->
                 </div>
@@ -86,20 +86,21 @@
             </div>
 
             <!-- FLOATING DOTS -->
-            <div class="absolute top-1/2 right-3 max-md:right-2 -translate-y-1/2 z-30 flex flex-col gap-2">     
-               <button class="unique-dot w-2 h-8 max-md:h-6 rounded-full bg-blue-700 transition-all"></button>
-                <button class="unique-dot w-2 h-2 rounded-full bg-slate-300 transition-all"></button>
-                <button class="unique-dot w-2 h-2 rounded-full bg-slate-300 transition-all"></button>
+            <div class="absolute top-1/2 right-5 -translate-y-1/2 z-30 flex flex-col gap-3">
+                <button class="unique-dot w-3 h-10 rounded-full bg-blue-700 transition-all"></button>
+                <button class="unique-dot w-3 h-3 rounded-full bg-slate-300 transition-all"></button>
+                <button class="unique-dot w-3 h-3 rounded-full bg-slate-300 transition-all"></button>
             </div>
 
         </div>
     </div>
 </div>
 
+
 <!-- NOTICE STRIP -->
-<section class="relative -mt-6 z-10">
+<section class="relative -mt-4 z-10">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="bg-gradient-to-r from-[#0f172a] via-[#11255d] to-[#0c5b54] rounded-3xl shadow-2xl border-2 border-blue-600 p-6 grid md:grid-cols-3 gap-6 mt-4">
+        <div class="bg-gradient-to-r from-[#0f172a] via-[#11255d] to-[#0c5b54] rounded-3xl shadow-2xl border-2 border-blue-600 p-6 grid md:grid-cols-3 gap-6 md:mt-10">
             <div class="flex gap-4 items-center">
                 <i class="fa-solid fa-calendar-check text-4xl text-white    "></i>
                 <div>

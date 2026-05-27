@@ -1,5 +1,15 @@
-<?php $pageTitle = "Refund Policy | Indira Gandhi School"; include 'header.php'; ?>
-<section class="igs-page-hero">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="dist/output.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <?php $pageTitle = "Refund Policy | Indira Gandhi School"; include 'header.php'; ?>
+<section class="igs-page-hero mt-4">
     <div class="igs-container">
         <h1>Refund Policy</h1>
         <p>Official information page.</p>
@@ -17,3 +27,6 @@
 </section>
 
 <?php include 'footer.php'; ?>
+
+</body>
+</html>
