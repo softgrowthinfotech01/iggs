@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Indira Gandhi School Chandrapur</title>
-    <link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="dist/output.css">
 <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -37,7 +38,7 @@
             <i class="fa-solid fa-circle-play mr-2"></i> Campus Highlights
         </div> -->
 
-        <div class="relative mt-10  h-[500px] rounded-[35px] overflow-hidden bg-gradient-to-br from-blue-50 to-white">
+        <div class="relative mt-10 h-[500px] rounded-[35px] overflow-hidden bg-gradient-to-br from-blue-50 to-white">
 
             <div id="uniqueSlider" class="relative w-full h-full">
 
@@ -46,7 +47,7 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-cyan-50"></div>
 
                     <img src="images/IG_GATE.png"
-                         class="absolute right-0 bottom-0 w-[100%] h-[100%] object-cover drop-shadow-2xl">
+                         class="absolute right-0 bottom-0 mt-8 w-[100%] h-[100%] object-cover drop-shadow-2xl">
 
                     <!-- <div class="absolute left-8 bottom-8 right-8 bg-white/85 backdrop-blur-2xl rounded-[28px] p-6 shadow-2xl border border-white">
                         <span class="text-blue-700 font-black text-sm uppercase tracking-widest">01 / Campus</span>
@@ -266,7 +267,7 @@
                 <h2 class="mt-7 text-4xl lg:text-6xl font-black text-black leading-tight">
 
                     A School Built For  
-                    <span class="text-blue-700">Future Leaders</span>
+                    <span class="text-red-700">Future Leaders</span>
 
                 </h2>
 
