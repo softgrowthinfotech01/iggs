@@ -72,7 +72,14 @@ html{
 
 </section>
 
+<?php
 
+include 'admin/conn.php';
+
+$stmt = $pdo->query("SELECT * FROM about_us LIMIT 1");
+$about = $stmt->fetch(PDO::FETCH_ASSOC);
+
+?>
 
 <!-- ABOUT -->
 <section class="relative py-24 bg-white overflow-hidden">
@@ -92,9 +99,9 @@ html{
 
                 <div class="relative rounded-[35px] overflow-hidden h-[550px]">
 
-                    <img src="images/IG_GATE.png"
-                         alt="Students"
-                         class="w-full h-full object-cover hover:scale-110 transition duration-[2000ms]">
+                    <img src="admin/images/<?php echo $about['image']; ?>"
+     alt="About Image"
+     class="w-full h-full object-cover hover:scale-110 transition duration-[2000ms]">
 
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
 
@@ -132,22 +139,11 @@ html{
 
             </h3>
 
-            <p class="mt-7 text-black leading-9 text-lg text-justify">
+            <div class="mt-7 text-black leading-9 text-lg text-justify">
+    
+    <?php echo $about['description']; ?>
 
-                Indira Gandhi School Chandrapur is dedicated to quality education,
-                discipline, innovation and complete student growth.
-                We create a learning environment where students develop
-                confidence, leadership and strong moral values.
-
-            </p>
-
-            <p class="mt-6 text-black leading-9 text-lg text-justify">
-
-                Our mission is to prepare students with academic excellence,
-                communication skills and future-ready thinking while maintaining
-                discipline and cultural values.
-
-            </p>
+</div>
 
 
 
