@@ -48,9 +48,9 @@
                         A creative glimpse of classroom learning, activities, celebrations and student life at Indira Gandhi School.
                     </p>
 
-                    <a href="#gallery" class="inline-flex mt-9 px-8 py-4 rounded-full bg-cyan-400 text-slate-950 font-black hover:bg-orange-400 hover:-translate-y-2 transition duration-500">
+                    <!-- <a href="#gallery" class="inline-flex mt-9 px-8 py-4 rounded-full bg-cyan-400 text-slate-950 font-black hover:bg-orange-400 hover:-translate-y-2 transition duration-500">
                         View Gallery
-                    </a>
+                    </a> -->
                 </div>
 
         <div class="grid grid-cols-2 gap-5 rotate-2">
