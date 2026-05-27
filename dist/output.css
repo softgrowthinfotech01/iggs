@@ -2087,7 +2087,7 @@ background-color: #F79C00;
 }
 
 .from-blue-700 {
-  background-color: #FF9519;
+  background-color:var(--igs-red);
 }
 
 .from-blue-900 {

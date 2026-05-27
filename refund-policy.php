@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="dist/output.css">
 
-    <title>Document</title>
+    <title>Refund policy</title>
 </head>
 <body>
     <?php $pageTitle = "Refund Policy | Indira Gandhi School"; include 'header.php'; ?>
-<section class="igs-page-hero mt-4">
+<section class="igs-page-hero mt-10">
     <div class="igs-container">
         <h1>Refund Policy</h1>
         <p>Official information page.</p>
