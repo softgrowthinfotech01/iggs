@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="dist/output.css">
 
-    <title>Document</title>
+    <title>Terms Of Service</title>
 </head>
 <body>
 <?php $pageTitle = "Terms Of Service | Indira Gandhi School"; include 'header.php'; ?>

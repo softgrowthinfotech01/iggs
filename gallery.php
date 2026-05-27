@@ -48,9 +48,9 @@
                         A creative glimpse of classroom learning, activities, celebrations and student life at Indira Gandhi School.
                     </p>
 
-                    <a href="#gallery" class="inline-flex mt-9 px-8 py-4 rounded-full bg-cyan-400 text-slate-950 font-black hover:bg-orange-400 hover:-translate-y-2 transition duration-500">
+                    <!-- <a href="#gallery" class="inline-flex mt-9 px-8 py-4 rounded-full bg-cyan-400 text-slate-950 font-black hover:bg-orange-400 hover:-translate-y-2 transition duration-500">
                         View Gallery
-                    </a>
+                    </a> -->
                 </div>
 
         <div class="grid grid-cols-2 gap-5 rotate-2">
@@ -139,7 +139,7 @@
 </section>
 
         <!-- CATEGORY STRIP -->
-        <section class="py-12 bg-white text-slate-950">
+        <!-- <section class="py-12 bg-white text-slate-950">
             <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="p-7 rounded-[30px] bg-slate-100 hover:bg-cyan-100 hover:-translate-y-2 transition duration-500">
                     <i class="fa-solid fa-book-open text-4xl text-cyan-600"></i>
@@ -158,10 +158,10 @@
                     <h3 class="mt-4 text-xl font-black">Student Life</h3>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- UNIQUE MASONRY GALLERY -->
-        <section id="gallery" class="py-24 bg-[#F27D00]">
+        <!-- <section id="gallery" class="py-24 bg-[#F27D00]">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
                     <span class="text-black font-black uppercase tracking-widest">Photo Wall</span>
@@ -196,7 +196,7 @@
 
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- FINAL CTA -->
         <section class="relative py-24 bg-white text-slate-950 overflow-hidden">
