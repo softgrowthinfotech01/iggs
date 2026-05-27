@@ -100,8 +100,8 @@ $about = $stmt->fetch(PDO::FETCH_ASSOC);
                 <div class="relative rounded-[35px] overflow-hidden h-[550px]">
 
                     <img src="admin/images/<?php echo $about['image']; ?>"
-     alt="About Image"
-     class="w-full h-full object-cover hover:scale-110 transition duration-[2000ms]">
+                        alt="About Image"
+                        class="w-full h-full object-cover hover:scale-110 transition duration-[2000ms]">
 
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
 

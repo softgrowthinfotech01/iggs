@@ -42,10 +42,10 @@ if ($slider) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Indira Gandhi School Chandrapur</title>
+    <title>Indira Gandhi School Chandrapur</title>
     <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="dist/output.css">
-<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="dist/output.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -67,113 +67,113 @@ if ($slider) {
     <!-- HERO CARD UNIQUE SLIDER -->
     <div class="relative">
 
-    <div class="relative bg-white mt-20 rounded-[4px] shadow-[0_40px_90px_rgba(15,23,42,0.18)] border border-slate-200 p-5 overflow-hidden">
+        <div class="relative bg-white mt-20 rounded-[4px] shadow-[0_40px_90px_rgba(15,23,42,0.18)] border border-slate-200 p-5 overflow-hidden">
 
-        <!-- <div class="absolute top-6 left-6 z-20 px-5 py-3 rounded-full bg-white/80 backdrop-blur-xl shadow-lg text-blue-700 font-black text-sm">
+            <!-- <div class="absolute top-6 left-6 z-20 px-5 py-3 rounded-full bg-white/80 backdrop-blur-xl shadow-lg text-blue-700 font-black text-sm">
             <i class="fa-solid fa-circle-play mr-2"></i> Campus Highlights
         </div> -->
 
-        <div class="relative mt-10 h-[500px] rounded-[35px] overflow-hidden bg-gradient-to-br from-blue-50 to-white">
+            <div class="relative mt-10 h-[500px] rounded-[35px] overflow-hidden bg-gradient-to-br from-blue-50 to-white">
 
-            <div id="uniqueSlider" class="relative w-full h-full">
+                <div id="uniqueSlider" class="relative w-full h-full">
 
-                <!-- SLIDE 1 -->
-                <div class="unique-slide absolute inset-0 opacity-100 scale-100 transition-all duration-1000 ease-in-out">
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-cyan-50"></div>
+                    <!-- SLIDE 1 -->
+                    <div class="unique-slide absolute inset-0 opacity-100 scale-100 transition-all duration-1000 ease-in-out">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-cyan-50"></div>
 
-                    <img src="images/IG_GATE.png"
-                         class="absolute right-0 bottom-0 mt-8 w-[100%] h-[100%] object-cover drop-shadow-2xl">
+                        <img src="images/IG_GATE.png"
+                            class="absolute right-0 bottom-0 mt-8 w-[100%] h-[100%] object-cover drop-shadow-2xl">
 
-                    <!-- <div class="absolute left-8 bottom-8 right-8 bg-white/85 backdrop-blur-2xl rounded-[28px] p-6 shadow-2xl border border-white">
+                        <!-- <div class="absolute left-8 bottom-8 right-8 bg-white/85 backdrop-blur-2xl rounded-[28px] p-6 shadow-2xl border border-white">
                         <span class="text-blue-700 font-black text-sm uppercase tracking-widest">01 / Campus</span>
                         <h3 class="text-3xl font-black text-slate-900 mt-2">Modern School Campus</h3>
                         <p class="text-slate-500 mt-2">Clean, safe and inspiring environment for students.</p>
                     </div> -->
-                </div>
+                    </div>
 
-                <!-- SLIDE 2 -->
-                <div class="unique-slide absolute inset-0 opacity-0 scale-95 transition-all duration-1000 ease-in-out">
-                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-50 via-white to-blue-50"></div>
+                    <!-- SLIDE 2 -->
+                    <div class="unique-slide absolute inset-0 opacity-0 scale-95 transition-all duration-1000 ease-in-out">
+                        <div class="absolute inset-0 bg-gradient-to-br from-cyan-50 via-white to-blue-50"></div>
 
-                    <img src="images/IG_TS.png"
-                         class="absolute right-0 bottom-0 w-[100%] h-[100%] object-cover drop-shadow-2xl">
+                        <img src="images/IG_TS.png"
+                            class="absolute right-0 bottom-0 w-[100%] h-[100%] object-cover drop-shadow-2xl">
 
-                    <!-- <div class="absolute left-8 bottom-8 right-8 bg-white/85 backdrop-blur-2xl rounded-[28px] p-6 shadow-2xl border border-white">
+                        <!-- <div class="absolute left-8 bottom-8 right-8 bg-white/85 backdrop-blur-2xl rounded-[28px] p-6 shadow-2xl border border-white">
                         <span class="text-blue-700 font-black text-sm uppercase tracking-widest">02 / Learning</span>
                         <h3 class="text-3xl font-black text-slate-900 mt-2">Smart Learning</h3>
                         <p class="text-slate-500 mt-2">Digital classrooms with activity-based education.</p>
                     </div> -->
-                </div>
+                    </div>
 
-                <!-- SLIDE 3 -->
-                <div class="unique-slide absolute inset-0 opacity-0 scale-95 transition-all duration-1000 ease-in-out">
-                    <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-sky-50"></div>
+                    <!-- SLIDE 3 -->
+                    <div class="unique-slide absolute inset-0 opacity-0 scale-95 transition-all duration-1000 ease-in-out">
+                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-sky-50"></div>
 
-                    <img src="images/IG_CAMPUS.png"
-                         class="absolute right-0 mt-8 bottom-0 w-[100%] h-[1000px] object-cover drop-shadow-2xl">
+                        <img src="images/IG_CAMPUS.png"
+                            class="absolute right-0 mt-8 bottom-0 w-[100%] h-[1000px] object-cover drop-shadow-2xl">
 
-                    <!-- <div class="absolute left-8 bottom-8 right-8 bg-white/85 backdrop-blur-2xl rounded-[28px] p-6 shadow-2xl border border-white">
+                        <!-- <div class="absolute left-8 bottom-8 right-8 bg-white/85 backdrop-blur-2xl rounded-[28px] p-6 shadow-2xl border border-white">
                         <span class="text-blue-700 font-black text-sm uppercase tracking-widest">03 / Activities</span>
                         <h3 class="text-3xl font-black text-slate-900 mt-2">Sports & Activities</h3>
                         <p class="text-slate-500 mt-2">Building confidence through culture and sports.</p>
                     </div> -->
-                </div>
+                    </div>
 
-            <div class="hidden absolute top-28 left-8 z-20 px-5 py-3 rounded-full bg-white/80 backdrop-blur-xl shadow-lg text-blue-700 font-black text-sm">
-                <i class="fa-solid fa-circle-play "></i> Campus Highlights
-            </div>
+                    <div class="hidden absolute top-28 left-8 z-20 px-5 py-3 rounded-full bg-white/80 backdrop-blur-xl shadow-lg text-blue-700 font-black text-sm">
+                        <i class="fa-solid fa-circle-play "></i> Campus Highlights
+                    </div>
 
-            <!-- FLOATING DOTS -->
-            <div class="absolute top-1/2 right-5 -translate-y-1/2 z-30 flex flex-col gap-3">
-                <button class="unique-dot w-3 h-10 rounded-full bg-blue-700 transition-all"></button>
-                <button class="unique-dot w-3 h-3 rounded-full bg-slate-300 transition-all"></button>
-                <button class="unique-dot w-3 h-3 rounded-full bg-slate-300 transition-all"></button>
-            </div>
+                    <!-- FLOATING DOTS -->
+                    <div class="absolute top-1/2 right-5 -translate-y-1/2 z-30 flex flex-col gap-3">
+                        <button class="unique-dot w-3 h-10 rounded-full bg-blue-700 transition-all"></button>
+                        <button class="unique-dot w-3 h-3 rounded-full bg-slate-300 transition-all"></button>
+                        <button class="unique-dot w-3 h-3 rounded-full bg-slate-300 transition-all"></button>
+                    </div>
 
                     <?php if (!empty($images)): ?>
 
 
-<!-- NOTICE STRIP -->
-<section class="relative -mt-4 z-10">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="bg-gradient-to-r from-[#0f172a] via-[#11255d] to-[#0c5b54] rounded-3xl shadow-2xl border-2 border-blue-600 p-6 grid md:grid-cols-3 gap-6 md:mt-10">
-            <div class="flex gap-4 items-center">
-                <i class="fa-solid fa-calendar-check text-4xl text-white    "></i>
-                <div>
-                    <h3 class="font-black text-xl text-white">Admission Notice</h3>
-                    <p class="text-slate-100">Forms available for 2026-27</p>
-                </div>
-            </div>
-            <div class="flex gap-4 items-center">
-                <i class="fa-solid fa-award text-4xl text-white "></i>
-                <div>
-                    <h3 class="font-black text-xl text-white ">Academic Excellence</h3>
-                    <p class="text-slate-100">Result-oriented education</p>
-                </div>
-            </div>
-            <div class="flex gap-4 items-center">
-                <i class="fa-solid fa-user-shield text-4xl text-white "></i>
-                <div>
-                    <h3 class="font-black text-xl text-white ">Safe Campus</h3>
-                    <p class="text-slate-100">Disciplined and secure atmosphere</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                        <!-- NOTICE STRIP -->
+                        <section class="relative -mt-4 z-10">
+                            <div class="max-w-7xl mx-auto px-6">
+                                <div class="bg-gradient-to-r from-[#0f172a] via-[#11255d] to-[#0c5b54] rounded-3xl shadow-2xl border-2 border-blue-600 p-6 grid md:grid-cols-3 gap-6 md:mt-10">
+                                    <div class="flex gap-4 items-center">
+                                        <i class="fa-solid fa-calendar-check text-4xl text-white    "></i>
+                                        <div>
+                                            <h3 class="font-black text-xl text-white">Admission Notice</h3>
+                                            <p class="text-slate-100">Forms available for 2026-27</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <i class="fa-solid fa-award text-4xl text-white "></i>
+                                        <div>
+                                            <h3 class="font-black text-xl text-white ">Academic Excellence</h3>
+                                            <p class="text-slate-100">Result-oriented education</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <i class="fa-solid fa-user-shield text-4xl text-white "></i>
+                                        <div>
+                                            <h3 class="font-black text-xl text-white ">Safe Campus</h3>
+                                            <p class="text-slate-100">Disciplined and secure atmosphere</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
 
-                            <div class="unique-slide absolute inset-0 
+                        <div class="unique-slide absolute inset-0 
                 <?php echo $index === 0 ? 'opacity-100 scale-100' : 'opacity-0 scale-95'; ?>
                 transition-all duration-1000 ease-in-out">
 
-                                <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-cyan-50"></div>
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-cyan-50"></div>
 
-                                <img
-                                    src="admin/images/<?php echo $image['image']; ?>"
-                                    class="absolute right-0 bottom-0 w-full h-full object-cover drop-shadow-2xl max-md:object-contain"
-                                    alt="Slider Image">
+                            <img
+                                src="admin/images/<?php echo $image['image']; ?>"
+                                class="absolute right-0 bottom-0 w-full h-full object-cover drop-shadow-2xl max-md:object-contain"
+                                alt="Slider Image">
 
-                            </div>
+                        </div>
 
 
                     <?php endif; ?>
@@ -214,7 +214,7 @@ if ($slider) {
 
                 <h2 class="mt-7 text-4xl lg:text-6xl font-black text-black leading-tight">
 
-                    A School Built For  
+                    A School Built For
                     <span class="text-red-700">Future Leaders</span>
 
                 </h2>
@@ -348,12 +348,12 @@ if ($slider) {
 
     <?php
 
-include 'admin/conn.php';
+    include 'admin/conn.php';
 
-$stmt = $pdo->query("SELECT * FROM about_us LIMIT 1");
-$about = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt = $pdo->query("SELECT * FROM about_us LIMIT 1");
+    $about = $stmt->fetch(PDO::FETCH_ASSOC);
 
-?>
+    ?>
 
     <!-- ABOUT -->
     <section class="relative py-28 overflow-hidden -mt-2 bg-gradient-to-br from-white via-blue-50 to-slate-100">
@@ -393,8 +393,8 @@ $about = $stmt->fetch(PDO::FETCH_ASSOC);
                         <!-- TOP -->
                         <div class="relative md:h-[650px] overflow-hidden">
                             <img src="admin/images/<?php echo $about['image']; ?>"
-     alt="About Image"
-     class="w-full h-full object-cover hover:scale-110 transition duration-[2000ms]">
+                                alt="About Image"
+                                class="w-full h-full object-cover hover:scale-110 transition duration-[2000ms]">
 
                             <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.35),transparent_40%)]"></div>
 
@@ -502,10 +502,10 @@ $about = $stmt->fetch(PDO::FETCH_ASSOC);
                     </h2>
 
                     <div class="mt-7 text-black leading-9 text-lg text-justify">
-    
-    <?php echo $about['description']; ?>
 
-</div>
+                        <?php echo $about['description']; ?>
+
+                    </div>
 
 
 
@@ -1499,7 +1499,8 @@ $about = $stmt->fetch(PDO::FETCH_ASSOC);
 </body>
 <<<<<<< HEAD
 
-</html>
-=======
+    </html>
+    =======
+
 </html>
 >>>>>>> e8fbab2e34250ddc115940d8175d9f3eceeba667
