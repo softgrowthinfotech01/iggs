@@ -1,5 +1,15 @@
-<?php $pageTitle = "Privacy Policy | Indira Gandhi School"; include 'header.php'; ?>
-<section class="igs-page-hero">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" href="dist/output.css">
+
+</head>
+<body>
+    <?php $pageTitle = "Privacy Policy | Indira Gandhi School"; include 'header.php'; ?>
+<section class="igs-page-hero mt-4">
     <div class="igs-container">
         <h1>Privacy Policy</h1>
         <p>Official information page.</p>
@@ -17,3 +27,6 @@
 </section>
 
 <?php include 'footer.php'; ?>
+
+</body>
+</html>
