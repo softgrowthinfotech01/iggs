@@ -106,7 +106,7 @@ if (isset($_POST['save_result'])) {
 
 <!-- PAGE WRAPPER -->
 <div id="mainContent"
-    class="pt-16 lg:pl-60 transition-all duration-300 min-h-screen flex flex-col">
+    class="pt-16 lg:pl-60 transition-all duration-300 min-h-screen flex flex-col opacity-0 translate-y-6 scale-[0.98] ease-out">
 
     <!-- MAIN -->
     <main class="p-6 pb-10">
@@ -313,10 +313,35 @@ if (isset($_POST['save_result'])) {
 
         </div>
 
+        <!-- FLOATING RESULT TABLE BUTTON -->
+        <button
+            id="scrollToTable"
+            class="fixed bottom-6 right-6 z-50 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-full shadow-2xl flex items-center gap-3 transition-all duration-300 hover:scale-105">
+
+            <!-- DOWN ARROW ICON -->
+            <svg xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+
+                <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7" />
+
+            </svg>
+
+            <span class="font-semibold text-sm">
+                Result Table
+            </span>
+
+        </button>
+
     </main>
 
     <!-- RESULT TABLE -->
-    <div class="bg-white rounded-2xl px-6 pb-2 shadow mx-6 mb-10">
+    <div id="resultTable" class="bg-white rounded-2xl px-6 pb-2 shadow mx-6 mb-10">
 
         <h2 class="text-2xl font-semibold text-gray-800 mb-6">
             Result Records
@@ -426,3 +451,17 @@ if (isset($_POST['save_result'])) {
     </div>
 
 </div>
+
+<script>
+    document.getElementById('scrollToTable').addEventListener('click', function() {
+
+        document.getElementById('resultTable').scrollIntoView({
+
+            behavior: 'smooth'
+
+        });
+
+    });
+</script>
+
+<?php include 'footer.php'?>

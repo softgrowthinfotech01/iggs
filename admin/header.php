@@ -166,3 +166,28 @@
 
         });
     </script>
+
+    <!-- Transition -->
+     <script>
+
+window.addEventListener('load', () => {
+
+    const mainContent = document.getElementById('mainContent');
+
+    if (mainContent) {
+
+        setTimeout(() => {
+
+            mainContent.classList.remove(
+                'opacity-0',
+                'translate-y-6',
+                'scale-[0.98]'
+            );
+
+        }, 100);
+
+    }
+
+});
+
+</script>

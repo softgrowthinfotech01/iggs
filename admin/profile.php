@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!-- PAGE WRAPPER -->
 <div id="mainContent"
-    class="pt-20 lg:pl-60 transition-all duration-300 min-h-screen flex flex-col">
+    class="pt-20 lg:pl-60 transition-all duration-300 min-h-screen flex flex-col opacity-0 translate-y-6 scale-[0.98] ease-out">
 
     <!-- MAIN -->
     <main class="p-6 pb-10 overflow-y-auto h-[calc(100vh-140px)]">

@@ -6,7 +6,6 @@ if (!isset($_SESSION['admin'])) {
 
     header("Location: login.php?error=Please login first");
     exit;
-
 }
 ?>
 
@@ -15,7 +14,7 @@ if (!isset($_SESSION['admin'])) {
 
 <!-- PAGE WRAPPER -->
 <div id="mainContent"
-    class="pt-20 lg:pl-60 transition-all duration-300 min-h-screen flex flex-col">
+    class="pt-20 lg:pl-60 bg-slate-100 transition-all duration-300 min-h-screen flex flex-col opacity-0 translate-y-6 scale-[0.98] ease-out">
 
     <!-- MAIN -->
     <main class="p-6 pb-10 overflow-y-auto h-[calc(100vh-140px)]">
@@ -29,7 +28,7 @@ if (!isset($_SESSION['admin'])) {
                     Dashboard
                 </h2>
 
-                <p class="text-gray-500 mt-1">
+                <p class="text-lg text-gray-800 mt-1">
                     Welcome back to Indira Gandhi Garden School ERP
                 </p>
 
@@ -38,33 +37,41 @@ if (!isset($_SESSION['admin'])) {
             <!-- STATS -->
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
 
-                <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
-                    <p class="text-gray-500">Total Students</p>
-                    <h1 class="text-4xl font-bold text-blue-900 mt-2">
-                        2,450
-                    </h1>
-                </div>
+                <a href="results">
+                    <div class="bg-cyan-300 border border-slate-200 rounded-2xl p-6 shadow-xl hover:shadow-md transition">
+                        <p class="text-lg text-gray-800">Toppers</p>
+                        <h1 class="text-4xl font-bold text-blue-900 mt-2">
+                            2,450
+                        </h1>
+                    </div>
+                </a>
 
-                <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
-                    <p class="text-gray-500">Teachers</p>
-                    <h1 class="text-4xl font-bold text-green-600 mt-2">
-                        180
-                    </h1>
-                </div>
+                <a href="admission">
+                    <div class="bg-pink-400 border border-slate-200 rounded-2xl p-6 shadow-xl hover:shadow-md transition">
+                        <p class="text-lg text-gray-800">Admission enquiries</p>
+                        <h1 class="text-4xl font-bold text-blue-900 mt-2">
+                            2,450
+                        </h1>
+                    </div>
+                </a>
 
-                <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
-                    <p class="text-gray-500">Fees Collected</p>
-                    <h1 class="text-4xl font-bold text-yellow-500 mt-2">
-                        ₹18L
-                    </h1>
-                </div>
+                <a href="contact_us">
+                    <div class="bg-emerald-400 border border-slate-200 rounded-2xl p-6 shadow-xl hover:shadow-md transition">
+                        <p class="text-lg text-gray-800">Contact enquiries</p>
+                        <h1 class="text-4xl font-bold text-blue-900 mt-2">
+                            2,450
+                        </h1>
+                    </div>
+                </a>
 
-                <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
-                    <p class="text-gray-500">Pending Fees</p>
-                    <h1 class="text-4xl font-bold text-red-500 mt-2">
-                        ₹3L
-                    </h1>
-                </div>
+                <a href="slider_images">
+                    <div class="bg-orange-400 border border-slate-200 rounded-2xl p-6 shadow-xl hover:shadow-md transition">
+                        <p class="text-lg text-gray-800">Manage Slider</p>
+                        <h1 class="text-4xl font-bold text-blue-900 mt-2">
+                            2,450
+                        </h1>
+                    </div>
+                </a>
 
             </div>
 
