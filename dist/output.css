@@ -2059,9 +2059,7 @@ body {
 }
 
 .from-\[\#0f172a\] {
-    --tw-gradient-from: #0f172a var(--tw-gradient-from-position);
-    --tw-gradient-to: rgba(15, 23, 42, 0) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+background-color: #F79C00;
 }
 
 .from-black\/80 {
