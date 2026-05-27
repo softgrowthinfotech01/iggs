@@ -170,7 +170,7 @@ if ($slider) {
 
             </div>
         </div>
-
+    </div>
 
 
             <!-- NOTICE STRIP -->
@@ -1354,13 +1354,5 @@ if ($slider) {
 
 </body>
 
-<<<<<<< HEAD
     </html>
-    =======
 
-</html>
->>>>>>> e8fbab2e34250ddc115940d8175d9f3eceeba667
-=======
-
-</html>
->>>>>>> 1e4c7029d04fdd6ec2b5ec66dc3fbbf0b2a88d85
