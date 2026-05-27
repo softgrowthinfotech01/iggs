@@ -150,39 +150,67 @@
 
             </a>
 
-            <!-- Galley -->
+            <!-- Gallery -->
             <a href="gallery"
-    class="flex items-center gap-3 hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition">
+                class="flex items-center gap-3 hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition">
 
-    <svg xmlns="http://www.w3.org/2000/svg"
-        class="w-5 h-5"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
 
-        <rect x="3"
-            y="5"
-            width="18"
-            height="14"
-            rx="2"
-            ry="2"
-            stroke-width="1.8" />
+                    <rect x="3"
+                        y="5"
+                        width="18"
+                        height="14"
+                        rx="2"
+                        ry="2"
+                        stroke-width="1.8" />
 
-        <path stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.8"
-            d="M7 15l3-3 2 2 4-4 1 1" />
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.8"
+                        d="M7 15l3-3 2 2 4-4 1 1" />
 
-        <path stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.8"
-            d="M8 9h.01" />
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.8"
+                        d="M8 9h.01" />
 
-    </svg>
+                </svg>
 
-    Gallery
+                Gallery
 
-</a>
+            </a>
+
+            <!-- Results -->
+            <a href="results"
+                class="flex items-center gap-3 hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+
+                    <!-- Trophy Cup -->
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.8"
+                        d="M8 21h8M12 17v4M7 4h10v4a5 5 0 01-10 0V4z" />
+
+                    <!-- Trophy Handles -->
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.8"
+                        d="M5 6H3a2 2 0 002 2h2M19 6h2a2 2 0 01-2 2h-2" />
+
+                </svg>
+
+                Results
+
+            </a>
 
         </nav>
 

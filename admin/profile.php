@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php endif; ?>
 
             <!-- PROFILE CARD -->
-            <div class="bg-slate-400 border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+            <div class="bg-slate-200 border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
 
                 <!-- TOP -->
                 <div class="p-8 border-b border-slate-100 flex items-center gap-5">

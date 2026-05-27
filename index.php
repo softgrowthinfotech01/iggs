@@ -1032,9 +1032,7 @@ if ($slider) {
 
                                 <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-700 to-cyan-500"></div>
 
-                                <i class="fa-solid fa-quote-left text-5xl text-blue-100"></i>
-
-                                <p class="mt-5 text-xl leading-10 text-slate-700 text-justify">
+                                <p class="mt-3 text-xl leading-10 text-slate-700 text-justify">
                                     <?php echo $principal['message']; ?>
                                 </p>
 

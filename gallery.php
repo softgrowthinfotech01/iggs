@@ -127,13 +127,6 @@
 
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
 
-                            <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-3 group-hover:translate-y-0 transition duration-500">
-
-                                <h3 class="text-lg font-black">
-                                    <?php echo $item['title']; ?>
-                                </h3>
-
-                            </div>
 
                         </div>
 
@@ -196,14 +189,6 @@
                                 class="w-full h-full object-cover group-hover:scale-110 transition duration-[1200ms]">
 
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
-
-                            <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-3 group-hover:translate-y-0 transition duration-500">
-
-                                <h3 class="text-lg font-black">
-                                    <?php echo $item['title']; ?>
-                                </h3>
-
-                            </div>
 
                         </div>
 

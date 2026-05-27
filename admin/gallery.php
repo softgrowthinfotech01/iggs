@@ -10,6 +10,31 @@ if (!isset($_SESSION['admin'])) {
 
 include 'conn.php';
 
+/* DELETE GALLERY IMAGE */
+if (isset($_GET['delete'])) {
+
+    $id = $_GET['delete'];
+
+    // GET IMAGE
+    $stmt = $pdo->prepare("SELECT * FROM gallery WHERE id = ?");
+    $stmt->execute([$id]);
+
+    $gallery = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // DELETE IMAGE FROM FOLDER
+    if ($gallery && file_exists("images/" . $gallery['image'])) {
+
+        unlink("images/" . $gallery['image']);
+    }
+
+    // DELETE FROM DATABASE
+    $stmt = $pdo->prepare("DELETE FROM gallery WHERE id = ?");
+    $stmt->execute([$id]);
+
+    header("Location: gallery.php");
+    exit;
+}
+
 if (isset($_POST['save_gallery'])) {
 
     $title = trim($_POST['title']);
