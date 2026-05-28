@@ -60,8 +60,8 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                         </span>
 
                 <span class="igs-logo-text">
-                    <strong class="font-bold md:text-xl">Indira Gandhi Garden</strong>
-                    <small class="text-lg">School Chandrapur</small>
+                    <strong >Indira Gandhi Garden</strong>
+                    <small>School Chandrapur</small>
                 </span>
 
             </a>
