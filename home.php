@@ -66,10 +66,9 @@ if ($slider) {
     <!-- HERO CARD UNIQUE SLIDER -->
     <div class="relative w-full m-0 p-0 overflow-hidden">
 
-        <div class="relative w-full mt-20 overflow-hidden rounded-[4px] shadow-[0_40px_90px_rgba(15,23,42,0.18)] border border-slate-200 p-5">
+        <div class="relative w-full mt-10 md:mt-20 overflow-hidden rounded-[4px] shadow-[0_40px_90px_rgba(15,23,42,0.18)] border border-slate-200 p-5">
 
-            <div class="relative mt-10 h-[500px] rounded-[35px] overflow-hidden bg-gradient-to-br from-blue-50 to-white w-full ">
-                <div id="uniqueSlider" class="relative w-full h-full">
+<div class="relative mt-10 md:mt-10 h-[240px] sm:h-[260px] md:h-[500px] rounded-[20px] md:rounded-[35px] overflow-hidden bg-gradient-to-br from-blue-50 to-white w-full">                <div id="uniqueSlider" class="relative w-full h-full">
 
                     <?php if (!empty($images)): ?>
 
@@ -97,18 +96,18 @@ if ($slider) {
                     <!-- FLOATING DOTS -->
                     <div class="absolute inset-y-0 right-6 max-md:right-3 flex flex-col justify-center z-30 gap-2">
 
-    <?php foreach ($images as $index => $image): ?>
+                        <?php foreach ($images as $index => $image): ?>
 
-        <button
-            class="unique-dot transition-all rounded-full
+                            <button
+                                class="unique-dot transition-all rounded-full
             <?php echo $index === 0
-                ? 'w-2 h-8 max-md:h-6 bg-blue-700'
-                : 'w-2 h-2 bg-slate-300'; ?>">
-        </button>
+                                ? 'w-2 h-8 max-md:h-6 bg-blue-700'
+                                : 'w-2 h-2 bg-slate-300'; ?>">
+                            </button>
 
-    <?php endforeach; ?>
+                        <?php endforeach; ?>
 
-</div>
+                    </div>
 
                 </div>
 
@@ -191,91 +190,91 @@ if ($slider) {
                     <div class="relative bg-white rounded-[45px] shadow-[0_35px_90px_rgba(15,23,42,0.10)] border border-white overflow-hidden">
 
                         <!-- TOP -->
-                        <div class="relative md:h-[650px] overflow-hidden">
-                            <img src="admin/images/<?php echo $about['image']; ?>"
-                                alt="About Image"
-                                class="w-full h-full object-cover hover:scale-110 transition duration-[2000ms]">
+                       <div class="relative h-[350px] sm:h-[450px] md:h-[650px] overflow-hidden rounded-[24px] md:rounded-[0px]">
 
-                            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.35),transparent_40%)]"></div>
+    <img src="admin/images/<?php echo $about['image']; ?>"
+        alt="About Image"
+        class="w-full h-full object-cover hover:scale-110 transition duration-[2000ms]">
 
-                            <!-- FLOATING ICONS -->
-                            <div class="absolute top-8 left-8 w-20 h-20 rounded-3xl bg-[#AE1C21] backdrop-blur-xl flex items-center justify-center border border-white/20">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.35),transparent_40%)]"></div>
 
-                                <i class="fa-solid fa-book-open-reader text-white text-4xl"></i>
+    <!-- FLOATING ICONS -->
+    <div class="absolute top-4 left-4 sm:top-6 sm:left-6 md:top-8 md:left-8 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-[#AE1C21] backdrop-blur-xl flex items-center justify-center border border-white/20">
 
-                            </div>
+        <!-- <i class="fa-solid fa-book-open-reader text-white text-xl sm:text-3xl md:text-4xl"></i> -->
 
-                            <div class="absolute top-8 right-8 w-20 h-20 rounded-3xl bg-[#AE1C21] backdrop-blur-xl flex items-center justify-center border border-white/20">
+    </div>
 
-                                <i class="fa-solid fa-children text-white text-4xl"></i>
+    <div class="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-[#AE1C21] backdrop-blur-xl flex items-center justify-center border border-white/20">
 
-                            </div>
+        <!-- <i class="fa-solid fa-children text-white text-xl sm:text-3xl md:text-4xl"></i> -->
 
-                            <!-- CENTER -->
-                            <div class="absolute bottom-10 left-10 right-10">
+    </div>
 
-                                <span class="inline-flex px-5 py-3 rounded-full bg-[#AE1C21] backdrop-blur-xl border border-white/20 text-white font-black uppercase tracking-widest text-sm">
+    <!-- CENTER -->
+    <div class="absolute bottom-5 left-5 right-5 sm:bottom-8 sm:left-8 sm:right-8 md:bottom-10 md:left-10 md:right-10">
 
-                                    Since 2005
+        <span class="inline-flex px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-3 rounded-full bg-[#AE1C21] backdrop-blur-xl border border-white/20 text-white font-black uppercase tracking-widest text-[10px] sm:text-xs md:text-sm">
 
-                                </span>
+            Since 2005
 
-                                <h3 class="mt-5 text-4xl font-black text-white leading-tight">
+        </span>
 
-                                    Excellence In
-                                    <span class="block">Modern Education</span>
+        <h3 class="mt-3 sm:mt-4 md:mt-5 text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">
 
-                                </h3>
+            Excellence In
+            <span class="block">Modern Education</span>
 
-                            </div>
+        </h3>
 
-                        </div>
+    </div>
 
+</div>
 
                         <!-- BOTTOM -->
-                        <div class="p-8">
+                        <div class="p-4 sm:p-6 md:p-8">
 
-                            <div class="grid grid-cols-3 gap-5">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
 
-                                <div class="rounded-3xl bg-blue-50 p-5 text-center hover:-translate-y-2 transition duration-500">
+        <div class="rounded-2xl md:rounded-3xl bg-blue-50 p-4 sm:p-5 text-center hover:-translate-y-2 transition duration-500">
 
-                                    <h4 class="text-3xl font-black text-blue-700">
-                                        25+
-                                    </h4>
+            <h4 class="text-2xl sm:text-3xl font-black text-blue-700">
+                25+
+            </h4>
 
-                                    <p class="mt-2 text-sm font-bold text-slate-500">
-                                        Years
-                                    </p>
+            <p class="mt-2 text-xs sm:text-sm font-bold text-slate-500">
+                Years
+            </p>
 
-                                </div>
+        </div>
 
-                                <div class="rounded-3xl bg-cyan-50 p-5 text-center hover:-translate-y-2 transition duration-500">
+        <div class="rounded-2xl md:rounded-3xl bg-cyan-50 p-4 sm:p-5 text-center hover:-translate-y-2 transition duration-500">
 
-                                    <h4 class="text-3xl font-black text-cyan-600">
-                                        1200+
-                                    </h4>
+            <h4 class="text-2xl sm:text-3xl font-black text-cyan-600">
+                1200+
+            </h4>
 
-                                    <p class="mt-2 text-sm font-bold text-slate-500">
-                                        Students
-                                    </p>
+            <p class="mt-2 text-xs sm:text-sm font-bold text-slate-500">
+                Students
+            </p>
 
-                                </div>
+        </div>
 
-                                <div class="rounded-3xl bg-blue-50 p-5 text-center hover:-translate-y-2 transition duration-500">
+        <div class="rounded-2xl md:rounded-3xl bg-blue-50 p-4 sm:p-5 text-center hover:-translate-y-2 transition duration-500">
 
-                                    <h4 class="text-3xl font-black text-blue-700">
-                                        45+
-                                    </h4>
+            <h4 class="text-2xl sm:text-3xl font-black text-blue-700">
+                45+
+            </h4>
 
-                                    <p class="mt-2 text-sm font-bold text-slate-500">
-                                        Teachers
-                                    </p>
+            <p class="mt-2 text-xs sm:text-sm font-bold text-slate-500">
+                Teachers
+            </p>
 
-                                </div>
+        </div>
 
-                            </div>
+    </div>
 
-                        </div>
+</div>
 
                     </div>
 
@@ -977,8 +976,8 @@ if ($slider) {
                         <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-700 to-cyan-500"></div>
 
                         <p class="mt-3 text-xl leading-10 text-slate-700 text-justify">
-                            <h4 class="font-semibold mb-2">Principal Message: </h4>
-                            <?php echo $principal['message']; ?>
+                        <h4 class="font-semibold mb-2">Principal Message: </h4>
+                        <?php echo $principal['message']; ?>
                         </p>
 
                     </div>

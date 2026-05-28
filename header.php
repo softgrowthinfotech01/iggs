@@ -17,7 +17,7 @@
 $currentPage = basename($_SERVER['PHP_SELF']);
 ?>
 
-<header class="igs-header border-b-2 border-blue-600" id="igsHeader">
+<header class="igs-header border-b-2 border-[#AE1C21]" id="igsHeader">
 
     <!-- TOP BAR -->
     <div class="igs-topbar">
@@ -60,8 +60,8 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                         </span>
 
                 <span class="igs-logo-text">
-                    <strong>Indira Gandhi Garden</strong>
-                    <small>School Chandrapur</small>
+                    <strong class="font-bold md:text-xl">Indira Gandhi Garden</strong>
+                    <small class="text-lg">School Chandrapur</small>
                 </span>
 
             </a>

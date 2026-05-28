@@ -71,7 +71,7 @@ body{
     <div class="absolute top-20 left-10 w-72 h-72 border-[12px] border-blue-700/10 rotate-12 rounded-[50px]"></div>
     <div class="absolute bottom-10 left-1/3 w-52 h-52 border-[10px] border-cyan-500/10 -rotate-12 rounded-[35px]"></div>
 
-    <div class="max-w-7xl mt-20 mx-auto px-6 grid lg:grid-cols-[1fr_.9fr] gap-16 items-center relative z-10">
+    <div class="max-w-7xl mt-10 md:mt-20 mx-auto px-6 grid lg:grid-cols-[1fr_.9fr] gap-16 items-center relative z-10">
 
         <!-- LEFT -->
         <div class="mt-20">

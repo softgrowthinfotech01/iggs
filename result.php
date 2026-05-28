@@ -48,7 +48,7 @@ $students = $resultStmt->fetchAll(PDO::FETCH_ASSOC);
     <main class="overflow-hidden bg-white">
 
         <!-- RESULT BANNER -->
-        <section class="relative pt-32 pb-24 overflow-hidden bg-[#AE1C21]">
+        <section class="relative pt-22 md:mt-20 pb-24 overflow-hidden bg-[#AE1C21]">
 
             <div class="absolute -top-24 -left-24 w-[420px] h-[420px] bg-cyan-300/20 blur-[120px] rounded-full"></div>
             <div class="absolute bottom-0 right-0 w-[420px] h-[420px] bg-white/10 blur-[120px] rounded-full"></div>

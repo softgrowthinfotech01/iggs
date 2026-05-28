@@ -30,13 +30,13 @@ html{
 <main class="overflow-hidden bg-white">
 
 <!-- HERO -->
-<section class="relative pt-24 pb-24 p-10 mt-10 overflow-hidden bg-gradient-to-br from-white via-blue-50 to-cyan-50">
+<section class="relative pt-24 pb-24 p-10 md:mt-10 overflow-hidden bg-gradient-to-br from-white via-blue-50 to-cyan-50">
 
     <div class="absolute top-10 right-10 w-80 h-80 border-[14px] border-blue-700/10 rotate-12 rounded-[55px]"></div>
     <div class="absolute bottom-0 left-10 w-72 h-72 border-[12px] border-cyan-600/10 -rotate-12 rounded-[45px]"></div>
     <div class="absolute top-1/2 left-1/2 w-[450px] h-[450px] bg-blue-200/30 blur-[120px] rounded-full"></div>
 
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center mt-20 relative z-10">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center mt-5 relative z-10">
 
         <div>
                 <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] border border-blue-100 shadow-xl text-black font-black uppercase tracking-widest text-sm">

@@ -496,7 +496,11 @@ section{
     overflow:hidden;
 }
 .facility-track{
-    animation:facilityFlow 24s linear infinite;
+    display:flex;
+    gap:32px;
+    width:max-content;
+    animation:facilityFlow 6s linear infinite;
+    will-change:transform;
     padding:20px 0 40px;
 }
 
@@ -505,12 +509,15 @@ section{
 }
 
 @keyframes facilityFlow{
+
     0%{
         transform:translateX(0);
     }
+
     100%{
-        transform:translateX(-50%);
+        transform:translateX(calc(-50% - 16px));
     }
+
 }
 
 .facility-item{
@@ -712,6 +719,11 @@ section{
     body{
         overflow-x:hidden !important;
     }
-
+  
+   .facility-track{
+        animation-duration:3s;
+    }
 }
+
+
 

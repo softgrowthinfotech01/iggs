@@ -9,6 +9,28 @@ if (!isset($_SESSION['admin'])) {
 }
 ?>
 
+<?php
+
+require_once 'conn.php';
+
+/* RESULTS */
+$resultsQuery = $pdo->query("SELECT COUNT(*) FROM results");
+$totalResults = $resultsQuery->fetchColumn();
+
+/* ADMISSION */
+$admissionQuery = $pdo->query("SELECT COUNT(*) FROM admission_enquiry");
+$totalAdmissions = $admissionQuery->fetchColumn();
+
+/* CONTACT */
+$contactQuery = $pdo->query("SELECT COUNT(*) FROM contact_us");
+$totalContacts = $contactQuery->fetchColumn();
+
+/* SLIDER */
+$sliderQuery = $pdo->query("SELECT COUNT(*) FROM slider_images");
+$totalSliders = $sliderQuery->fetchColumn();
+
+?>
+
 <?php include 'header.php'; ?>
 <?php include 'sidebar.php'; ?>
 
@@ -41,7 +63,7 @@ if (!isset($_SESSION['admin'])) {
                     <div class="bg-cyan-300 border border-slate-200 rounded-2xl p-6 shadow-xl hover:shadow-md transition">
                         <p class="text-lg text-gray-800">Toppers</p>
                         <h1 class="text-4xl font-bold text-blue-900 mt-2">
-                            2,450
+                            <?= $totalResults ?>
                         </h1>
                     </div>
                 </a>
@@ -50,7 +72,7 @@ if (!isset($_SESSION['admin'])) {
                     <div class="bg-pink-400 border border-slate-200 rounded-2xl p-6 shadow-xl hover:shadow-md transition">
                         <p class="text-lg text-gray-800">Admission enquiries</p>
                         <h1 class="text-4xl font-bold text-blue-900 mt-2">
-                            2,450
+                            <?= $totalAdmissions ?>
                         </h1>
                     </div>
                 </a>
@@ -59,7 +81,7 @@ if (!isset($_SESSION['admin'])) {
                     <div class="bg-emerald-400 border border-slate-200 rounded-2xl p-6 shadow-xl hover:shadow-md transition">
                         <p class="text-lg text-gray-800">Contact enquiries</p>
                         <h1 class="text-4xl font-bold text-blue-900 mt-2">
-                            2,450
+                            <?= $totalContacts ?>
                         </h1>
                     </div>
                 </a>
@@ -68,7 +90,7 @@ if (!isset($_SESSION['admin'])) {
                     <div class="bg-orange-400 border border-slate-200 rounded-2xl p-6 shadow-xl hover:shadow-md transition">
                         <p class="text-lg text-gray-800">Manage Slider</p>
                         <h1 class="text-4xl font-bold text-blue-900 mt-2">
-                            2,450
+                            <?= $totalSliders ?>
                         </h1>
                     </div>
                 </a>
