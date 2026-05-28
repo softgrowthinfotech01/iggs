@@ -41,17 +41,6 @@ if (isset($_POST['save_gallery'])) {
 
     if (!empty($_FILES['gallery_images']['name'][0])) {
 
-        // COUNT TOTAL IMAGES
-        $stmt = $pdo->query("SELECT COUNT(*) FROM gallery");
-
-        $totalImages = $stmt->fetchColumn();
-
-        if (($totalImages + count($_FILES['gallery_images']['name'])) > 10) {
-
-            header("Location: gallery.php?error=Maximum 10 gallery images allowed");
-            exit;
-        }
-
         foreach ($_FILES['gallery_images']['tmp_name'] as $key => $tmpName) {
 
             $imageName = time() . '_' . $_FILES['gallery_images']['name'][$key];
