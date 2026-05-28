@@ -2,7 +2,7 @@
 
 include 'admin/conn.php';
 
-$sliderStmt = $pdo->query("SELECT * FROM sliders ORDER BY id ASC LIMIT 1");
+$sliderStmt = $pdo->query("SELECT * FROM sliders WHERE id = 17 LIMIT 1");
 $slider = $sliderStmt->fetch(PDO::FETCH_ASSOC);
 
 $images = [];
