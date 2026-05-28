@@ -15,7 +15,22 @@ if (isset($_POST['title'])) {
 
     $title = trim($_POST['title']);
 
-    // INSERT TITLE INTO SLIDERS TABLE
+    // CHECK TOTAL IMAGES
+    $countStmt = $pdo->query("
+        SELECT COUNT(*) as total
+        FROM slider_images
+    ");
+
+    $totalImages = $countStmt->fetch(PDO::FETCH_ASSOC)['total'];
+
+    $newImagesCount = count(array_filter($_FILES['slider_images']['name']));
+
+    if (($totalImages + $newImagesCount) > 7) {
+
+        die("Maximum 7 slider images allowed.");
+    }
+
+    // INSERT TITLE
     $stmt = $pdo->prepare("
         INSERT INTO sliders (title)
         VALUES (?)
@@ -23,7 +38,7 @@ if (isset($_POST['title'])) {
 
     $stmt->execute([$title]);
 
-    // GET LAST INSERTED SLIDER ID
+    // GET SLIDER ID
     $sliderId = $pdo->lastInsertId();
 
     // SAVE IMAGES
@@ -35,14 +50,15 @@ if (isset($_POST['title'])) {
                 time() . '_' .
                 $_FILES['slider_images']['name'][$key];
 
-            $targetPath = __DIR__ . "/images/" . $imageName;
+            $targetPath =
+                __DIR__ . "/images/" . $imageName;
 
             move_uploaded_file(
                 $tmpName,
                 $targetPath
             );
 
-            // INSERT IMAGE INTO slider_images TABLE
+            // SAVE IMAGE
             $stmt = $pdo->prepare("
                 INSERT INTO slider_images (
                     slider_id,
@@ -61,41 +77,6 @@ if (isset($_POST['title'])) {
         exit;
     }
 }
-
-/* DELETE IMAGE */
-if (isset($_GET['delete'])) {
-
-    $id = $_GET['delete'];
-
-    // GET IMAGE
-    $stmt = $pdo->prepare("
-        SELECT * 
-        FROM slider_images 
-        WHERE id = ?
-    ");
-
-    $stmt->execute([$id]);
-
-    $imageData = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    // DELETE IMAGE FROM FOLDER
-    if ($imageData && file_exists("images/" . $imageData['image'])) {
-
-        unlink("images/" . $imageData['image']);
-    }
-
-    // DELETE IMAGE FROM DATABASE
-    $stmt = $pdo->prepare("
-        DELETE FROM slider_images
-        WHERE id = ?
-    ");
-
-    $stmt->execute([$id]);
-
-    header("Location: slider_images.php");
-    exit;
-}
-
 ?>
 
 <?php include 'header.php'; ?>
@@ -207,46 +188,46 @@ if (isset($_GET['delete'])) {
 
         </div>
 
-                        <!-- SLIDER TABLE -->
-                <div class="mt-4 bg-white rounded-2xl p-6 shadow-2xl">
+        <!-- SLIDER TABLE -->
+        <div class="mt-4 bg-white rounded-2xl p-6 shadow-2xl">
 
-                    <h2 class="text-2xl font-semibold text-gray-800 mb-6">
-                        Slider Records
-                    </h2>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">
+                Slider Records
+            </h2>
 
-                    <div class="overflow-x-auto">
+            <div class="overflow-x-auto">
 
-                        <table class="w-full border border-gray-300">
+                <table class="w-full border border-gray-300">
 
-                            <thead class="bg-slate-200">
+                    <thead class="bg-slate-200">
 
-                                <tr>
+                        <tr>
 
-                                    <th class="p-3 text-left border">
-                                        Sr No
-                                    </th>
+                            <th class="p-3 text-left border">
+                                Sr No
+                            </th>
 
-                                    <th class="p-3 text-left border">
-                                        Image
-                                    </th>
+                            <th class="p-3 text-left border">
+                                Image
+                            </th>
 
-                                    <th class="p-3 text-left border">
-                                        Title
-                                    </th>
+                            <th class="p-3 text-left border">
+                                Title
+                            </th>
 
-                                    <th class="p-3 text-center border">
-                                        Action
-                                    </th>
+                            <th class="p-3 text-center border">
+                                Action
+                            </th>
 
-                                </tr>
+                        </tr>
 
-                            </thead>
+                    </thead>
 
-                            <tbody>
+                    <tbody>
 
-                                <?php
+                        <?php
 
-                                $stmt = $pdo->query("
+                        $stmt = $pdo->query("
                                     SELECT 
                                         slider_images.id,
                                         sliders.title,
@@ -257,56 +238,56 @@ if (isset($_GET['delete'])) {
                                     ORDER BY slider_images.id DESC
                                 ");
 
-                                $sliderData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        $sliderData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                                $count = 1;
+                        $count = 1;
 
-                                foreach ($sliderData as $row) {
+                        foreach ($sliderData as $row) {
 
-                                ?>
+                        ?>
 
-                                    <tr class="hover:bg-slate-50">
+                            <tr class="hover:bg-slate-50">
 
-                                        <td class="p-3 border">
-                                            <?php echo $count++; ?>
-                                        </td>
+                                <td class="p-3 border">
+                                    <?php echo $count++; ?>
+                                </td>
 
-                                        <td class="p-3 border">
+                                <td class="p-3 border">
 
-                                            <img
-                                                src="images/<?php echo $row['image']; ?>"
-                                                class="w-28 h-16 object-cover rounded-lg border">
+                                    <img
+                                        src="images/<?php echo $row['image']; ?>"
+                                        class="w-28 h-16 object-cover rounded-lg border">
 
-                                        </td>
+                                </td>
 
-                                        <td class="p-3 border">
-                                            <?php echo $row['title']; ?>
-                                        </td>
+                                <td class="p-3 border">
+                                    <?php echo $row['title']; ?>
+                                </td>
 
-                                        <td class="p-3 border text-center">
+                                <td class="p-3 border text-center">
 
-                                            <a
-                                                href="slider_images.php?delete=<?php echo $row['id']; ?>"
-                                                onclick="return confirm('Delete this image?')"
-                                                class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm">
+                                    <a
+                                        href="slider_images.php?delete=<?php echo $row['id']; ?>"
+                                        onclick="return confirm('Delete this image?')"
+                                        class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm">
 
-                                                Delete
+                                        Delete
 
-                                            </a>
+                                    </a>
 
-                                        </td>
+                                </td>
 
-                                    </tr>
+                            </tr>
 
-                                <?php } ?>
+                        <?php } ?>
 
-                            </tbody>
+                    </tbody>
 
-                        </table>
+                </table>
 
-                    </div>
+            </div>
 
-                </div>
+        </div>
 
     </main>
 
