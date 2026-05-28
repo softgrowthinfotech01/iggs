@@ -2,21 +2,8 @@
 
 include 'admin/conn.php';
 
-/*
-|--------------------------------------------------------------------------
-| GET SLIDER
-|--------------------------------------------------------------------------
-*/
-
-$sliderStmt = $pdo->query("SELECT * FROM sliders ORDER BY id DESC LIMIT 1");
-
+$sliderStmt = $pdo->query("SELECT * FROM sliders WHERE id = 1 LIMIT 1");
 $slider = $sliderStmt->fetch(PDO::FETCH_ASSOC);
-
-/*
-|--------------------------------------------------------------------------
-| GET SLIDER IMAGES
-|--------------------------------------------------------------------------
-*/
 
 $images = [];
 
@@ -26,6 +13,7 @@ if ($slider) {
         SELECT * 
         FROM slider_images 
         WHERE slider_id = ?
+        ORDER BY id ASC
     ");
 
     $imageStmt->execute([$slider['id']]);
@@ -300,7 +288,7 @@ if ($slider) {
 
                     </h2>
 
-                    <div class="mt-7 text-black leading-7 text-lg text-justify">
+                    <div class="mt-7 text-black leading-6 text-lg text-justify">
 
                         <?php echo $about['description']; ?>
 
@@ -1010,191 +998,190 @@ if ($slider) {
 
     <!-- CTA -->
     <!-- ADMISSION CTA -->
-    <section class="relative py-28 overflow-hidden bg-[#FACC15]">
-        <div class="absolute inset-0 overflow-hidden opacity-[0.07]">
+    <section class="relative py-16 md:py-28 overflow-hidden bg-[#FACC15]">
 
-            <!-- BIG CIRCLE -->
-            <div class="absolute -top-20 -left-20 w-[420px] max-md:w-[180px] max-md:w-[180px] h-[420px] border-[18px] border-white rounded-full"></div>
+    <!-- BACKGROUND -->
+    <div class="absolute inset-0 overflow-hidden opacity-[0.07]">
 
-            <!-- DIAGONAL LINES -->
-            <div class="hidden md:block absolute top-32 left-1/4 w-[500px] max-md:w-[220px] max-md:w-[220px] h-[2px] bg-white rotate-[18deg]"></div>
+        <!-- BIG CIRCLE -->
+        <div class="absolute -top-10 -left-10 md:-top-20 md:-left-20 w-[180px] h-[180px] md:w-[420px] md:h-[420px] border-[10px] md:border-[18px] border-white rounded-full"></div>
 
-            <div class="hidden md:block absolute top-52 right-0 w-[420px] max-md:w-[180px] max-md:w-[180px] h-[2px] bg-white -rotate-[22deg]"></div>
+        <!-- DIAGONAL LINES -->
+        <div class="hidden md:block absolute top-32 left-1/4 w-[500px] h-[2px] bg-white rotate-[18deg]"></div>
 
-            <div class="hidden md:block absolute bottom-32 left-0 w-[380px] h-[2px] bg-white rotate-[12deg]"></div>
+        <div class="hidden md:block absolute top-52 right-0 w-[420px] h-[2px] bg-white -rotate-[22deg]"></div>
 
-            <!-- ABSTRACT BOX -->
-            <div class="absolute top-16 right-16 w-64 h-64 border-[14px] border-white rotate-12 rounded-[55px]"></div>
+        <div class="hidden md:block absolute bottom-32 left-0 w-[380px] h-[2px] bg-white rotate-[12deg]"></div>
 
-            <div class="absolute bottom-10 left-1/3 w-80 h-80 border-[16px] border-white -rotate-[18deg] rounded-[70px]"></div>
+        <!-- ABSTRACT BOX -->
+        <div class="absolute top-10 right-4 md:top-16 md:right-16 w-28 h-28 md:w-64 md:h-64 border-[8px] md:border-[14px] border-white rotate-12 rounded-[25px] md:rounded-[55px]"></div>
 
-            <!-- DOT GRID -->
-            <div class="absolute top-20 left-1/2 grid grid-cols-6 gap-3">
+        <div class="absolute bottom-5 left-1/3 w-36 h-36 md:w-80 md:h-80 border-[8px] md:border-[16px] border-white -rotate-[18deg] rounded-[35px] md:rounded-[70px]"></div>
 
-                <span class="w-3 h-3 bg-white rounded-full"></span>
-                <span class="w-3 h-3 bg-white rounded-full"></span>
-                <span class="w-3 h-3 bg-white rounded-full"></span>
-                <span class="w-3 h-3 bg-white rounded-full"></span>
-                <span class="w-3 h-3 bg-white rounded-full"></span>
-                <span class="w-3 h-3 bg-white rounded-full"></span>
+        <!-- DOT GRID -->
+        <div class="hidden md:grid absolute top-20 left-1/2 grid-cols-6 gap-3">
 
-                <span class="w-3 h-3 bg-white rounded-full"></span>
-                <span class="w-3 h-3 bg-white rounded-full"></span>
-                <span class="w-3 h-3 bg-white rounded-full"></span>
-                <span class="w-3 h-3 bg-white rounded-full"></span>
-                <span class="w-3 h-3 bg-white rounded-full"></span>
-                <span class="w-3 h-3 bg-white rounded-full"></span>
+            <span class="w-3 h-3 bg-white rounded-full"></span>
+            <span class="w-3 h-3 bg-white rounded-full"></span>
+            <span class="w-3 h-3 bg-white rounded-full"></span>
+            <span class="w-3 h-3 bg-white rounded-full"></span>
+            <span class="w-3 h-3 bg-white rounded-full"></span>
+            <span class="w-3 h-3 bg-white rounded-full"></span>
 
-            </div>
-
-            <!-- WAVE CIRCLE -->
-            <div class="absolute bottom-0 right-20 w-[320px] h-[320px] border-[14px] border-dashed border-white rounded-full"></div>
+            <span class="w-3 h-3 bg-white rounded-full"></span>
+            <span class="w-3 h-3 bg-white rounded-full"></span>
+            <span class="w-3 h-3 bg-white rounded-full"></span>
+            <span class="w-3 h-3 bg-white rounded-full"></span>
+            <span class="w-3 h-3 bg-white rounded-full"></span>
+            <span class="w-3 h-3 bg-white rounded-full"></span>
 
         </div>
 
-        <!-- GLOW -->
-        <div class="absolute top-0 left-0 w-[500px] max-md:w-[220px] max-md:w-[220px] max-md:w-[220px] h-[500px] bg-cyan-300/20 blur-[120px] rounded-full"></div>
+        <!-- WAVE -->
+        <div class="absolute bottom-0 right-5 md:right-20 w-[120px] h-[120px] md:w-[320px] md:h-[320px] border-[6px] md:border-[14px] border-dashed border-white rounded-full"></div>
 
-        <div class="absolute bottom-0 right-0 w-[500px] max-md:w-[220px] max-md:w-[220px] max-md:w-[220px] h-[500px] bg-blue-300/20 blur-[120px] rounded-full"></div>
+    </div>
 
+    <!-- GLOW -->
+    <div class="absolute top-0 left-0 w-[220px] h-[220px] md:w-[500px] md:h-[500px] bg-cyan-300/20 blur-[80px] md:blur-[120px] rounded-full"></div>
 
+    <div class="absolute bottom-0 right-0 w-[220px] h-[220px] md:w-[500px] md:h-[500px] bg-blue-300/20 blur-[80px] md:blur-[120px] rounded-full"></div>
 
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <!-- CONTENT -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
-            <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-14 items-center">
+        <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-10 md:gap-14 items-center">
 
-                <!-- LEFT CONTENT -->
-                <div>
+            <!-- LEFT -->
+            <div>
 
-                    <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#AE1C21] backdrop-blur-xl border border-white/10 text-white font-black uppercase tracking-widest text-sm">
+                <span class="inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-3 rounded-full bg-[#AE1C21] backdrop-blur-xl border border-white/10 text-white font-black uppercase tracking-widest text-[10px] sm:text-xs md:text-sm">
 
-                        <i class="fa-solid fa-user-graduate"></i>
+                    <i class="fa-solid fa-user-graduate"></i>
 
-                        Admissions Open 2026-27
+                    Admissions Open 2026-27
 
-                    </span>
+                </span>
 
-                    <h2 class="mt-7 text-4xl lg:text-7xl font-black text-black leading-tight">
+                <h2 class="mt-5 md:mt-7 text-3xl sm:text-5xl lg:text-7xl font-black text-black leading-tight">
 
-                        Start Your
-                        <span class="block text-[#AE1C21]">Child’s Journey</span>
+                    Start Your
+                    <span class="block text-[#AE1C21]">Child’s Journey</span>
 
-                    </h2>
+                </h2>
 
-                    <p class="mt-8 text-black text-lg leading-9 text-justify max-w-2xl">
+                <p class="mt-5 md:mt-8 text-black text-sm sm:text-base md:text-lg leading-7 md:leading-9 text-justify max-w-2xl">
 
-                        Give your child the opportunity to learn, grow and succeed
-                        in a modern educational environment focused on values,
-                        confidence and academic excellence.
+                    Give your child the opportunity to learn, grow and succeed
+                    in a modern educational environment focused on values,
+                    confidence and academic excellence.
 
-                    </p>
+                </p>
 
-                    <!-- BUTTONS -->
-                    <div class="mt-10 flex flex-wrap gap-5">
+                <!-- BUTTONS -->
+                <div class="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 md:gap-5">
 
-                        <a href="admission" class="group inline-flex items-center gap-3 px-10 py-5 rounded-[20px] bg-white text-blue-700 font-black shadow-[0_25px_70px_rgba(255,255,255,0.25)] hover:-translate-y-2 transition duration-700">
+                    <a href="admission" class="group inline-flex justify-center items-center gap-3 px-6 py-4  rounded-2xl md:rounded-2xl bg-white text-blue-700 font-black shadow-[0_25px_70px_rgba(255,255,255,0.25)] hover:-translate-y-2 transition duration-700">
 
-                            Apply Now
+                        Apply Now
 
-                            <span class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center group-hover:translate-x-1 transition">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </span>
+                        <span class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center group-hover:translate-x-1 transition">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
 
-                        </a>
+                    </a>
 
-                        <a href="contact" class="inline-flex items-center gap-3 px-10 py-5 rounded-[20px] border border-white/20 bg-black backdrop-blur-xl text-white font-black hover:bg-white hover:text-blue-700 transition duration-700">
+                    <a href="contact" class="inline-flex justify-center items-center gap-3 px-6  py-4  rounded-2xl md:rounded-2xl border border-white/20 bg-black backdrop-blur-xl text-white font-black hover:bg-white hover:text-blue-700 transition duration-700">
 
-                            <i class="fa-solid fa-phone"></i>
+                        <i class="fa-solid fa-phone"></i>
 
-                            Contact Office
+                        Contact Office
 
-                        </a>
+                    </a>
+
+                </div>
+
+                <!-- STATS -->
+                <div class="mt-8 md:mt-14 grid grid-cols-3 gap-3 md:gap-5 max-w-2xl">
+
+                    <div class="bg-[#AE1C21] backdrop-blur-xl rounded-2xl md:rounded-2xl p-3 sm:p-4 md:p-5 border border-white/10 text-center">
+
+                        <h3 class="text-xl sm:text-2xl md:text-4xl font-black text-white leading-none">
+                            25+
+                        </h3>
+
+                        <p class="mt-1 md:mt-2 text-[11px] sm:text-sm md:text-base text-blue-100 font-bold">
+                            Years
+                        </p>
 
                     </div>
 
-                    <!-- STATS -->
-        <div class="mt-8 md:mt-14 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-2xl">
+                    <div class="bg-[#AE1C21] backdrop-blur-xl rounded-2xl md:rounded-2xl p-3 sm:p-4 md:p-5 border border-white/10 text-center">
 
-    <div class="bg-[#AE1C21] backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-4 md:p-5 border border-white/10 text-center">
+                        <h3 class="text-xl sm:text-2xl md:text-4xl font-black text-white leading-none">
+                            1200+
+                        </h3>
 
-        <h3 class="text-3xl md:text-4xl font-black text-white">
-            25+
-        </h3>
+                        <p class="mt-1 md:mt-2 text-[11px] sm:text-sm md:text-base text-blue-100 font-bold">
+                            Students
+                        </p>
 
-        <p class="mt-2 text-sm md:text-base text-blue-100 font-bold">
-            Years
-        </p>
+                    </div>
 
-    </div>
+                    <div class="bg-[#AE1C21] backdrop-blur-xl rounded-2xl md:rounded-2xl p-3 sm:p-4 md:p-5 border border-white/10 text-center">
 
-    <div class="bg-[#AE1C21] backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-4 md:p-5 border border-white/10 text-center">
+                        <h3 class="text-xl sm:text-2xl md:text-4xl font-black text-white leading-none">
+                            45+
+                        </h3>
 
-        <h3 class="text-3xl md:text-4xl font-black text-white">
-            1200+
-        </h3>
+                        <p class="mt-1 md:mt-2 text-[11px] sm:text-sm md:text-base text-blue-100 font-bold">
+                            Teachers
+                        </p>
 
-        <p class="mt-2 text-sm md:text-base text-blue-100 font-bold">
-            Students
-        </p>
+                    </div>
 
-    </div>
+                </div>
 
-    <div class="bg-[#AE1C21] backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-4 md:p-5 border border-white/10 text-center">
+            </div>
 
-        <h3 class="text-3xl md:text-4xl font-black text-white">
-            45+
-        </h3>
+            <!-- RIGHT IMAGE -->
+            <div class="relative mt-10 md:ml-5 lg:mt-0">
 
-        <p class="mt-2 text-sm md:text-base text-blue-100 font-bold">
-            Teachers
-        </p>
+                <!-- GLOW -->
+                <div class="absolute inset-0 bg-cyan-300/20 blur-3xl rounded-full"></div>
 
-    </div>
+                <!-- MAIN IMAGE -->
+                <div class="relative bg-white/10 backdrop-blur-xl border border-white/10 rounded-[25px] md:rounded-[45px] p-3 md:p-5 shadow-[0_35px_90px_rgba(15,23,42,0.25)] overflow-hidden">
 
-</div>
+                    <div class="relative rounded-[20px] md:rounded-[35px] overflow-hidden h-[320px] sm:h-[420px] md:h-[560px]">
 
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80"
+                            class="w-full h-full object-cover hover:scale-110 transition duration-[2000ms]"
+                            alt="School Students">
 
+                        <!-- OVERLAY -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent"></div>
 
-                <!-- RIGHT IMAGE -->
-                <div class="relative">
+                        <!-- FLOATING CONTENT -->
+                        <div class="absolute left-3 right-3 bottom-3 md:left-6 md:right-6 md:bottom-6 bg-white/90 backdrop-blur-xl rounded-[20px] md:rounded-[30px] p-4 md:p-6 shadow-2xl">
 
-                    <!-- GLOW -->
-                    <div class="absolute inset-0 bg-cyan-300/20 blur-3xl rounded-full"></div>
+                            <div class="flex items-center gap-3 md:gap-5">
 
-                    <!-- MAIN IMAGE -->
-                    <div class="relative bg-white/10 backdrop-blur-xl border border-white/10 rounded-[45px] p-5 shadow-[0_35px_90px_rgba(15,23,42,0.25)] overflow-hidden">
+                                <div class="w-14 h-14 md:w-20 md:h-20 rounded-[18px] md:rounded-[24px] bg-gradient-to-br from-blue-700 to-cyan-500 flex items-center justify-center text-white text-2xl md:text-4xl shadow-xl">
 
-                        <div class="relative rounded-[35px] overflow-hidden h-[560px]">
+                                    <i class="fa-solid fa-school"></i>
 
-                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80"
-                                class="w-full h-full object-cover hover:scale-110 transition duration-[2000ms]"
-                                alt="School Students">
+                                </div>
 
-                            <!-- OVERLAY -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent"></div>
+                                <div>
 
-                            <!-- FLOATING CONTENT -->
-                            <div class="absolute left-6 right-6 bottom-6 bg-white/90 backdrop-blur-xl rounded-[30px] p-6 shadow-2xl">
+                                    <h3 class="text-lg sm:text-2xl md:text-3xl font-black text-black">
+                                        Admissions Open
+                                    </h3>
 
-                                <div class="flex items-center gap-5">
-
-                                    <div class="w-20 h-20 rounded-[24px] bg-gradient-to-br from-blue-700 to-cyan-500 flex items-center justify-center text-white text-4xl shadow-xl">
-
-                                        <i class="fa-solid fa-school"></i>
-
-                                    </div>
-
-                                    <div>
-
-                                        <h3 class="text-3xl font-black text-black">
-                                            Admissions Open
-                                        </h3>
-
-                                        <p class="mt-2 text-black font-semibold">
-                                            Limited seats available for the new academic session.
-                                        </p>
-
-                                    </div>
+                                    <p class="mt-1 md:mt-2 text-xs sm:text-sm md:text-base text-black font-semibold">
+                                        Limited seats available for the new academic session.
+                                    </p>
 
                                 </div>
 
@@ -1204,32 +1191,30 @@ if ($slider) {
 
                     </div>
 
+                </div>
 
+                <!-- FLOATING CARD -->
+                <div class="absolute -left-6 top-10 hidden lg:block">
 
-                    <!-- FLOATING SMALL CARD -->
-                    <div class="absolute -left-6 top-10 hidden lg:block">
+                    <div class="bg-white rounded-[28px] p-5 shadow-[0_25px_70px_rgba(15,23,42,0.18)] border border-white">
 
-                        <div class="bg-white rounded-[28px] p-5 shadow-[0_25px_70px_rgba(15,23,42,0.18)] border border-white">
+                        <div class="flex items-center gap-4">
 
-                            <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-400 flex items-center justify-center text-white text-2xl shadow-xl">
 
-                                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-400 flex items-center justify-center text-white text-2xl shadow-xl">
+                                <i class="fa-solid fa-award"></i>
 
-                                    <i class="fa-solid fa-award"></i>
+                            </div>
 
-                                </div>
+                            <div>
 
-                                <div>
+                                <h4 class="text-2xl font-black text-black">
+                                    Excellence
+                                </h4>
 
-                                    <h4 class="text-2xl font-black text-black">
-                                        Excellence
-                                    </h4>
-
-                                    <p class="text-slate-500 font-semibold text-sm">
-                                        Modern Education
-                                    </p>
-
-                                </div>
+                                <p class="text-slate-500 font-semibold text-sm">
+                                    Modern Education
+                                </p>
 
                             </div>
 
@@ -1243,7 +1228,14 @@ if ($slider) {
 
         </div>
 
-    </section>
+    </div>
+
+</section>
+
+
+
+                <!-- RIGHT IMAGE -->
+              
 
     <!-- FOOTER -->
     <?php include 'footer.php' ?>
