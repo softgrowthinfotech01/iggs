@@ -1,9 +1,9 @@
 <?php
 
 $host = "localhost";
-$dbname = "ig_school";
-$username = "root";
-$password = "";
+$dbname = "softgrow_iggs";
+$username = "softgrow_iggs";
+$password = "lXpCk$s}}7V(O!VW";
 
 try {
 
