@@ -44,7 +44,7 @@
 
             <div class="max-w-7xl mx-auto px-6 mt-20  relative z-10 text-center">
 
-                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white border border-blue-100 shadow-xl text-blue-700 font-black uppercase tracking-widest text-sm">
+                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] border border-blue-100 shadow-xl text-black font-black uppercase tracking-widest text-sm">
 
                     <i class="fa-solid fa-school"></i>
 
@@ -55,7 +55,7 @@
                 <h1 class="mt-7 text-4xl lg:text-7xl font-black text-black leading-tight">
 
                     Building Future
-                    <span class="text-blue-700">Leaders With Values</span>
+                    <span class="text-[#AE1C21]">Leaders With Values</span>
 
                 </h1>
 
@@ -126,14 +126,14 @@
                 <!-- CONTENT -->
                 <div>
 
-                    <span class="text-blue-700 font-black uppercase tracking-widest">
+                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] border border-blue-100 shadow-xl text-black font-black uppercase tracking-widest text-sm">
                         Who We Are
                     </span>
 
                     <h3 class="mt-5 text-2xl lg:text-6xl font-black text-black leading-tight">
 
                         A School Designed For
-                        <span class="text-blue-700">Complete Development</span>
+                        <span class="text-[#AE1C21]">Complete Development</span>
 
                     </h3>
 
@@ -296,12 +296,13 @@
 
                 <div class="text-center max-w-3xl mx-auto">
 
-                    <span class="text-blue-700 font-black uppercase tracking-widest">
+                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] border border-blue-100 shadow-xl text-black font-black uppercase tracking-widest text-sm">
                         Core Values
                     </span>
 
                     <h2 class="mt-5 text-4xl lg:text-5xl font-black text-black">
-                        What Makes Us Different
+                        What Makes
+                        <span class="text-[#AE1C21]">Us Different</span>
                     </h2>
 
                 </div>

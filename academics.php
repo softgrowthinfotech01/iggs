@@ -39,14 +39,14 @@ html{
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center mt-20 relative z-10">
 
         <div>
-            <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white border border-blue-100 shadow-xl text-blue-700 font-black uppercase tracking-widest text-sm">
+                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] border border-blue-100 shadow-xl text-black font-black uppercase tracking-widest text-sm">
                 <i class="fa-solid fa-book-open-reader"></i>
                 Academics
             </span>
 
             <h1 class="mt-7 text-4xl lg:text-7xl font-black text-black leading-tight">
                 Modern Education With
-                <span class="text-blue-700">Strong Fundamentals</span>
+                <span class="text-[#AE1C21]">Strong Fundamentals</span>
             </h1>
 
             <p class="mt-6 text-black text-lg leading-8 max-w-2xl">
@@ -84,7 +84,7 @@ html{
     <div class="max-w-7xl mx-auto px-6">
 
         <div class="text-center max-w-3xl mx-auto">
-            <span class="text-blue-700 font-black uppercase tracking-widest">
+                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] border border-blue-100 shadow-xl text-black font-black uppercase tracking-widest text-sm">
                 Learning System
             </span>
 
@@ -150,14 +150,14 @@ html{
     <div class="max-w-7xl mx-auto px-6 relative z-10">
 
         <div class="text-center max-w-4xl mx-auto">
-            <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white border border-blue-100 shadow-xl text-blue-700 font-black uppercase tracking-widest text-sm">
+                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] border border-blue-100 shadow-xl text-black font-black uppercase tracking-widest text-sm">
                 <i class="fa-solid fa-layer-group"></i>
                 Academic Journey
             </span>
 
             <h2 class="mt-6 text-4xl lg:text-6xl font-black text-black leading-tight">
                 Learning Designed
-                <span class="text-blue-700">For Every Stage</span>
+                <span class="text-[#AE1C21]">For Every Stage</span>
             </h2>
         </div>
 

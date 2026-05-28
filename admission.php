@@ -81,14 +81,14 @@ if (isset($_POST['submit_admission'])) {
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center relative mt-20 z-10">
 
             <div>
-                <span class="inline-flex items-center mt-20 gap-2 px-5 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/10 text-cyan-300 font-black uppercase tracking-widest text-sm">
+                <span class="inline-flex items-center mt-20 gap-2 px-5 py-3 rounded-full bg-[#FACC15] backdrop-blur-xl border border-white/10 text-black font-black uppercase tracking-widest text-sm">
                     <i class="fa-solid fa-bell"></i>
                     Admission Open 2026-27
                 </span>
 
                 <h1 class="mt-7 text-5xl lg:text-7xl font-black leading-tight">
                     Secure Your Child’s
-                    <span class="block text-cyan-300">Bright Future</span>
+                    <span class="block text-[#AE1C21]">Bright Future</span>
                 </h1>
 
                 <p class="mt-7 text-blue-100 text-lg leading-9 max-w-2xl">
@@ -138,7 +138,7 @@ if (isset($_POST['submit_admission'])) {
         <div class="max-w-7xl mx-auto px-6">
 
             <div class="text-center max-w-3xl mx-auto">
-                <span class="text-blue-700 font-black uppercase tracking-widest">Admission Process</span>
+                <span class="text-black bg-[#FACC15] px-5 py-3 rounded-full font-black uppercase tracking-widest">Admission Process</span>
                 <h2 class="mt-5 text-4xl lg:text-5xl font-black text-slate-900">Simple Steps To Admission</h2>
             </div>
 
@@ -190,7 +190,7 @@ if (isset($_POST['submit_admission'])) {
 
             <div class="bg-white rounded-[40px] p-8 lg:p-10 shadow-[0_35px_90px_rgba(15,23,42,0.12)] border border-blue-100">
 
-                <span class="text-blue-700 font-black uppercase tracking-widest">Admission Form</span>
+                <span class="text-black bg-[#FACC15] rounded-full px-5 py-3 font-black uppercase tracking-widest">Admission Form</span>
                 <h2 class="mt-4 text-4xl lg:text-5xl font-black text-slate-900">Send Admission Enquiry</h2>
                 <p class="mt-4 text-slate-600 leading-8">Fill the form below. You can connect it with PHP backend later.</p>
 

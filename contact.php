@@ -75,14 +75,14 @@ body{
 
         <!-- LEFT -->
         <div class="mt-20">
-            <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-blue-50 text-blue-700 font-black uppercase tracking-widest text-sm">
+            <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] text-black font-black uppercase tracking-widest text-sm">
                 <i class="fa-solid fa-paper-plane"></i>
                 Contact School Office
             </span>
 
             <h1 class="mt-7 text-5xl lg:text-7xl font-black text-slate-900 leading-tight">
                 Let’s Talk About
-                <span class="block text-blue-700">Your Child’s Future</span>
+                <span class="block text-[#AE1C21]">Your Child’s Future</span>
             </h1>
 
             <p class="mt-7 text-slate-600 text-lg leading-9 max-w-2xl">
@@ -236,7 +236,7 @@ body{
             <!-- LEFT CONTENT -->
             <div class="rounded-[40px] bg-white/80 backdrop-blur-xl p-10 border border-blue-100 shadow-[0_25px_70px_rgba(15,23,42,0.08)]">
 
-                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-blue-50 text-blue-700 font-black uppercase tracking-widest text-sm">
+                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] text-black font-black uppercase tracking-widest text-sm">
 
                     <i class="fa-solid fa-map-location-dot"></i>
 

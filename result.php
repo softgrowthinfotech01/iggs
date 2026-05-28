@@ -62,7 +62,7 @@ $students = $resultStmt->fetchAll(PDO::FETCH_ASSOC);
 
                     <div>
 
-                        <span class="inline-flex items-center gap-2 mt-4 px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-cyan-100 font-black uppercase tracking-widest text-sm">
+                        <span class="inline-flex items-center gap-2 mt-4 px-6 py-3 rounded-full bg-[#FACC15] backdrop-blur-xl border border-white/20 text-black font-black uppercase tracking-widest text-sm">
                             <i class="fa-solid fa-award"></i>
                             Academic Excellence
                         </span>
@@ -185,7 +185,7 @@ $students = $resultStmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="max-w-7xl mx-auto px-6 relative z-10">
 
                 <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-blue-700 font-black uppercase tracking-widest">
+                    <span class="text-black bg-[#FACC15] px-5 py-3 rounded-full font-black uppercase tracking-widest">
                         Top Performers
                     </span>
 

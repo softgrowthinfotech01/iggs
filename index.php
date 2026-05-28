@@ -118,28 +118,28 @@ if ($slider) {
 
 
     <!-- NOTICE STRIP -->
-    <section class="relative -mt-4 z-10">
+    <section class="relative -mt-2 z-10">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="bg-gradient-to-r from-[#0f172a] via-[#11255d] to-[#0c5b54] rounded-3xl shadow-2xl border-2 border-blue-600 p-6 grid md:grid-cols-3 gap-6 mt-4">
+            <div class="bg-white rounded-3xl shadow-2xl border-2 border-[#AE1C21] p-6 grid md:grid-cols-3 gap-6 mt-4">
                 <div class="flex gap-4 items-center">
-                    <i class="fa-solid fa-calendar-check text-4xl text-black        "></i>
+                    <i class="fa-solid fa-calendar-check text-4xl text-[#FACC15]"></i>
                     <div>
                         <h3 class="font-black text-xl text-black">Admission Notice</h3>
-                        <p class="text-slate-100">Forms available for 2026-27</p>
+                        <p class="text-slate-800">Forms available for 2026-27</p>
                     </div>
                 </div>
                 <div class="flex gap-4 items-center">
-                    <i class="fa-solid fa-award text-4xl text-black "></i>
+                    <i class="fa-solid fa-award text-4xl text-[#FACC15] "></i>
                     <div>
                         <h3 class="font-black text-xl text-black ">Academic Excellence</h3>
-                        <p class="text-slate-100">Result-oriented education</p>
+                        <p class="text-slate-800">Result-oriented education</p>
                     </div>
                 </div>
                 <div class="flex gap-4 items-center">
-                    <i class="fa-solid fa-user-shield text-4xl text-black "></i>
+                    <i class="fa-solid fa-user-shield text-4xl text-[#FACC15] "></i>
                     <div>
                         <h3 class="font-black text-xl text-black ">Safe Campus</h3>
-                        <p class="text-slate-100">Disciplined and secure atmosphere</p>
+                        <p class="text-slate-800">Disciplined and secure atmosphere</p>
                     </div>
                 </div>
             </div>
@@ -199,13 +199,13 @@ if ($slider) {
                             <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.35),transparent_40%)]"></div>
 
                             <!-- FLOATING ICONS -->
-                            <div class="absolute top-8 left-8 w-20 h-20 rounded-3xl bg-white/20 backdrop-blur-xl flex items-center justify-center border border-white/20">
+                            <div class="absolute top-8 left-8 w-20 h-20 rounded-3xl bg-[#AE1C21] backdrop-blur-xl flex items-center justify-center border border-white/20">
 
                                 <i class="fa-solid fa-book-open-reader text-white text-4xl"></i>
 
                             </div>
 
-                            <div class="absolute top-8 right-8 w-20 h-20 rounded-3xl bg-white/20 backdrop-blur-xl flex items-center justify-center border border-white/20">
+                            <div class="absolute top-8 right-8 w-20 h-20 rounded-3xl bg-[#AE1C21] backdrop-blur-xl flex items-center justify-center border border-white/20">
 
                                 <i class="fa-solid fa-children text-white text-4xl"></i>
 
@@ -214,9 +214,9 @@ if ($slider) {
                             <!-- CENTER -->
                             <div class="absolute bottom-10 left-10 right-10">
 
-                                <span class="inline-flex px-5 py-3 rounded-full bg-white/20 backdrop-blur-xl border border-white/20 text-white font-black uppercase tracking-widest text-sm">
+                                <span class="inline-flex px-5 py-3 rounded-full bg-[#AE1C21] backdrop-blur-xl border border-white/20 text-white font-black uppercase tracking-widest text-sm">
 
-                                    Since 1999
+                                    Since 2005
 
                                 </span>
 
@@ -286,7 +286,7 @@ if ($slider) {
                 <!-- RIGHT SIDE -->
                 <div>
 
-                    <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white border border-blue-100 shadow-xl text-blue-700 font-black uppercase tracking-widest text-sm">
+                    <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] border border-blue-100 shadow-xl text-black font-black uppercase tracking-widest text-sm">
 
                         <i class="fa-solid fa-circle-info"></i>
 
@@ -297,7 +297,7 @@ if ($slider) {
                     <h2 class="mt-7 text-4xl lg:text-6xl font-black text-black leading-tight">
 
                         A School Built For
-                        <span class="text-blue-700">Future Leaders</span>
+                        <span class="text-[#AE1C21]">Future Leaders</span>
 
                     </h2>
 
@@ -420,7 +420,7 @@ if ($slider) {
             <!-- HEADING -->
             <div class="text-center max-w-4xl mx-auto">
 
-                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white border border-blue-100 shadow-xl text-blue-700 font-black uppercase tracking-widest text-sm">
+                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] border border-blue-100 shadow-xl text-black font-black uppercase tracking-widest text-sm">
 
                     <i class="fa-solid fa-layer-group"></i>
 
@@ -431,7 +431,7 @@ if ($slider) {
                 <h2 class="mt-6 text-4xl lg:text-6xl font-black text-black leading-tight">
 
                     Future Focused
-                    <span class="text-blue-700">Learning Structure</span>
+                    <span class="text-[#AE1C21]">Learning Structure</span>
 
                 </h2>
 
@@ -460,7 +460,7 @@ if ($slider) {
                     <!-- LEFT CONTENT -->
                     <div class="relative">
 
-                        <div class="bg-gradient-to-br from-blue-700 to-cyan-500 text-white rounded-[40px] p-10  hover:-translate-y-3 transition duration-700">
+                        <div class="bg-[#AE1C21] text-white rounded-[40px] p-10  hover:-translate-y-3 transition duration-700">
 
                             <span class="text-blue-100 font-black uppercase tracking-[4px]">
                                 Step 01
@@ -539,7 +539,7 @@ if ($slider) {
                     <!-- RIGHT CONTENT -->
                     <div class="order-1 lg:order-2 relative">
 
-                        <div class="bg-gradient-to-br from-orange-500 to-amber-400 text-white rounded-[40px] p-10 hover:-translate-y-3 transition duration-700">
+                        <div class="bg-[#FACC15] text-white rounded-[40px] p-10 hover:-translate-y-3 transition duration-700">
 
                             <span class="text-orange-100 font-black uppercase tracking-[4px]">
                                 Step 02
@@ -580,7 +580,7 @@ if ($slider) {
                     <!-- LEFT CONTENT -->
                     <div class="relative">
 
-                        <div class="bg-gradient-to-br from-cyan-500 to-blue-700 text-white rounded-[40px] p-10  hover:-translate-y-3 transition duration-700">
+                        <div class="bg-[#AE1C21] text-white rounded-[40px] p-10  hover:-translate-y-3 transition duration-700">
 
                             <span class="text-cyan-100 font-black uppercase tracking-[4px]">
                                 Step 03
@@ -667,7 +667,7 @@ if ($slider) {
             <!-- HEADING -->
             <div class="text-center max-w-4xl mx-auto">
 
-                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white border border-blue-100 shadow-xl text-blue-700 font-black uppercase tracking-widest text-sm">
+                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] border border-blue-100 shadow-xl text-black font-black uppercase tracking-widest text-sm">
 
                     <i class="fa-solid fa-building"></i>
 
@@ -678,7 +678,7 @@ if ($slider) {
                 <h2 class="mt-6 text-4xl lg:text-6xl font-black text-black leading-tight">
 
                     Smart Campus
-                    <span class="text-blue-700">Infrastructure</span>
+                    <span class="text-[#AE1C21]">Infrastructure</span>
 
                 </h2>
 
@@ -955,14 +955,14 @@ if ($slider) {
                 <!-- CONTENT SIDE -->
                 <div>
 
-                    <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white border border-blue-100 shadow-xl text-blue-700 font-black uppercase tracking-widest text-sm">
+                    <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] border border-blue-100 shadow-xl text-black font-black uppercase tracking-widest text-sm">
                         <i class="fa-solid fa-message"></i>
                         Principal Message
                     </span>
 
                     <h2 class="mt-7 text-4xl lg:text-6xl font-black text-black leading-tight">
                         Education With
-                        <span class="text-blue-700">Values & Vision</span>
+                        <span class="text-[#AE1C21]">Values & Vision</span>
                     </h2>
 
                     <p class="mt-8 text-black leading-9 text-lg text-justify">
@@ -1010,7 +1010,7 @@ if ($slider) {
 
     <!-- CTA -->
     <!-- ADMISSION CTA -->
-    <section class="relative py-28 overflow-hidden bg-gradient-to-br from-blue-900 via-slate-900 to-amber-700">
+    <section class="relative py-28 overflow-hidden bg-[#FACC15]">
         <div class="absolute inset-0 overflow-hidden opacity-[0.07]">
 
             <!-- BIG CIRCLE -->
@@ -1066,7 +1066,7 @@ if ($slider) {
                 <!-- LEFT CONTENT -->
                 <div>
 
-                    <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/10 text-white font-black uppercase tracking-widest text-sm">
+                    <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#AE1C21] backdrop-blur-xl border border-white/10 text-white font-black uppercase tracking-widest text-sm">
 
                         <i class="fa-solid fa-user-graduate"></i>
 
@@ -1074,14 +1074,14 @@ if ($slider) {
 
                     </span>
 
-                    <h2 class="mt-7 text-4xl lg:text-7xl font-black text-white leading-tight">
+                    <h2 class="mt-7 text-4xl lg:text-7xl font-black text-black leading-tight">
 
                         Start Your
-                        <span class="block text-cyan-200">Child’s Journey</span>
+                        <span class="block text-[#AE1C21]">Child’s Journey</span>
 
                     </h2>
 
-                    <p class="mt-8 text-blue-100 text-lg leading-9 text-justify max-w-2xl">
+                    <p class="mt-8 text-black text-lg leading-9 text-justify max-w-2xl">
 
                         Give your child the opportunity to learn, grow and succeed
                         in a modern educational environment focused on values,
@@ -1102,7 +1102,7 @@ if ($slider) {
 
                         </a>
 
-                        <a href="contact" class="inline-flex items-center gap-3 px-10 py-5 rounded-[20px] border border-white/20 bg-white/10 backdrop-blur-xl text-white font-black hover:bg-white hover:text-blue-700 transition duration-700">
+                        <a href="contact" class="inline-flex items-center gap-3 px-10 py-5 rounded-[20px] border border-white/20 bg-black backdrop-blur-xl text-white font-black hover:bg-white hover:text-blue-700 transition duration-700">
 
                             <i class="fa-solid fa-phone"></i>
 
@@ -1115,9 +1115,9 @@ if ($slider) {
                     <!-- STATS -->
                     <div class="mt-14 grid grid-cols-3 gap-5 max-w-2xl">
 
-                        <div class="bg-white/10 backdrop-blur-xl rounded-[28px] p-5 border border-white/10 text-center">
+                        <div class="bg-[#AE1C21] backdrop-blur-xl rounded-[28px] p-5 border border-white/10 text-center">
 
-                            <h3 class="text-4xl font-black text-white">
+                            <h3 class="text-4xl font-black  text-white">
                                 25+
                             </h3>
 
@@ -1127,7 +1127,7 @@ if ($slider) {
 
                         </div>
 
-                        <div class="bg-white/10 backdrop-blur-xl rounded-[28px] p-5 border border-white/10 text-center">
+                        <div class="bg-[#AE1C21] backdrop-blur-xl rounded-[28px] p-5 border border-white/10 text-center">
 
                             <h3 class="text-4xl font-black text-white">
                                 1200+
@@ -1139,7 +1139,7 @@ if ($slider) {
 
                         </div>
 
-                        <div class="bg-white/10 backdrop-blur-xl rounded-[28px] p-5 border border-white/10 text-center">
+                        <div class="bg-[#AE1C21] backdrop-blur-xl rounded-[28px] p-5 border border-white/10 text-center">
 
                             <h3 class="text-4xl font-black text-white">
                                 45+

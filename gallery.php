@@ -36,12 +36,12 @@
 
     <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 mt-20 gap-14 items-center">
         <div>
-            <span class="inline-flex px-5 py-3 rounded-full bg-white/40 border border-white/10 text-cyan-300 font-black tracking-widest uppercase">
+            <span class="inline-flex px-5 py-3 rounded-full bg-[#FACC15] border border-white/10 text-black font-black tracking-widest uppercase">
                 <i class="fa-solid fa-camera-retro mr-2"></i> School Memories
             </span>
 
                     <h1 class="mt-8 text-5xl lg:text-8xl font-black leading-tight">
-                        Moments That <span class="text-cyan-300">Inspire</span>
+                        Moments That <span class="text-[#AE1C21]">Inspire</span>
                     </h1>
 
                     <p class="mt-6 text-slate-300 text-lg leading-8 max-w-xl">
@@ -181,6 +181,7 @@
                     foreach ($galleryItems as $item) {
 
                     ?>
+                    
 
                         <div class="group break-inside-avoid relative overflow-hidden rounded-[35px] bg-white/10 border border-white/10 shadow-2xl h-[200px]">
 
