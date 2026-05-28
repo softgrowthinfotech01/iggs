@@ -113,233 +113,359 @@ if (isset($_POST['save_result'])) {
 
         <div class="max-w-7xl mx-auto bg-slate-300 p-4 rounded-xl">
 
-            <!-- PAGE CARD -->
-            <div class="p-3">
+    <!-- TABS -->
+    <div class="flex justify-between mb-6 px-10">
 
-                <!-- PAGE TITLE -->
-                <div class="mb-6">
+        <!-- RESULT ENTRY TAB -->
+        <button
+            id="entryTab"
+            onclick="showTab('entry')"
+            class="tab-btn px-10 py-3 rounded-xl bg-white text-indigo-700 font-bold shadow transition">
 
-                    <h2 class="text-2xl font-semibold text-gray-800">
-                        Add Student Result
-                    </h2>
+            Result Entry
+
+        </button>
+
+        <!-- RESULT TABLE TAB -->
+        <button
+            id="tableTab"
+            onclick="showTab('table')"
+            class="tab-btn px-10 py-3 rounded-xl bg-slate-200 text-slate-600 font-bold transition">
+
+            Result Table
+
+        </button>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- RESULT ENTRY SECTION -->
+    <!-- ========================= -->
+
+    <div id="entrySection">
+
+        <!-- PAGE CARD -->
+        <div class="p-2">
+
+            <!-- PAGE TITLE -->
+            <div class="mb-6">
+
+                <h2 class="text-2xl font-semibold text-gray-800">
+                    Add Student Result
+                </h2>
+
+            </div>
+
+            <!-- FORM -->
+            <form action="" method="POST" enctype="multipart/form-data">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                    <!-- STUDENT NAME -->
+                    <div>
+
+                        <label class="text-sm font-medium block text-gray-700 mb-1">
+                            Student Name
+                        </label>
+
+                        <input
+                            type="text"
+                            name="student_name"
+                            required
+                            placeholder="Enter student name"
+                            class="w-full border border-gray-600 rounded-xl px-4 py-3">
+
+                    </div>
+
+                    <!-- RANK -->
+                    <div>
+
+                        <label class="text-sm font-medium block text-gray-700 mb-1">
+                            Rank
+                        </label>
+
+                        <input
+                            type="number"
+                            name="rank_position"
+                            required
+                            placeholder="Enter rank"
+                            class="w-full border border-gray-600 rounded-xl px-4 py-3">
+
+                    </div>
+
+                    <!-- ROLL NUMBER -->
+                    <div>
+
+                        <label class="text-sm font-medium block text-gray-700 mb-1">
+                            Roll Number
+                        </label>
+
+                        <input
+                            type="text"
+                            name="roll_no"
+                            required
+                            placeholder="Enter roll number"
+                            class="w-full border border-gray-600 rounded-xl px-4 py-3">
+
+                    </div>
+
+                    <!-- OBTAINED MARKS -->
+                    <div>
+
+                        <label class="text-sm font-medium block text-gray-700 mb-1">
+                            Obtained Marks
+                        </label>
+
+                        <input
+                            type="text"
+                            name="obtained_marks"
+                            required
+                            placeholder="490"
+                            class="w-full border border-gray-600 rounded-xl px-4 py-3">
+
+                    </div>
+
+                    <!-- TOTAL MARKS -->
+                    <div>
+
+                        <label class="text-sm font-medium block text-gray-700 mb-1">
+                            Total Marks
+                        </label>
+
+                        <input
+                            type="text"
+                            name="total_marks"
+                            required
+                            placeholder="500"
+                            class="w-full border border-gray-600 rounded-xl px-4 py-3">
+
+                    </div>
+
+                    <!-- PERCENTAGE -->
+                    <div>
+
+                        <label class="text-sm font-medium block text-gray-700 mb-1">
+                            Percentage
+                        </label>
+
+                        <input
+                            type="text"
+                            name="percentage"
+                            required
+                            placeholder="98%"
+                            class="w-full border border-gray-600 rounded-xl px-4 py-3">
+
+                    </div>
+
+                    <!-- TITLE -->
+                    <div>
+
+                        <label class="text-sm font-medium block text-gray-700 mb-1">
+                            Student Title
+                        </label>
+
+                        <input
+                            type="text"
+                            name="student_title"
+                            required
+                            placeholder="School Topper"
+                            class="w-full border border-gray-600 rounded-xl px-4 py-3">
+
+                    </div>
+
+                    <!-- STATUS -->
+                    <div>
+
+                        <label class="text-sm font-medium block text-gray-700 mb-1">
+                            Status
+                        </label>
+
+                        <select
+                            name="status"
+                            class="w-full border border-gray-600 rounded-xl px-4 py-3">
+
+                            <option value="PASS">PASS</option>
+                            <option value="FAIL">FAIL</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- IMAGE -->
+                    <div>
+
+                        <label class="text-sm font-medium block text-gray-700 mb-1">
+                            Student Image
+                        </label>
+
+                        <input
+                            type="file"
+                            name="student_image"
+                            accept="image/*"
+                            required
+                            class="w-full border border-gray-600 rounded-xl px-4 py-2 bg-white">
+
+                    </div>
+
+                    <!-- FEATURED -->
+                    <div class="flex items-center gap-3 mt-7">
+
+                        <input
+                            type="checkbox"
+                            name="is_featured"
+                            value="1"
+                            class="w-5 h-5">
+
+                        <label class="text-sm font-medium text-gray-700">
+                            Topper
+                        </label>
+
+                    </div>
 
                 </div>
 
-                <!-- FORM -->
-                <form action="" method="POST" enctype="multipart/form-data">
+                <!-- SUBMIT -->
+                <div class="mt-8">
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    <button
+                        type="submit"
+                        name="save_result"
+                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg transition">
 
-                        <!-- STUDENT NAME -->
-                        <div>
+                        Save Result
 
-                            <label class="text-sm font-medium block text-gray-700 mb-2">
-                                Student Name
-                            </label>
+                    </button>
 
-                            <input
-                                type="text"
-                                name="student_name"
-                                required
-                                placeholder="Enter student name"
-                                class="w-full border border-gray-600 rounded-xl px-4 py-3">
+                </div>
 
-                        </div>
+            </form>
 
-                        <!-- RANK -->
-                        <div>
+        </div>
 
-                            <label class="text-sm font-medium block text-gray-700 mb-2">
-                                Rank
-                            </label>
+    </div>
 
-                            <input
-                                type="number"
-                                name="rank_position"
-                                required
-                                placeholder="Enter rank"
-                                class="w-full border border-gray-600 rounded-xl px-4 py-3">
+    <!-- ========================= -->
+    <!-- RESULT TABLE SECTION -->
+    <!-- ========================= -->
 
-                        </div>
+    <div id="tableSection" class="hidden">
 
-                        <!-- ROLL NUMBER -->
-                        <div>
+        <div class="bg-white rounded-xl px-6 py-2 shadow">
 
-                            <label class="text-sm font-medium block text-gray-700 mb-2">
-                                Roll Number
-                            </label>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">
+                Result Records
+            </h2>
 
-                            <input
-                                type="text"
-                                name="roll_no"
-                                required
-                                placeholder="Enter roll number"
-                                class="w-full border border-gray-600 rounded-xl px-4 py-3">
+            <div class="overflow-x-auto">
 
-                        </div>
+                <table class="w-full border border-gray-300">
 
-                        <!-- OBTAINED MARKS -->
-                        <div>
+                    <thead class="bg-slate-200">
 
-                            <label class="text-sm font-medium block text-gray-700 mb-2">
-                                Obtained Marks
-                            </label>
+                        <tr>
 
-                            <input
-                                type="text"
-                                name="obtained_marks"
-                                required
-                                placeholder="490"
-                                class="w-full border border-gray-600 rounded-xl px-4 py-3">
+                            <th class="p-3 text-left border">Sr No</th>
+                            <th class="p-3 text-left border">Image</th>
+                            <th class="p-3 text-left border">Student</th>
+                            <th class="p-3 text-left border">Rank</th>
+                            <th class="p-3 text-left border">Percentage</th>
+                            <th class="p-3 text-left border">Topper</th>
+                            <th class="p-3 text-center border">Action</th>
 
-                        </div>
+                        </tr>
 
-                        <!-- TOTAL MARKS -->
-                        <div>
+                    </thead>
 
-                            <label class="text-sm font-medium block text-gray-700 mb-2">
-                                Total Marks
-                            </label>
+                    <tbody>
 
-                            <input
-                                type="text"
-                                name="total_marks"
-                                required
-                                placeholder="500"
-                                class="w-full border border-gray-600 rounded-xl px-4 py-3">
+                        <?php
 
-                        </div>
+                        $stmt = $pdo->query("SELECT * FROM results ORDER BY rank_position ASC");
 
-                        <!-- PERCENTAGE -->
-                        <div>
+                        $resultData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                            <label class="text-sm font-medium block text-gray-700 mb-2">
-                                Percentage
-                            </label>
+                        $count = 1;
 
-                            <input
-                                type="text"
-                                name="percentage"
-                                required
-                                placeholder="98%"
-                                class="w-full border border-gray-600 rounded-xl px-4 py-3">
+                        foreach ($resultData as $row) {
 
-                        </div>
+                        ?>
 
-                        <!-- TITLE -->
-                        <div>
+                            <tr class="hover:bg-slate-50">
 
-                            <label class="text-sm font-medium block text-gray-700 mb-2">
-                                Student Title
-                            </label>
+                                <td class="p-3 border">
+                                    <?php echo $count++; ?>
+                                </td>
 
-                            <input
-                                type="text"
-                                name="student_title"
-                                required
-                                placeholder="School Topper"
-                                class="w-full border border-gray-600 rounded-xl px-4 py-3">
+                                <td class="p-3 border">
 
-                        </div>
+                                    <img
+                                        src="images/results/<?php echo $row['student_image']; ?>"
+                                        class="w-20 h-20 object-cover rounded-lg border">
 
-                        <!-- STATUS -->
-                        <div>
+                                </td>
 
-                            <label class="text-sm font-medium block text-gray-700 mb-2">
-                                Status
-                            </label>
+                                <td class="p-3 border">
+                                    <?php echo $row['student_name']; ?>
+                                </td>
 
-                            <select
-                                name="status"
-                                class="w-full border border-gray-600 rounded-xl px-4 py-3">
+                                <td class="p-3 border">
+                                    #<?php echo $row['rank_position']; ?>
+                                </td>
 
-                                <option value="PASS">PASS</option>
-                                <option value="FAIL">FAIL</option>
+                                <td class="p-3 border">
+                                    <?php echo $row['percentage']; ?>
+                                </td>
 
-                            </select>
+                                <td class="p-3 border">
 
-                        </div>
+                                    <?php if ($row['is_featured'] == 1) { ?>
 
-                        <!-- IMAGE -->
-                        <div>
+                                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
+                                            Yes
+                                        </span>
 
-                            <label class="text-sm font-medium block text-gray-700 mb-2">
-                                Student Image
-                            </label>
+                                    <?php } else { ?>
 
-                            <input
-                                type="file"
-                                name="student_image"
-                                accept="image/*"
-                                required
-                                class="w-full border border-gray-600 rounded-xl px-4 py-2 bg-white">
+                                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                                            No
+                                        </span>
 
-                        </div>
+                                    <?php } ?>
 
-                        <!-- FEATURED -->
-                        <div class="flex items-center gap-3 mt-8">
+                                </td>
 
-                            <input
-                                type="checkbox"
-                                name="is_featured"
-                                value="1"
-                                class="w-5 h-5">
+                                <td class="p-3 border text-center">
 
-                            <label class="text-sm font-medium text-gray-700">
-                                Topper
-                            </label>
+                                    <a
+                                        href="results.php?delete=<?php echo $row['id']; ?>"
+                                        onclick="return confirm('Delete this result?')"
+                                        class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm">
 
-                        </div>
+                                        Delete
 
-                    </div>
+                                    </a>
 
-                    <!-- SUBMIT -->
-                    <div class="mt-8">
+                                </td>
 
-                        <button
-                            type="submit"
-                            name="save_result"
-                            class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg transition">
+                            </tr>
 
-                            Save Result
+                        <?php } ?>
 
-                        </button>
+                    </tbody>
 
-                    </div>
-
-                </form>
+                </table>
 
             </div>
 
         </div>
 
-        <!-- FLOATING RESULT TABLE BUTTON -->
-        <button
-            id="scrollToTable"
-            class="fixed bottom-6 right-6 z-50 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-full shadow-2xl flex items-center gap-3 transition-all duration-300 hover:scale-105">
+    </div>
 
-            <!-- DOWN ARROW ICON -->
-            <svg xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-
-                <path stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7" />
-
-            </svg>
-
-            <span class="font-semibold text-sm">
-                Result Table
-            </span>
-
-        </button>
+</div>
 
     </main>
 
+    <div id="tableSection" class="hidden">
     <!-- RESULT TABLE -->
     <div id="resultTable" class="bg-white rounded-2xl px-6 pb-2 shadow mx-6 mb-10">
 
@@ -449,19 +575,52 @@ if (isset($_POST['save_result'])) {
         </div>
 
     </div>
+    </div>
 
 </div>
 
+<!-- TAB SCRIPT -->
 <script>
-    document.getElementById('scrollToTable').addEventListener('click', function() {
 
-        document.getElementById('resultTable').scrollIntoView({
+function showTab(tab) {
 
-            behavior: 'smooth'
+    const entrySection = document.getElementById('entrySection');
+    const tableSection = document.getElementById('tableSection');
 
-        });
+    const entryTab = document.getElementById('entryTab');
+    const tableTab = document.getElementById('tableTab');
 
-    });
+    // RESET BOTH TABS
+    entryTab.className =
+        'tab-btn px-10 py-3 rounded-xl bg-slate-200 text-slate-600 font-bold transition';
+
+    tableTab.className =
+        'tab-btn px-10 py-3 rounded-xl bg-slate-200 text-slate-600 font-bold transition';
+
+    // SHOW ENTRY
+    if (tab === 'entry') {
+
+        entrySection.classList.remove('hidden');
+        tableSection.classList.add('hidden');
+
+        entryTab.className =
+            'tab-btn px-10 py-3 rounded-xl bg-white text-indigo-700 font-bold shadow transition';
+
+    }
+
+    // SHOW TABLE
+    else {
+
+        tableSection.classList.remove('hidden');
+        entrySection.classList.add('hidden');
+
+        tableTab.className =
+            'tab-btn px-10 py-3 rounded-xl bg-white text-indigo-700 font-bold shadow transition';
+
+    }
+
+}
+
 </script>
 
-<?php include 'footer.php'?>
+<?php include 'footer.php' ?>

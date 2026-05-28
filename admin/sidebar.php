@@ -57,7 +57,7 @@
             </a>
 
             <!-- Principal's Message -->
-            <a href="principal_message" id="principal_msg-link"
+            <a href="principal_message" id="principal_message-link"
                 class="flex items-center gap-3 hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition">
 
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +109,7 @@
             </a>
 
             <!-- Contact Us -->
-            <a href="contact_us"
+            <a href="contact_us" id="contact_us-link"
                 class="flex items-center gap-3 hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition">
 
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +130,7 @@
             </a>
 
             <!-- Admission -->
-            <a href="admission"
+            <a href="admission" id="admission-link"
                 class="flex items-center gap-3 hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition">
 
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +151,7 @@
             </a>
 
             <!-- Gallery -->
-            <a href="gallery"
+            <a href="gallery" id="gallery-link"
                 class="flex items-center gap-3 hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition">
 
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -185,7 +185,7 @@
             </a>
 
             <!-- Results -->
-            <a href="results"
+            <a href="results" id="results-link"
                 class="flex items-center gap-3 hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition">
 
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -232,27 +232,21 @@
 
 <!-- Sidebar Highlight -->
 <script>
-    const path = window.location.pathname;
+    const currentPage = window.location.pathname
+        .split("/")
+        .pop()
+        .replace(".php", "");
 
-    if (path.includes('dashboard')) {
+    const activeLink = document.getElementById(currentPage + "-link");
 
-        document.getElementById('dashboard-link')
-            .classList.add('bg-white/10', 'border', 'border-white/10');
+    if (activeLink) {
 
-    } else if (path.includes('about_us')) {
-
-        document.getElementById('about_us-link')
-            .classList.add('bg-white/10', 'border', 'border-white/10');
-
-    } else if (path.includes('principal_msg')) {
-
-        document.getElementById('principal_msg-link')
-            .classList.add('bg-white/10', 'border', 'border-white/10');
-
-    } else if (path.includes('slider_images')) {
-
-        document.getElementById('slider_images-link')
-            .classList.add('bg-white/10', 'border', 'border-white/10');
+        // ACTIVE LINK STYLES
+        activeLink.classList.add(
+            "bg-white/20",
+            "text-white",
+            "shadow-lg"
+        );
 
     }
 </script>

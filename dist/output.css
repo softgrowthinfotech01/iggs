@@ -2540,6 +2540,18 @@ video {
   --tw-gradient-to: #fff var(--tw-gradient-to-position);
 }
 
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -3134,6 +3146,18 @@ video {
 
 .opacity-\[0\.30\] {
   opacity: 0.30;
+}
+
+.opacity-5 {
+  opacity: 0.05;
+}
+
+.opacity-10 {
+  opacity: 0.1;
+}
+
+.opacity-\[25px\] {
+  opacity: 25px;
 }
 
 .shadow {
