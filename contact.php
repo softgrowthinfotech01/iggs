@@ -156,25 +156,25 @@ body{
 </section>
 
 <!-- CONTACT STRIP -->
-<section class="py-16 bg-slate-950 text-white">
+<section class="py-16 bg-[#FACC15] text-white">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
 
         <div>
-            <i class="fa-solid fa-location-dot text-4xl text-cyan-300"></i>
-            <h3 class="mt-5 text-2xl font-black">Visit Campus</h3>
-            <p class="mt-3 text-slate-300">Indira Gandhi Garden School, Chandrapur, Maharashtra</p>
+            <i class="fa-solid fa-location-dot text-4xl text-[#AE1C21]"></i>
+            <h3 class="mt-5 text-2xl text-black font-black">Visit Campus</h3>
+            <p class="mt-3 text-black">Indira Gandhi Garden School, Chandrapur, Maharashtra</p>
         </div>
 
         <div>
-            <i class="fa-solid fa-clock text-4xl text-cyan-300"></i>
-            <h3 class="mt-5 text-2xl font-black">Office Hours</h3>
-            <p class="mt-3 text-slate-300">Monday to Saturday<br>9:00 AM to 4:00 PM</p>
+            <i class="fa-solid fa-clock text-4xl text-[#AE1C21]"></i>
+            <h3 class="mt-5 text-2xl text-black font-black">Office Hours</h3>
+            <p class="mt-3 text-black">Monday to Saturday<br>9:00 AM to 4:00 PM</p>
         </div>
 
         <div>
-            <i class="fa-solid fa-user-graduate text-4xl text-cyan-300"></i>
-            <h3 class="mt-5 text-2xl font-black">Admission Help</h3>
-            <p class="mt-3 text-slate-300">Get guidance about admission process and class details.</p>
+            <i class="fa-solid fa-user-graduate text-4xl text-[#AE1C21]"></i>
+            <h3 class="mt-5 text-2xl text-black">Admission Help</h3>
+            <p class="mt-3 text-black">Get guidance about admission process and class details.</p>
         </div>
 
     </div>

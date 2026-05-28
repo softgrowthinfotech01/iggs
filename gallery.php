@@ -27,14 +27,14 @@
 <body class="bg-white overflow-x-hidden">
     <?php include 'header.php'; ?>
 
-    <main class="overflow-hidden bg-[#050816] text-white">
+    <main class="overflow-hidden bg-white text-black">
 
 <!-- UNIQUE GALLERY HERO -->
 <section class="relative min-h-screen flex items-center mt-10 overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#38bdf8,transparent_35%),radial-gradient(circle_at_bottom_right,#f97316,transparent_30%)] opacity-30"></div>
-    <div class="absolute inset-0 bg-[#050816]/90"></div>
+    <!-- <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#38bdf8,transparent_35%),radial-gradient(circle_at_bottom_right,#f97316,transparent_30%)] opacity-30"></div>
+    <div class="absolute inset-0 bg-[#050816]/90"></div> -->
 
-    <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 mt-20 gap-14 items-center">
+    <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-1 mt-20 gap-14 items-center">
         <div>
             <span class="inline-flex px-5 py-3 rounded-full bg-[#FACC15] border border-white/10 text-black font-black tracking-widest uppercase">
                 <i class="fa-solid fa-camera-retro mr-2"></i> School Memories
@@ -44,7 +44,7 @@
                         Moments That <span class="text-[#AE1C21]">Inspire</span>
                     </h1>
 
-                    <p class="mt-6 text-slate-300 text-lg leading-8 max-w-xl">
+                    <p class="mt-6 text-black text-lg leading-8 max-w-xl">
                         A creative glimpse of classroom learning, activities, celebrations and student life at Indira Gandhi School.
                     </p>
 
@@ -53,17 +53,17 @@
                     </a> -->
                 </div>
 
-        <div class="grid grid-cols-2 gap-5 rotate-2">
+        <!-- <div class="grid grid-cols-2 gap-5 rotate-2">
             <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=700&q=80" class="h-72 w-full object-cover rounded-[40px] shadow-2xl hover:scale-105 transition duration-700 mt-10">
             <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=700&q=80" class="h-96 w-full object-cover rounded-[40px] shadow-2xl mt-14 hover:scale-105 transition duration-700">
             <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=700&q=80" class="h-96 w-full object-cover rounded-[40px] shadow-2xl -mt-14 hover:scale-105 transition duration-700 mb-6">
             <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?auto=format&fit=crop&w=700&q=80" class="h-72 w-full object-cover rounded-[40px] shadow-2xl hover:scale-105 transition duration-700 ">
-        </div>
+        </div> -->
     </div>
 </section>
 
 <!-- CATEGORY STRIP -->
-<section class="py-12 bg-white text-slate-950">
+<section class="py-12 bg-[#FACC15] text-slate-950">
     <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="p-7 rounded-[30px] bg-slate-100 hover:bg-cyan-100 hover:-translate-y-2 transition duration-500">
             <i class="fa-solid fa-book-open text-4xl text-cyan-600"></i>
@@ -93,11 +93,11 @@
         <!-- HEADING -->
         <div class="text-center max-w-3xl mx-auto">
 
-            <span class="text-black font-black uppercase tracking-widest">
+            <span class="text-black bg-[#FACC15] rounded-full px-5 py-3  font-black uppercase tracking-widest">
                 Photo Wall
             </span>
 
-            <h2 class="mt-5 text-4xl lg:text-6xl font-black">
+            <h2 class="mt-5 text-4xl lg:text-6xl text-white font-black">
                 Our Beautiful Campus Stories
             </h2>
 

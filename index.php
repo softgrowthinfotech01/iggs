@@ -977,6 +977,7 @@ if ($slider) {
                         <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-700 to-cyan-500"></div>
 
                         <p class="mt-3 text-xl leading-10 text-slate-700 text-justify">
+                            <h4 class="font-semibold mb-2">Principal Message: </h4>
                             <?php echo $principal['message']; ?>
                         </p>
 

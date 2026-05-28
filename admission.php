@@ -67,16 +67,16 @@ if (isset($_POST['submit_admission'])) {
     <?php include 'header.php'; ?>
 
     <!-- ADMISSION HERO -->
-    <section class="relative min-h-[85vh] flex items-center overflow-hidden bg-slate-950 text-white">
+    <section class="relative min-h-[85vh] flex items-center overflow-hidden  text-white">
 
         <div class="absolute inset-0">
             <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1400&q=80"
-                class="w-full h-full object-cover opacity-30">
-            <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-blue-950/60"></div>
+                class="w-full h-full object-cover opacity-20">
+            <!-- <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-blue-950/60"></div> -->
         </div>
 
-        <div class="absolute top-20 right-20 w-80 h-80 border-[12px] border-white/10 rotate-12 rounded-[50px]"></div>
-        <div class="absolute bottom-10 left-10 w-72 h-72 border-[12px] border-cyan-300/10 -rotate-12 rounded-[45px]"></div>
+        <!-- <div class="absolute top-20 right-20 w-80 h-80 border-[12px] border-white/10 rotate-12 rounded-[50px]"></div>
+        <div class="absolute bottom-10 left-10 w-72 h-72 border-[12px] border-cyan-300/10 -rotate-12 rounded-[45px]"></div> -->
 
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center relative mt-20 z-10">
 
@@ -91,17 +91,17 @@ if (isset($_POST['submit_admission'])) {
                     <span class="block text-[#AE1C21]">Bright Future</span>
                 </h1>
 
-                <p class="mt-7 text-blue-100 text-lg leading-9 max-w-2xl">
+                <p class="mt-7 text-white text-lg leading-9 max-w-2xl">
                     Apply for admission at Indira Gandhi School Chandrapur.
                     Our admission team will guide you through class selection,
                     process, documents and counselling.
                 </p>
 
-                <div class="mt-10 flex flex-wrap gap-4">
-                    <a href="#admission-form" class="px-9 py-5 rounded-2xl bg-cyan-400 text-slate-950 font-black shadow-xl hover:-translate-y-2 transition duration-500">
+                <div class="mt-4 mb-10 flex flex-wrap gap-4">
+                    <a href="#admission-form" class="px-9 py-5 rounded-2xl bg-white  text-black font-black shadow-xl hover:-translate-y-2 transition duration-500">
                         Fill Admission Form
                     </a>
-                    <a href="#process" class="px-9 py-5 rounded-2xl bg-white/10 border border-white/10 backdrop-blur-xl text-white font-black hover:bg-white hover:text-slate-950 transition duration-500">
+                    <a href="#process" class="px-9 py-5 rounded-2xl bg-white/10 border border-white/10 backdrop-blur-xl text-black font-black hover:bg-white hover:text-slate-950 transition duration-500">
                         View Process
                     </a>
                 </div>
@@ -110,21 +110,21 @@ if (isset($_POST['submit_admission'])) {
             <div class="relative">
                 <div class="bg-white/10 backdrop-blur-xl border border-white/10 rounded-[40px] p-6 shadow-2xl">
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="rounded-[28px] bg-white text-slate-900 p-6">
-                            <h3 class="text-4xl font-black text-blue-700">25+</h3>
-                            <p class="font-bold text-slate-500 mt-2">Years Excellence</p>
+                        <div class="rounded-[28px] bg-[#FACC15] text-black p-6">
+                            <h3 class="text-4xl font-black">25+</h3>
+                            <p class="font-bold mt-2">Years Excellence</p>
                         </div>
-                        <div class="rounded-[28px] bg-cyan-400 text-slate-950 p-6 mt-10">
-                            <h3 class="text-4xl font-black">1200+</h3>
+                        <div class="rounded-[28px] bg-[#AE1C21] text-white p-6 mt-10">
+                            <h3 class="text-4xl  font-black">1200+</h3>
                             <p class="font-bold mt-2">Happy Students</p>
                         </div>
-                        <div class="rounded-[28px] bg-blue-600 text-white p-6">
+                        <div class="rounded-[28px] bg-[#AE1C21] text-white p-6">
                             <h3 class="text-4xl font-black">45+</h3>
                             <p class="font-bold text-blue-100 mt-2">Expert Teachers</p>
                         </div>
-                        <div class="rounded-[28px] bg-white/10 border border-white/10 text-white p-6 mt-10">
+                        <div class="rounded-[28px] bg-[#FACC15] border border-white/10 text-black p-6 mt-10">
                             <h3 class="text-4xl font-black">100%</h3>
-                            <p class="font-bold text-blue-100 mt-2">Growth Focus</p>
+                            <p class="font-bold text-black mt-2">Growth Focus</p>
                         </div>
                     </div>
                 </div>

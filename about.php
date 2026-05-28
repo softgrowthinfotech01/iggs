@@ -103,13 +103,13 @@
 
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
 
-                            <div class="absolute left-6 right-6 bottom-6 bg-white/90 backdrop-blur-xl rounded-[28px] p-6 shadow-2xl">
+                            <div class="absolute left-6 right-6 bottom-6 bg-[#AE1C21] backdrop-blur-xl rounded-[28px] p-6 shadow-2xl">
 
-                                <h3 class="text-3xl font-black text-black">
+                                <h3 class="text-3xl font-black text-white">
                                     25+ Years Of Excellence
                                 </h3>
 
-                                <p class="mt-2 text-black font-semibold">
+                                <p class="mt-2 text-white font-semibold">
                                     Trusted education with modern learning.
                                 </p>
 
@@ -237,7 +237,7 @@
 
 
         <!-- MISSION & VISION -->
-        <section class="relative py-24 overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white">
+        <section class="relative py-24 overflow-hidden bg-[#AE1C21] text-white">
 
             <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-500/20 blur-[120px] rounded-full"></div>
 
@@ -381,19 +381,19 @@
 
 
         <!-- CTA -->
-        <section class="relative py-24 overflow-hidden bg-gradient-to-r from-blue-700 via-cyan-600 to-blue-800">
+        <section class="relative py-24 overflow-hidden bg-[#FACC15]">
 
             <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-white/10 blur-[120px] rounded-full"></div>
 
             <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
 
-                <h2 class="text-4xl lg:text-6xl font-black text-white">
+                <h2 class="text-4xl lg:text-6xl font-black text-black">
 
                     Join Indira Gandhi School Today
 
                 </h2>
 
-                <p class="mt-6 text-blue-100 text-lg leading-8">
+                <p class="mt-6 text-black text-lg leading-8">
 
                     Admissions are open for the new academic session.
                     Start your child’s learning journey with us.
@@ -401,7 +401,7 @@
                 </p>
 
                 <a href="contact.php"
-                    class="inline-flex mt-10 px-10 py-5 rounded-[20px] bg-white text-blue-700 font-black shadow-[0_25px_70px_rgba(255,255,255,0.25)] hover:bg-slate-950 hover:text-white hover:-translate-y-2 transition duration-500">
+                    class="inline-flex mt-10 px-10 py-5 rounded-[20px] bg-white text-black font-black shadow-[0_25px_70px_rgba(255,255,255,0.25)] hover:bg-slate-950 hover:text-white hover:-translate-y-2 transition duration-500">
 
                     Contact Admission Office
 

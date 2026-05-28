@@ -199,19 +199,19 @@ html{
 </section>
 
 <!-- CTA -->
-<section class="relative py-24 overflow-hidden bg-black">
+<section class="relative py-24 overflow-hidden bg-[#FACC15]">
 
     <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
         <h2 class="text-4xl lg:text-6xl font-black text-black">
             Give Your Child A Strong Academic Future
         </h2>
 
-        <p class="mt-6 text-blue-800 text-lg leading-8">
+        <p class="mt-6 text-black text-lg leading-8">
             Admissions are open for the new academic session.
         </p>
 
         <a href="contact.php"
-           class="inline-flex mt-10 px-10 py-5 rounded-[20px] bg-white text-blue-700 font-black shadow-xl hover:bg-slate-950 hover:text-white hover:-translate-y-2 transition duration-500">
+           class="inline-flex mt-10 px-10 py-5 rounded-[20px] bg-white text-black font-black shadow-xl hover:bg-slate-950 hover:text-white hover:-translate-y-2 transition duration-500">
             Contact Admission Office
         </a>
     </div>

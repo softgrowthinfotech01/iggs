@@ -48,7 +48,7 @@ $students = $resultStmt->fetchAll(PDO::FETCH_ASSOC);
     <main class="overflow-hidden bg-white">
 
         <!-- RESULT BANNER -->
-        <section class="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br  mt-10 from-blue-900 via-blue-700 to-cyan-900">
+        <section class="relative pt-32 pb-24 overflow-hidden bg-[#AE1C21]">
 
             <div class="absolute -top-24 -left-24 w-[420px] h-[420px] bg-cyan-300/20 blur-[120px] rounded-full"></div>
             <div class="absolute bottom-0 right-0 w-[420px] h-[420px] bg-white/10 blur-[120px] rounded-full"></div>
@@ -306,13 +306,13 @@ $students = $resultStmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="rounded-[40px] overflow-hidden border border-slate-100 bg-white shadow-[0_35px_90px_rgba(15,23,42,0.10)]">
 
-                    <div class="p-8 lg:p-10 bg-gradient-to-r from-blue-700 via-cyan-600 to-blue-800 text-white">
+                    <div class="p-8 lg:p-10 bg-[#FACC15]">
 
-                        <h2 class="text-3xl lg:text-5xl font-black">
+                        <h2 class="text-3xl lg:text-5xl text-black font-black">
                             Result Records
                         </h2>
 
-                        <p class="mt-4 text-blue-100 text-lg">
+                        <p class="mt-4 text-black text-lg">
                             School topper and student performance table.
                         </p>
 
@@ -419,22 +419,22 @@ $students = $resultStmt->fetchAll(PDO::FETCH_ASSOC);
         </section>
 
         <!-- CTA -->
-        <section class="relative py-24 overflow-hidden bg-gradient-to-r from-blue-700 via-cyan-600 to-blue-800">
+        <section class="relative py-24 overflow-hidden bg-[#FACC15]">
 
             <div class="absolute top-0 left-0 w-[420px] h-[420px] bg-white/10 blur-[120px] rounded-full"></div>
 
             <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
 
-                <h2 class="text-4xl lg:text-6xl font-black text-white">
+                <h2 class="text-4xl lg:text-6xl font-black text-black">
                     Proud Of Our Students
                 </h2>
 
-                <p class="mt-6 text-blue-100 text-lg leading-8">
+                <p class="mt-6 text-black text-lg leading-8">
                     Our students continue to achieve academic excellence with dedication and discipline.
                 </p>
 
                 <a href="admission"
-                    class="inline-flex mt-10 px-10 py-5 rounded-[20px] bg-white text-blue-700 font-black shadow-[0_25px_70px_rgba(255,255,255,0.25)] hover:bg-slate-950 hover:text-white hover:-translate-y-2 transition duration-500">
+                    class="inline-flex mt-10 px-10 py-5 rounded-[20px] bg-white text-black font-black shadow-[0_25px_70px_rgba(255,255,255,0.25)] hover:bg-slate-950 hover:text-white hover:-translate-y-2 transition duration-500">
                     Apply For Admission
                 </a>
 
