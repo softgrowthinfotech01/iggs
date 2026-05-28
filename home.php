@@ -300,7 +300,7 @@ if ($slider) {
 
                     </h2>
 
-                    <div class="mt-7 text-black leading-5 text-lg text-justify">
+                    <div class="mt-7 text-black leading-7 text-lg text-justify">
 
                         <?php echo $about['description']; ?>
 
