@@ -1113,47 +1113,45 @@ if ($slider) {
                     </div>
 
                     <!-- STATS -->
-                    <div class="mt-14 grid grid-cols-3 gap-5 max-w-2xl">
+        <div class="mt-8 md:mt-14 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-2xl">
 
-                        <div class="bg-[#AE1C21] backdrop-blur-xl rounded-[28px] p-5 border border-white/10 text-center">
+    <div class="bg-[#AE1C21] backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-4 md:p-5 border border-white/10 text-center">
 
-                            <h3 class="text-4xl font-black  text-white">
-                                25+
-                            </h3>
+        <h3 class="text-3xl md:text-4xl font-black text-white">
+            25+
+        </h3>
 
-                            <p class="mt-2 text-blue-100 font-bold">
-                                Years
-                            </p>
+        <p class="mt-2 text-sm md:text-base text-blue-100 font-bold">
+            Years
+        </p>
 
-                        </div>
+    </div>
 
-                        <div class="bg-[#AE1C21] backdrop-blur-xl rounded-[28px] p-5 border border-white/10 text-center">
+    <div class="bg-[#AE1C21] backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-4 md:p-5 border border-white/10 text-center">
 
-                            <h3 class="text-4xl font-black text-white">
-                                1200+
-                            </h3>
+        <h3 class="text-3xl md:text-4xl font-black text-white">
+            1200+
+        </h3>
 
-                            <p class="mt-2 text-blue-100 font-bold">
-                                Students
-                            </p>
+        <p class="mt-2 text-sm md:text-base text-blue-100 font-bold">
+            Students
+        </p>
 
-                        </div>
+    </div>
 
-                        <div class="bg-[#AE1C21] backdrop-blur-xl rounded-[28px] p-5 border border-white/10 text-center">
+    <div class="bg-[#AE1C21] backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-4 md:p-5 border border-white/10 text-center">
 
-                            <h3 class="text-4xl font-black text-white">
-                                45+
-                            </h3>
+        <h3 class="text-3xl md:text-4xl font-black text-white">
+            45+
+        </h3>
 
-                            <p class="mt-2 text-blue-100 font-bold">
-                                Teachers
-                            </p>
+        <p class="mt-2 text-sm md:text-base text-blue-100 font-bold">
+            Teachers
+        </p>
 
-                        </div>
+    </div>
 
-                    </div>
-
-                </div>
+</div>
 
 
 
