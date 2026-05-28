@@ -96,7 +96,7 @@
     <div class="igs-footer-glow"></div>
     <div class="igs-container igs-footer-grid">
         <div>
-            <a href="index" class="igs-footer-logo">
+            <a href="home" class="igs-footer-logo">
                 <span class="igs-logo-mark"><img src="images/IG_logo.jpeg" alt=""></span>
                 <span>
                     <strong>Indira Gandhi Garden</strong>

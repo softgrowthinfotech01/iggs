@@ -53,7 +53,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         <div class="igs-container igs-nav-inner">
 
             <!-- LOGO -->
-            <a href="index" class="igs-logo">
+            <a href="home" class="igs-logo">
 
                 <span class="logo bg-white w-16 h-16">
                     <img src="images/IG_logo_transparent.png    " alt="">        
@@ -76,7 +76,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             <!-- MENU -->
             <div class="igs-menu" id="igsMenu">
 
-                <a class="<?= $currentPage == 'index.php' ? 'active' : '' ?>" href="index">
+                <a class="<?= $currentPage == 'home.php' ? 'active' : '' ?>" href="home">
                     Home
                 </a>
 
