@@ -380,11 +380,42 @@ if (isset($_POST['save_result'])) {
 
                         <?php
 
-                        $stmt = $pdo->query("SELECT * FROM results ORDER BY rank_position ASC");
+                        $recordsPerPage = 5;
 
-                        $resultData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
-                        $count = 1;
+if ($page < 1) {
+    $page = 1;
+}
+
+$offset = ($page - 1) * $recordsPerPage;
+
+// TOTAL RECORDS
+$countStmt = $pdo->query("
+    SELECT COUNT(*) as total
+    FROM results
+");
+
+$totalRecords = $countStmt->fetch(PDO::FETCH_ASSOC)['total'];
+
+$totalPages = ceil($totalRecords / $recordsPerPage);
+
+// FETCH RECORDS
+$stmt = $pdo->prepare("
+    SELECT *
+    FROM results
+    ORDER BY rank_position ASC
+    LIMIT :limit OFFSET :offset
+");
+
+$stmt->bindValue(':limit', $recordsPerPage, PDO::PARAM_INT);
+$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+
+$stmt->execute();
+
+$resultData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$count = $offset + 1;
 
                         foreach ($resultData as $row) {
 
@@ -454,6 +485,42 @@ if (isset($_POST['save_result'])) {
                     </tbody>
 
                 </table>
+
+                <?php if ($totalPages > 1): ?>
+
+<div class="flex justify-center items-center gap-2 mt-6">
+
+    <?php if ($page > 1): ?>
+        <a href="?page=<?php echo $page - 1; ?>"
+            class="px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700">
+            Prev
+        </a>
+    <?php endif; ?>
+
+    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+
+        <a href="?page=<?php echo $i; ?>"
+            class="px-4 py-2 rounded-lg
+            <?php echo ($i == $page)
+                ? 'bg-indigo-600 text-white'
+                : 'bg-slate-200 text-slate-700 hover:bg-slate-300'; ?>">
+
+            <?php echo $i; ?>
+
+        </a>
+
+    <?php endfor; ?>
+
+    <?php if ($page < $totalPages): ?>
+        <a href="?page=<?php echo $page + 1; ?>"
+            class="px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700">
+            Next
+        </a>
+    <?php endif; ?>
+
+</div>
+
+<?php endif; ?>
 
             </div>
 
