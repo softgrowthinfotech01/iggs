@@ -389,7 +389,7 @@
 
                 <h2 class="text-4xl lg:text-6xl font-black text-black">
 
-                    Join Indira Gandhi School Today
+                    Join Indira Gandhi Garden School Today
 
                 </h2>
 
