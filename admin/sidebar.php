@@ -212,6 +212,34 @@
 
             </a>
 
+            <!-- Mandatory Disclosures -->
+            <a href="mandatory_disclosures" id="mandatory-disclosures-link"
+                class="flex items-center gap-3 hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+
+                    <!-- Document -->
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.8"
+                        d="M9 3h6l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h3z" />
+
+                    <!-- Text Lines -->
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.8"
+                        d="M9 13h6M9 17h6M9 9h3" />
+
+                </svg>
+
+                Mandatory Disclosures
+
+            </a>
+
         </nav>
 
         <!-- LOGOUT -->
