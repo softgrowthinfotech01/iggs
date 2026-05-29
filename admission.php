@@ -86,12 +86,12 @@ if (isset($_POST['submit_admission'])) {
                     Admission Open 2026-27
                 </span>
 
-                <h1 class="mt-7 text-5xl lg:text-7xl font-black leading-tight">
+                <h1 class="mt-7 text-5xl lg:text-7xl text-black font-black leading-tight">
                     Secure Your Child’s
                     <span class="block text-[#AE1C21]">Bright Future</span>
                 </h1>
 
-                <p class="mt-7 text-white text-lg leading-9 max-w-2xl">
+                <p class="mt-7 text-black text-lg leading-9 max-w-2xl">
                     Apply for admission at Indira Gandhi School Chandrapur.
                     Our admission team will guide you through class selection,
                     process, documents and counselling.
@@ -107,88 +107,8 @@ if (isset($_POST['submit_admission'])) {
                 </div>
             </div>
 
-            <div class="relative">
-                <div class="bg-white/10 backdrop-blur-xl border border-white/10 rounded-[40px] p-6 shadow-2xl">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="rounded-[28px] bg-[#FACC15] text-black p-6">
-                            <h3 class="text-4xl font-black">25+</h3>
-                            <p class="font-bold mt-2">Years Excellence</p>
-                        </div>
-                        <div class="rounded-[28px] bg-[#AE1C21] text-white p-6 mt-10">
-                            <h3 class="text-4xl  font-black">1200+</h3>
-                            <p class="font-bold mt-2">Happy Students</p>
-                        </div>
-                        <div class="rounded-[28px] bg-[#AE1C21] text-white p-6">
-                            <h3 class="text-4xl font-black">45+</h3>
-                            <p class="font-bold text-blue-100 mt-2">Expert Teachers</p>
-                        </div>
-                        <div class="rounded-[28px] bg-[#FACC15] border border-white/10 text-black p-6 mt-10">
-                            <h3 class="text-4xl font-black">100%</h3>
-                            <p class="font-bold text-black mt-2">Growth Focus</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- PROCESS TIMELINE -->
-    <section id="process" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-
-            <div class="text-center max-w-3xl mx-auto">
-                <span class="text-black bg-[#FACC15] px-5 py-3 rounded-full font-black uppercase tracking-widest">Admission Process</span>
-                <h2 class="mt-5 text-4xl lg:text-5xl font-black text-slate-900">Simple Steps To Admission</h2>
-            </div>
-
-            <div class="mt-16 grid lg:grid-cols-4 gap-6">
-
-                <div class="relative p-8 rounded-[34px] bg-slate-50 border hover:-translate-y-3 transition duration-500">
-                    <span class="text-6xl font-black text-blue-100">01</span>
-                    <i class="fa-solid fa-file-signature text-4xl text-blue-700 mt-6 block"></i>
-                    <h3 class="mt-5 text-2xl font-black">Submit Enquiry</h3>
-                    <p class="mt-3 text-slate-600 leading-7">Fill student and parent details.</p>
-                </div>
-
-                <div class="relative p-8 rounded-[34px] bg-blue-700 text-white hover:-translate-y-3 transition duration-500 lg:mt-10">
-                    <span class="text-6xl font-black text-white/20">02</span>
-                    <i class="fa-solid fa-phone-volume text-4xl text-cyan-300 mt-6 block"></i>
-                    <h3 class="mt-5 text-2xl font-black">School Call</h3>
-                    <p class="mt-3 text-blue-100 leading-7">Our team contacts you for details.</p>
-                </div>
-
-                <div class="relative p-8 rounded-[34px] bg-slate-50 border hover:-translate-y-3 transition duration-500">
-                    <span class="text-6xl font-black text-cyan-100">03</span>
-                    <i class="fa-solid fa-clipboard-check text-4xl text-cyan-600 mt-6 block"></i>
-                    <h3 class="mt-5 text-2xl font-black">Document Check</h3>
-                    <p class="mt-3 text-slate-600 leading-7">Submit required documents.</p>
-                </div>
-
-                <div class="relative p-8 rounded-[34px] bg-cyan-500 text-white hover:-translate-y-3 transition duration-500 lg:mt-10">
-                    <span class="text-6xl font-black text-white/20">04</span>
-                    <i class="fa-solid fa-school-circle-check text-4xl text-white mt-6 block"></i>
-                    <h3 class="mt-5 text-2xl font-black">Admission Confirm</h3>
-                    <p class="mt-3 text-cyan-50 leading-7">Start your child’s journey.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- FORM SECTION -->
-    <section id="admission-form" class="relative py-24 overflow-hidden bg-gradient-to-br from-cyan-50 via-white to-blue-50">
-
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-[.8fr_1.2fr] gap-12 items-start">
-
-            <div class="sticky top-28 hidden lg:block">
-                <div class="rounded-[40px] overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=900&q=80"
-                        class="w-full h-[620px] object-cover">
-                </div>
-            </div>
-
-            <div class="bg-white rounded-[40px] p-8 lg:p-10 shadow-[0_35px_90px_rgba(15,23,42,0.12)] border border-blue-100">
+            
+  <div class="bg-white rounded-[40px] p-8 mb-2 md:mb-6 md:p-2 md:mt-14 lg:p-2 shadow-[0_35px_90px_rgba(15,23,42,0.12)] border border-blue-100">
 
                 <span class="text-black bg-[#FACC15] rounded-full px-5 py-3 font-black uppercase tracking-widest">Admission Form</span>
                 <h2 class="mt-4 text-4xl lg:text-5xl font-black text-slate-900">Send Admission Enquiry</h2>
@@ -241,6 +161,89 @@ if (isset($_POST['submit_admission'])) {
 
             </div>
 
+         
+
+        </div>
+    </section>
+
+    <!-- PROCESS TIMELINE -->
+    <section id="process" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-black bg-[#FACC15] px-5 py-3 rounded-full font-black uppercase tracking-widest">Admission Process</span>
+                <h2 class="mt-5 text-4xl lg:text-5xl font-black text-slate-900">Simple Steps To Admission</h2>
+            </div>
+
+            <div class="mt-16 grid lg:grid-cols-4 gap-6">
+
+                <div class="relative p-8 rounded-[34px] bg-slate-50 border hover:-translate-y-3 transition duration-500">
+                    <span class="text-6xl font-black text-[#AE1C21]">01</span>
+                    <i class="fa-solid fa-file-signature text-4xl text-blue-700 mt-6 block"></i>
+                    <h3 class="mt-5 text-2xl font-black">Submit Enquiry</h3>
+                    <p class="mt-3 text-slate-600 leading-7">Fill student and parent details.</p>
+                </div>
+
+                <div class="relative p-8 rounded-[34px] bg-blue-700 text-white hover:-translate-y-3 transition duration-500 lg:mt-10">
+                    <span class="text-6xl font-black text-[#FACC15]">02</span>
+                    <i class="fa-solid fa-phone-volume text-4xl text-cyan-300 mt-6 block"></i>
+                    <h3 class="mt-5 text-2xl font-black">School Call</h3>
+                    <p class="mt-3 text-blue-100 leading-7">Our team contacts you for details.</p>
+                </div>
+
+                <div class="relative p-8 rounded-[34px] bg-slate-50 border hover:-translate-y-3 transition duration-500">
+                    <span class="text-6xl font-black text-[#AE1C21]">03</span>
+                    <i class="fa-solid fa-clipboard-check text-4xl text-cyan-600 mt-6 block"></i>
+                    <h3 class="mt-5 text-2xl font-black">Document Check</h3>
+                    <p class="mt-3 text-slate-600 leading-7">Submit required documents.</p>
+                </div>
+
+                <div class="relative p-8 rounded-[34px] bg-cyan-500 text-white hover:-translate-y-3 transition duration-500 lg:mt-10">
+                    <span class="text-6xl font-black text-[#FACC15]">04</span>
+                    <i class="fa-solid fa-school-circle-check text-4xl text-white mt-6 block"></i>
+                    <h3 class="mt-5 text-2xl font-black">Admission Confirm</h3>
+                    <p class="mt-3 text-cyan-50 leading-7">Start your child’s journey.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM SECTION -->
+    <section id="admission-form" class="relative py-24 overflow-hidden bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-[.8fr_1.2fr] gap-12 items-start">
+
+            <div class="sticky top-28 hidden lg:block">
+                <div class="rounded-[40px] overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=900&q=80"
+                        class="w-full h-[620px] object-cover">
+                </div>
+            </div>
+
+              <div class="relative">
+                <div class="bg-white/10 backdrop-blur-xl border border-white/10 rounded-[40px] p-6 shadow-2xl">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="rounded-[28px] bg-[#FACC15] text-black p-6">
+                            <h3 class="text-4xl font-black">25+</h3>
+                            <p class="font-bold mt-2">Years Excellence</p>
+                        </div>
+                        <div class="rounded-[28px] bg-[#AE1C21] text-white p-6 mt-10">
+                            <h3 class="text-4xl  font-black">1200+</h3>
+                            <p class="font-bold mt-2">Happy Students</p>
+                        </div>
+                        <div class="rounded-[28px] bg-[#AE1C21] text-white p-6">
+                            <h3 class="text-4xl font-black">45+</h3>
+                            <p class="font-bold text-blue-100 mt-2">Expert Teachers</p>
+                        </div>
+                        <div class="rounded-[28px] bg-[#FACC15] border border-white/10 text-black p-6 mt-10">
+                            <h3 class="text-4xl font-black">100%</h3>
+                            <p class="font-bold text-black mt-2">Growth Focus</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -249,3 +252,8 @@ if (isset($_POST['submit_admission'])) {
 </body>
 
 </html>
+
+
+
+
+
