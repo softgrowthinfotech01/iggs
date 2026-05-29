@@ -79,6 +79,7 @@ if ($slider) {
 
                     <?php endif; ?>
 
+                    
                     <!-- FLOATING DOTS -->
                     <div class="absolute inset-y-0 right-6 max-md:right-3 flex flex-col justify-center z-30 gap-2">
 
