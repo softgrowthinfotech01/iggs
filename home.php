@@ -102,8 +102,70 @@ if ($slider) {
     </div>
 
 
+<!-- SMOOTH ANIMATED NOTIFICATION BAR -->
+<section class="relative overflow-hidden bg-[#AE1C21] shadow-xl">
+
+    <div class="absolute inset-0 bg-gradient-to-r from-[#AE1C21] via-[#8f1419] to-[#AE1C21]"></div>
+
+    <div class="relative flex items-center">
+
+        <div class="relative z-20 bg-[#FACC15] text-black font-black px-5 sm:px-8 py-3 mb-2 whitespace-nowrap">
+            <i class="fa-solid fa-bullhorn mr-2 animate-bounce"></i>
+            LATEST NEWS
+        </div>
+
+        <div class="relative flex-1 overflow-hidden">
+
+            <!-- <div class="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-[#AE1C21] to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-[#AE1C21] to-transparent z-10"></div> -->
+
+            <div class="notification-track flex w-max whitespace-nowrap py-4 text-white font-bold">
+
+                <span class="notification-item">
+                    📢 Admissions Open For Session 2026-27
+                </span>
+
+                <span class="notification-item">
+                    🏆 Congratulations To Our School Toppers
+                </span>
+
+                <span class="notification-item">
+                    📚 New Academic Session Starts From June
+                </span>
+
+                <span class="notification-item">
+                    🎓 Scholarship Forms Available
+                </span>
+
+                <span class="notification-item">
+                    🚌 School Bus Facility Available
+                </span>
+
+                <span class="notification-item">
+                    🏫 Mandatory Public Disclosure Updated
+                </span>
+
+                <span class="notification-item">
+                    📢 Admissions Open For Session 2026-27
+                </span>
+
+                <span class="notification-item">
+                    🏆 Congratulations To Our School Toppers
+                </span>
+
+                <span class="notification-item">
+                    📚 New Academic Session Starts From June
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
     <!-- NOTICE STRIP -->
-    <section class="relative -mt-2 z-10">
+    <!-- <section class="relative -mt-2 z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="bg-white rounded-3xl shadow-2xl border-2 border-[#AE1C21] p-6 grid md:grid-cols-3 gap-6 mt-4">
                 <div class="flex gap-4 items-center">
@@ -129,7 +191,7 @@ if ($slider) {
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <?php
 
@@ -141,7 +203,7 @@ if ($slider) {
     ?>
 
     <!-- ABOUT -->
-    <section class="relative py-28 overflow-hidden -mt-2 bg-gradient-to-br from-white via-blue-50 to-slate-100">
+    <section class="relative py-20 overflow-hidden -mt-2 bg-gradient-to-br from-white via-blue-50 to-slate-100">
 
         <!-- SKETCH BACKGROUND -->
         <!-- OPPOSITE DIRECTION SKETCH -->
@@ -185,17 +247,17 @@ if ($slider) {
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.35),transparent_40%)]"></div>
 
     <!-- FLOATING ICONS -->
-    <div class="absolute top-4 left-4 sm:top-6 sm:left-6 md:top-8 md:left-8 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-[#AE1C21] backdrop-blur-xl flex items-center justify-center border border-white/20">
+    <!-- <div class="absolute top-4 left-4 sm:top-6 sm:left-6 md:top-8 md:left-8 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-[#AE1C21] backdrop-blur-xl flex items-center justify-center border border-white/20"> -->
 
         <!-- <i class="fa-solid fa-book-open-reader text-white text-xl sm:text-3xl md:text-4xl"></i> -->
 
-    </div>
+    <!-- </div> -->
 
-    <div class="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-[#AE1C21] backdrop-blur-xl flex items-center justify-center border border-white/20">
+    <!-- <div class="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-[#AE1C21] backdrop-blur-xl flex items-center justify-center border border-white/20"> -->
 
         <!-- <i class="fa-solid fa-children text-white text-xl sm:text-3xl md:text-4xl"></i> -->
 
-    </div>
+    <!-- </div> -->
 
     <!-- CENTER -->
     <div class="absolute bottom-5 left-5 right-5 sm:bottom-8 sm:left-8 sm:right-8 md:bottom-10 md:left-10 md:right-10">

@@ -73,7 +73,7 @@
                 </button>
 
                 <!-- MENU -->
-                <div class="igs-menu flex items-center  whitespace-nowrap" id="igsMenu">
+                <div class="igs-menu flex items-center   whitespace-nowrap" id="igsMenu">
                     <a class="<?= $currentPage == 'home.php' ? 'active' : '' ?>" href="home">
                         Home
                     </a>

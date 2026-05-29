@@ -68,7 +68,7 @@ html{
         <div class="relative">
             <div class="relative bg-white rounded-[45px] p-5 shadow-[0_35px_90px_rgba(15,23,42,0.12)] border border-slate-100">
                 <div class="h-[520px] rounded-[35px] overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80"
+                    <img src="images/IG_ABOUT.png"
                          alt="Academics"
                          class="w-full h-full object-cover hover:scale-110 transition duration-[2000ms]">
                 </div>

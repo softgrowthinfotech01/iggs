@@ -220,7 +220,7 @@ if (isset($_POST['submit_admission'])) {
 
             <div class="sticky top-28 hidden lg:block">
                 <div class="rounded-[40px] overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=900&q=80"
+                    <img src="images/IG_GATE.png"
                         class="w-full h-[620px] object-cover">
                 </div>
             </div>
