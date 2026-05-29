@@ -87,7 +87,7 @@ if ($slider) {
                             <button
                                 class="unique-dot transition-all rounded-full
             <?php echo $index === 0
-                                ? 'w-2 h-8 max-md:h-6 bg-blue-700'
+                                ? 'w-2 h-8 max-md:h-6 bg-red-700'
                                 : 'w-2 h-2 bg-slate-300'; ?>">
                             </button>
 
@@ -322,7 +322,7 @@ if ($slider) {
 
                     </h2>
 
-                    <div class="mt-7 text-black leading-6 text-lg text-justify">
+                    <div class="mt-7 text-black leading-8 text-lg text-justify">
 
                         <?php echo $about['description']; ?>
 
@@ -454,7 +454,7 @@ if ($slider) {
                 <div class="absolute inset-x-0 top-0 h-2 bg-[#AE1C21]"></div>
 
                 <div class="relative h-[420px] rounded-[30px] overflow-hidden bg-slate-100">
-                    <img src="images/nareshbabuji-puglia.jpg"
+                    <img src="images/president.png"
                          alt="Shri NareshBabuji Puglia"
                          class="w-full h-full object-cover group-hover:scale-110 transition duration-[2000ms]">
 
@@ -489,9 +489,9 @@ if ($slider) {
                 <div class="absolute inset-x-0 top-0 h-2 bg-[#FACC15]"></div>
 
                 <div class="relative h-[420px] rounded-[30px] overflow-hidden bg-slate-100">
-                    <img src="images/rahulbabuji-puglia.jpg"
+                    <img src="images/vice_president.png"
                          alt="Shri Rahulbabuji Puglia"
-                         class="w-full h-full object-cover group-hover:scale-110 transition duration-[2000ms]">
+                         class="w-full h-full object-cover group-hover:scale-110  transition duration-[2000ms]">
 
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
 
@@ -1298,7 +1298,7 @@ if ($slider) {
 
                     <div class="relative rounded-[20px] md:rounded-[35px] overflow-hidden h-[320px] sm:h-[420px] md:h-[560px]">
 
-                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80"
+                        <img src="images/ig_boyscertificate.png"
                             class="w-full h-full object-cover hover:scale-110 transition duration-[2000ms]"
                             alt="School Students">
 
@@ -1392,22 +1392,23 @@ if ($slider) {
 
         let currentSlide = 0;
 
-        function showSlide(index) {
+  function showSlide(index) {
 
-            slides.forEach((slide, i) => {
-                slide.classList.remove('opacity-100', 'scale-100');
-                slide.classList.add('opacity-0', 'scale-95');
+    slides.forEach((slide, i) => {
 
-                dots[i].classList.remove('bg-blue-700', 'h-10');
-                dots[i].classList.add('bg-slate-300', 'h-3');
-            });
+        slide.classList.remove('opacity-100', 'scale-100');
+        slide.classList.add('opacity-0', 'scale-95');
 
-            slides[index].classList.remove('opacity-0', 'scale-95');
-            slides[index].classList.add('opacity-100', 'scale-100');
+        dots[i].classList.remove('bg-red-700', 'h-10');
+        dots[i].classList.add('bg-slate-300', 'h-2');
+    });
 
-            dots[index].classList.remove('bg-slate-300', 'h-3');
-            dots[index].classList.add('bg-blue-700', 'h-10');
-        }
+    slides[index].classList.remove('opacity-0', 'scale-95');
+    slides[index].classList.add('opacity-100', 'scale-100');
+
+    dots[index].classList.remove('bg-slate-300', 'h-2');
+    dots[index].classList.add('bg-red-700', 'h-10');
+}
 
         setInterval(() => {
             currentSlide++;

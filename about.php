@@ -137,7 +137,7 @@
 
                     </h3>
 
-                    <div class="mt-7 text-black leading-5 text-lg text-justify">
+                    <div class="mt-7 text-black leading-8 text-lg text-justify">
 
                         <?php echo $about['description']; ?>
 
