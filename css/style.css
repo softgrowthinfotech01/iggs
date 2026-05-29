@@ -103,7 +103,7 @@ img{max-width:100%;display:block}
 .igs-logo small,.igs-footer-logo small{font-weight:800;color:#AE1C21;letter-spacing:.6px}
 
 /* MENU */
-.igs-menu{display:flex;align-items:center;gap:8px}
+.igs-menu{display:flex;align-items:center;gap:1px}
 .igs-menu a{
     position:relative;
     padding:12px 14px;

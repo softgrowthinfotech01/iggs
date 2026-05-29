@@ -33,7 +33,16 @@
 <section class="relative min-h-screen flex items-center  overflow-hidden">
     <!-- <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#38bdf8,transparent_35%),radial-gradient(circle_at_bottom_right,#f97316,transparent_30%)] opacity-30"></div>
     <div class="absolute inset-0 bg-[#050816]/90"></div> -->
+    <div class="absolute top-10 right-10 w-80 h-80 border-[14px] border-blue-700/10 rotate-12 rounded-[55px]"></div>
 
+            <div class="absolute bottom-0 left-10 w-72 h-72 border-[12px] border-cyan-600/10 -rotate-12 rounded-[45px]"></div>
+
+            <div class="absolute top-1/2 left-1/2 w-[450px] h-[450px] bg-blue-200/30 blur-[120px] rounded-full"></div>
+                <div class="absolute top-10 right-10 w-80 h-80 border-[14px] border-blue-700/10 rotate-12 rounded-[55px]"></div>
+
+            <div class="absolute bottom-0 left-10 w-72 h-72 border-[12px] border-cyan-600/10 -rotate-12 rounded-[45px]"></div>
+
+            <div class="absolute top-1/2 left-1/2 w-[450px] h-[450px] bg-blue-200/30 blur-[120px] rounded-full"></div>
     <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-1 mt-10 gap-14 items-center">
         <div>
             <span class="inline-flex px-5 py-3 rounded-full bg-[#FACC15] border border-white/10 text-black font-black tracking-widest uppercase">

@@ -69,12 +69,16 @@ if (isset($_POST['submit_admission'])) {
     <!-- ADMISSION HERO -->
     <section class="relative min-h-[85vh]  md:mt-10  flex items-center overflow-hidden  text-white">
 
-        <div class="absolute inset-0">
+        <!-- <div class="absolute inset-0">
             <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1400&q=80"
-                class="w-full h-full object-cover opacity-20">
+                class="w-full h-full object-cover opacity-20"> -->
             <!-- <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-blue-950/60"></div> -->
-        </div>
+        <!-- </div> -->
+<div class="absolute top-10 right-10 w-80 h-80 border-[14px] border-blue-700/10 rotate-12 rounded-[55px]"></div>
 
+            <div class="absolute bottom-0 left-10 w-72 h-72 border-[12px] border-cyan-600/10 -rotate-12 rounded-[45px]"></div>
+
+            <div class="absolute top-1/2 left-1/2 w-[450px] h-[450px] bg-blue-200/30 blur-[120px] rounded-full"></div>
         <!-- <div class="absolute top-20 right-20 w-80 h-80 border-[12px] border-white/10 rotate-12 rounded-[50px]"></div>
         <div class="absolute bottom-10 left-10 w-72 h-72 border-[12px] border-cyan-300/10 -rotate-12 rounded-[45px]"></div> -->
 
@@ -108,7 +112,7 @@ if (isset($_POST['submit_admission'])) {
             </div>
 
             
-  <div class="bg-white rounded-[40px] p-8 mb-2 md:mb-6 md:p-2 md:mt-14 lg:p-2 shadow-[0_35px_90px_rgba(15,23,42,0.12)] border border-blue-100">
+  <div class="bg-white rounded-[40px] p-8 mb-2 md:mb-6 md:p-8 md:mt-14 lg:p-6 shadow-[0_35px_90px_rgba(15,23,42,0.12)] border border-blue-100">
 
                 <span class="text-black bg-[#FACC15] rounded-full px-5 py-3 font-black uppercase tracking-widest">Admission Form</span>
                 <h2 class="mt-4 text-4xl lg:text-5xl font-black text-slate-900">Send Admission Enquiry</h2>

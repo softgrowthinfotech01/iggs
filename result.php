@@ -40,10 +40,8 @@ $students = $resultStmt->fetchAll(PDO::FETCH_ASSOC);
 
 <body class="bg-white overflow-x-hidden">
 
-    <?php
-    $pageTitle = 'Results | Indira Gandhi School Chandrapur';
-    include 'header.php';
-    ?>
+        <?php include 'header.php' ?>
+
 
     <main class="overflow-hidden bg-white">
 
