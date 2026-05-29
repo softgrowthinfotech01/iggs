@@ -49,9 +49,9 @@
         </div>
 
         <!-- NAVBAR -->
-        <nav class="igs-navbar gap-4">
+        <nav class="igs-navbar ">
 
-            <div class="igs-container igs-nav-inner">
+            <div class="igs-container igs-nav-inner gap-10">
 
                 <!-- LOGO -->
                 <a href="home" class="igs-logo flex-shrink-0">
