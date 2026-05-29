@@ -126,7 +126,7 @@ if (isset($_POST['save_document'])) {
                     <div class="mb-6">
 
                         <h2 class="text-2xl font-semibold text-gray-800">
-                            Add Student Result
+                            Add Document
                         </h2>
 
                     </div>
@@ -200,7 +200,7 @@ if (isset($_POST['save_document'])) {
                 <div class="bg-white rounded-xl px-6 py-2 shadow">
 
                     <h2 class="text-2xl font-semibold text-gray-800 mb-6">
-                        Result Records
+                        Document Records
                     </h2>
 
                     <div class="overflow-x-auto">
