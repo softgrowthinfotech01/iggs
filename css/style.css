@@ -758,3 +758,227 @@ section{
         transform: translateX(-50%);
     }
 }
+
+
+
+
+
+
+.school-board{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:9999;
+    width:260px;
+    padding:18px 14px 16px;
+    border-radius:22px;
+    border:8px solid #8B5A2B;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.08), transparent 25%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,.05), transparent 30%),
+        #1f2937;
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35),
+        inset 0 0 40px rgba(255,255,255,.06);
+    overflow:hidden;
+}
+
+.school-board::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 18px,
+            rgba(255,255,255,.025) 19px
+        );
+    pointer-events:none;
+}
+
+/* .school-board::after{
+    content:"";
+    position:absolute;
+    left:18px;
+    right:18px;
+    bottom:8px;
+    height:5px;
+    border-radius:50px;
+    background:rgba(255,255,255,.65);
+    box-shadow:35px 0 0 #FACC15, 75px 0 0 #AE1C21;
+} */
+
+.board-pin{
+    position:absolute;
+    top:8px;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#FACC15;
+    box-shadow:0 3px 8px rgba(0,0,0,.35);
+    z-index:3;
+}
+
+.board-pin.left{left:14px;}
+.board-pin.right{right:14px;}
+
+.board-title{
+    position:relative;
+    z-index:3;
+    text-align:center;
+    color:#FACC15;
+    font-size:18px;
+    font-weight:900;
+    margin-bottom:12px;
+    font-family:"Comic Sans MS", cursive;
+    text-shadow:0 0 10px rgba(250,204,21,.35);
+}
+
+
+/* FULLY TRANSPARENT BUTTONS */
+
+.board-btn{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:10px 12px;
+    margin-top:8px;
+
+    text-decoration:none;
+
+    background:none !important;
+    background-color:transparent !important;
+    border:none !important;
+    box-shadow:none !important;
+
+    position:relative;
+    z-index:5;
+
+    transition:.35s ease;
+}
+
+.board-btn:hover{
+    background:none !important;
+    transform:translateX(-6px);
+}
+
+/* ICON */
+
+.board-btn i{
+    background:none !important;
+    box-shadow:none !important;
+    border:none !important;
+
+    width:auto;
+    height:auto;
+
+    font-size:24px;
+}
+
+/* CHALK TEXT */
+
+.board-btn span{
+    color:#ffffff;
+
+    font-size:18px;
+    font-weight:900;
+
+    font-family:"Comic Sans MS", cursive;
+
+    text-shadow:
+        1px 1px 0 rgba(255,255,255,.25),
+        -1px -1px 0 rgba(255,255,255,.15),
+        0 0 8px rgba(255,255,255,.12);
+}
+
+/* CHALK COLORS */
+
+.whatsapp i{
+    color:#25D366;
+}
+
+.call i{
+    color:#FACC15;
+}
+
+.admission i{
+    color:#ff6b6b;
+}
+.board-bg-text{
+    position:absolute;
+    z-index:1;
+    pointer-events:none;
+
+    font-family:"Comic Sans MS", cursive;
+    font-weight:900;
+
+    color:rgba(255,255,255,.08);
+
+    text-shadow:
+        1px 1px 0 rgba(255,255,255,.05),
+        -1px -1px 0 rgba(255,255,255,.03),
+        0 0 2px rgba(255,255,255,.05);
+
+    user-select:none;
+    white-space:nowrap;
+}
+
+.board-bg-text.one{
+    top:35px;
+    left:12px;
+    font-size:22px;
+    transform:rotate(-10deg);
+}
+
+.board-bg-text.two{
+    top:105px;
+    left:10px;
+    font-size:16px;
+    transform:rotate(6deg);
+}
+
+.board-bg-text.three{
+    bottom:45px;
+    left:8px;
+    font-size:15px;
+    transform:rotate(-5deg);
+    letter-spacing:2px;
+}
+
+
+.school-board::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.06) 1px, transparent 1px),
+        radial-gradient(circle at 80% 40%, rgba(255,255,255,.05) 1px, transparent 1px),
+        radial-gradient(circle at 40% 80%, rgba(255,255,255,.04) 1px, transparent 1px);
+
+    background-size:120px 120px;
+
+    pointer-events:none;
+}
+@media(max-width:768px){
+    .school-board{
+        width:180px;
+        right:10px;
+        bottom:10px;
+        padding:15px 11px;
+    }
+
+    .board-title{
+        font-size:16px;
+    }
+
+    .board-btn span{
+        font-size:15px;
+    }
+}
+
+
+
+
