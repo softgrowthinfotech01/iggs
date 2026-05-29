@@ -227,16 +227,43 @@ if (isset($_POST['title'])) {
 
                         <?php
 
-                        $stmt = $pdo->query("
-                                    SELECT 
-                                        slider_images.id,
-                                        sliders.title,
-                                        slider_images.image
-                                    FROM slider_images
-                                    INNER JOIN sliders
-                                    ON sliders.id = slider_images.slider_id
-                                    ORDER BY slider_images.id DESC
-                                ");
+                        $recordsPerPage = 5;
+
+                        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+                        if ($page < 1) {
+                            $page = 1;
+                        }
+
+                        $offset = ($page - 1) * $recordsPerPage;
+
+                        // TOTAL RECORDS
+                        $countStmt = $pdo->query("
+    SELECT COUNT(*) as total
+    FROM slider_images
+");
+
+                        $totalRecords = $countStmt->fetch(PDO::FETCH_ASSOC)['total'];
+
+                        $totalPages = ceil($totalRecords / $recordsPerPage);
+
+                        // FETCH RECORDS
+                        $stmt = $pdo->prepare("
+    SELECT 
+        slider_images.id,
+        sliders.title,
+        slider_images.image
+    FROM slider_images
+    INNER JOIN sliders
+    ON sliders.id = slider_images.slider_id
+    ORDER BY slider_images.id DESC
+    LIMIT :limit OFFSET :offset
+");
+
+                        $stmt->bindValue(':limit', $recordsPerPage, PDO::PARAM_INT);
+                        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+
+                        $stmt->execute();
 
                         $sliderData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -284,6 +311,40 @@ if (isset($_POST['title'])) {
                     </tbody>
 
                 </table>
+
+                <?php if ($totalPages > 1): ?>
+
+<div class="flex justify-center items-center gap-2 mt-6">
+
+    <?php if ($page > 1): ?>
+        <a href="?page=<?php echo $page - 1; ?>"
+            class="px-4 py-2 bg-slate-600 text-white rounded-lg">
+            Prev
+        </a>
+    <?php endif; ?>
+
+    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+
+        <a href="?page=<?php echo $i; ?>"
+            class="px-4 py-2 rounded-lg
+            <?php echo ($i == $page)
+                ? 'bg-indigo-600 text-white'
+                : 'bg-slate-200 text-slate-700'; ?>">
+            <?php echo $i; ?>
+        </a>
+
+    <?php endfor; ?>
+
+    <?php if ($page < $totalPages): ?>
+        <a href="?page=<?php echo $page + 1; ?>"
+            class="px-4 py-2 bg-slate-600 text-white rounded-lg">
+            Next
+        </a>
+    <?php endif; ?>
+
+</div>
+
+<?php endif; ?>
 
             </div>
 

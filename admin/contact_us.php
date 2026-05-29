@@ -27,10 +27,54 @@ if ($search != '') {
     $params[':search'] = "%$search%";
 }
 
+// PAGINATION
+$recordsPerPage = 5;
+
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+if ($page < 1) {
+    $page = 1;
+}
+
+$offset = ($page - 1) * $recordsPerPage;
+
+// COUNT QUERY
+$countQuery = "
+SELECT COUNT(*) as total
+FROM contact_us
+WHERE 1
+";
+
+$countParams = [];
+
+if ($search != '') {
+
+    $countQuery .= " AND name LIKE :search ";
+
+    $countParams[':search'] = "%$search%";
+}
+
+$countStmt = $pdo->prepare($countQuery);
+$countStmt->execute($countParams);
+
+$totalRecords = $countStmt->fetch(PDO::FETCH_ASSOC)['total'];
+
+$totalPages = ceil($totalRecords / $recordsPerPage);
+
+// MAIN QUERY
 $query .= " ORDER BY id DESC";
+$query .= " LIMIT :limit OFFSET :offset";
 
 $stmt = $pdo->prepare($query);
-$stmt->execute($params);
+
+foreach ($params as $key => $value) {
+    $stmt->bindValue($key, $value);
+}
+
+$stmt->bindValue(':limit', $recordsPerPage, PDO::PARAM_INT);
+$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+
+$stmt->execute();
 
 $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -174,6 +218,44 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </tbody>
 
                     </table>
+
+                    <?php if ($totalPages > 1): ?>
+
+<div class="flex justify-center items-center gap-2 mt-6 mb-2">
+
+    <?php if ($page > 1): ?>
+        <a
+            href="?page=<?php echo $page - 1; ?>&search=<?php echo urlencode($search); ?>"
+            class="px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700">
+            Prev
+        </a>
+    <?php endif; ?>
+
+    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+
+        <a
+            href="?page=<?php echo $i; ?>&search=<?php echo urlencode($search); ?>"
+            class="px-4 py-2 rounded-lg <?php echo ($i == $page)
+                                            ? 'bg-indigo-600 text-white'
+                                            : 'bg-slate-200 text-slate-700 hover:bg-slate-300'; ?>">
+
+            <?php echo $i; ?>
+
+        </a>
+
+    <?php endfor; ?>
+
+    <?php if ($page < $totalPages): ?>
+        <a
+            href="?page=<?php echo $page + 1; ?>&search=<?php echo urlencode($search); ?>"
+            class="px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700">
+            Next
+        </a>
+    <?php endif; ?>
+
+</div>
+
+<?php endif; ?>
 
                 </div>
 
