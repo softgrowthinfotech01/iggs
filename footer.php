@@ -186,18 +186,19 @@
 </div>
 <div class="school-board">
 
+
     <div class="board-pin left"></div>
     <div class="board-pin right"></div>
 
-<div class="board-bg-text one">A + Success</div>
+        <div class="board-bg-text one">A + Success</div>
 
-<div class="board-bg-text two">
-    Knowledge = Power
-</div>
+        <div class="board-bg-text two">
+            Knowledge = Power
+        </div>
 
-<div class="board-bg-text three">
-    Learn • Lead • Inspire
-</div>
+        <div class="board-bg-text three">
+            Learn • Lead • Inspire
+        </div>
 
     <div class="board-title">
         <i class="fa-solid fa-chalkboard-user"></i>
