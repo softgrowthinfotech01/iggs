@@ -109,7 +109,7 @@ if ($slider) {
 
     <div class="relative flex items-center">
 
-        <div class="relative z-20 bg-[#FACC15] text-black font-black px-7 md:px-6 sm:px-8 py-4 mb-2 md:mb-2  whitespace-nowrap">
+        <div class="relative z-20 bg-[#FACC15] text-black font-black px-7 md:px-8 sm:px-8 py-4 mb-2 md:mb-2  whitespace-nowrap">
             <i class="fa-solid fa-bell fa-shake mr-2"></i>
             Notification
         </div>

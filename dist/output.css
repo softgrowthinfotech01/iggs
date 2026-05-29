@@ -4214,6 +4214,11 @@ video {
     padding-bottom: 0.75rem;
   }
 
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .md\:text-right {
     text-align: right;
   }
