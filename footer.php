@@ -184,24 +184,47 @@
         <a href="admission">Enquire Now</a>
     </div>
 </div>
-<div class="glass-action-rail">
+<div class="school-board">
 
-    <a href="https://wa.me/917775883933?text=Hello%20Indira%20Gandhi%20Garden%20School,%20I%20want%20brochure%20details." target="_blank" class="glass-action whatsapp">
+    <div class="board-pin left"></div>
+    <div class="board-pin right"></div>
+
+<div class="board-bg-text one">A + Success</div>
+
+<div class="board-bg-text two">
+    Knowledge = Power
+</div>
+
+<div class="board-bg-text three">
+    Learn • Lead • Inspire
+</div>
+
+    <div class="board-title">
+        <i class="fa-solid fa-chalkboard-user"></i>
+        Quick Help
+    </div>
+
+    <a href="https://wa.me/917775883933" target="_blank" class="board-btn  whatsapp">
         <i class="fa-brands fa-whatsapp"></i>
         <span>WhatsApp</span>
     </a>
 
-    <a href="tel:+917775883933" class="glass-action call">
+    <a href="tel:+917775883933" class="board-btn call">
         <i class="fa-solid fa-phone-volume"></i>
         <span>Call</span>
     </a>
 
-    <a href="admission" class="glass-action enquiry">
-        <i class="fa-solid fa-graduation-cap"></i>
-        <span>Enquiry</span>
+    <a href="admission" class="board-btn admission">
+        <i class="fa-solid fa-book-open-reader"></i>
+        <span>Brochure</span>
     </a>
 
 </div>
+
+
+
+
+
 
 <script src="js/main.js"></script>
 </body>
