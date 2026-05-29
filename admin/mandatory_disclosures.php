@@ -45,10 +45,14 @@ if (isset($_POST['save_document'])) {
 
         $fileName = time() . '_' . $_FILES['document_file']['name'];
 
-        move_uploaded_file(
-            $_FILES['document_file']['tmp_name'],
-            "images/mandatory_disclosures/" . $fileName
-        );
+        $uploaded = move_uploaded_file(
+    $_FILES['document_file']['tmp_name'],
+    "images/mandatory_disclosures/" . $fileName
+);
+
+if (!$uploaded) {
+    die("Upload Failed");
+}
     }
 
     $stmt = $pdo->prepare("
@@ -86,10 +90,10 @@ if (isset($_POST['save_document'])) {
 
         <div class="max-w-7xl mx-auto bg-slate-300 p-4 rounded-xl">
 
-        
+
 
             <!-- TABS -->
-            <div class="flex justify-between mb-6 px-10">
+            <div class="flex justify-between mb-6 px-3">
 
                 <!-- RESULT ENTRY TAB -->
                 <button
@@ -162,10 +166,6 @@ if (isset($_POST['save_document'])) {
                                     name="document_file"
                                     required
                                     class="w-full border border-gray-600 rounded-xl px-4 py-2 bg-white">
-
-                                <p class="text-xs text-gray-500 mt-2">
-                                    Documents appear on website in the same order they are uploaded.
-                                </p>
 
                             </div>
 
@@ -339,38 +339,38 @@ if (isset($_POST['save_document'])) {
     }
 </script>
 
-<?php if(isset($_GET['saved'])) { ?>
+<?php if (isset($_GET['saved'])) { ?>
 
-<div id="toast"
-    class="fixed top-5 right-5 bg-indigo-500 text-white px-6 py-3 rounded-lg shadow-lg z-50">
+    <div id="toast"
+        class="fixed top-5 right-5 bg-indigo-500 text-white px-6 py-3 rounded-lg shadow-lg z-50">
 
-    Document saved successfully!
+        Document saved successfully!
 
-</div>
+    </div>
 
-<!-- Save and Delete popup -->
-<script>
-setTimeout(() => {
-    document.getElementById('toast').remove();
-}, 3000);
-</script>
+    <!-- Save and Delete popup -->
+    <script>
+        setTimeout(() => {
+            document.getElementById('toast').remove();
+        }, 3000);
+    </script>
 
 <?php } ?>
 
-<?php if(isset($_GET['deleted'])) { ?>
+<?php if (isset($_GET['deleted'])) { ?>
 
-<div id="toast"
-    class="fixed top-5 right-5 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg z-50">
+    <div id="toast"
+        class="fixed top-5 right-5 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg z-50">
 
-    Document deleted successfully!
+        Document deleted successfully!
 
-</div>
+    </div>
 
-<script>
-setTimeout(() => {
-    document.getElementById('toast').remove();
-}, 3000);
-</script>
+    <script>
+        setTimeout(() => {
+            document.getElementById('toast').remove();
+        }, 3000);
+    </script>
 
 <?php } ?>
 <!-- Save and Delete popup -->

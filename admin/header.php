@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indira Gandhi College</title>
 
-<link rel="stylesheet" href="../dist/output.css">   
+    <link rel="stylesheet" href="../dist/output.css">
 
- <script>
+    <script>
         let sidebarOpen = true;
 
         function toggleSidebar() {
@@ -66,7 +66,7 @@
         <div class="h-full px-5 flex items-center justify-between">
 
             <!-- LEFT -->
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-5">
 
                 <!-- TOGGLE -->
                 <button onclick="toggleSidebar()"
@@ -76,8 +76,13 @@
 
                 </button>
 
-                <!-- TITLE -->
-                <div>
+                <!-- TITLE AND LOGO -->
+                <div class="flex items-center gap-2">
+
+                    <img
+                        src="images/1779876371_IG_logo_transparent.png"
+                        alt="School Logo"
+                        class="h-19 w-11 lg:h-11 lg:w-13 object-contain">
 
                     <h1 class="text-lg lg:text-2xl font-bold text-blue-900">
                         Indira Gandhi Garden School
@@ -168,26 +173,24 @@
     </script>
 
     <!-- Transition -->
-     <script>
+    <script>
+        window.addEventListener('load', () => {
 
-window.addEventListener('load', () => {
+            const mainContent = document.getElementById('mainContent');
 
-    const mainContent = document.getElementById('mainContent');
+            if (mainContent) {
 
-    if (mainContent) {
+                setTimeout(() => {
 
-        setTimeout(() => {
+                    mainContent.classList.remove(
+                        'opacity-0',
+                        'translate-y-6',
+                        'scale-[0.98]'
+                    );
 
-            mainContent.classList.remove(
-                'opacity-0',
-                'translate-y-6',
-                'scale-[0.98]'
-            );
+                }, 100);
 
-        }, 100);
+            }
 
-    }
-
-});
-
-</script>
+        });
+    </script>

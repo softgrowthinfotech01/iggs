@@ -1,142 +1,114 @@
+<?php
+include 'admin/conn.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mandatory Public Disclosure</title>
 
-<link rel="stylesheet" href="dist/output.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandatory Public Disclosure</title>
+
+    <link rel="stylesheet" href="dist/output.css">
 </head>
 
 <body class="bg-[#FFF7ED] text-slate-900">
 
-<?php include 'header.php'; ?>
+    <?php include 'header.php'; ?>
 
-<!-- Banner -->
-<section class="relative mt-[50px] md:mt-[75px] h-[260px] md:h-[420px] overflow-hidden border-t border-[#AD1C21]">
+    <!-- Banner -->
+    <section class="relative mt-[50px] md:mt-[75px] h-[260px] md:h-[420px] overflow-hidden border-t border-[#AD1C21]">
 
-    <img src="images/IG_Playground.png"
-         alt="Mandatory Public Disclosure"
-         class="absolute inset-0 w-full h-full object-cover">
+        <img src="images/IG_Playground.png"
+            alt="Mandatory Public Disclosure"
+            class="absolute inset-0 w-full h-full object-cover">
 
-    <!-- <div class="absolute inset-0 bg-gradient-to-r from-[#AD1C21]/90 via-black/60 to-[#F79D20]/50"></div> -->
+        <!-- <div class="absolute inset-0 bg-gradient-to-r from-[#AD1C21]/90 via-black/60 to-[#F79D20]/50"></div> -->
 
-    <div class="relative z-10 h-full flex items-center max-w-7xl mx-auto px-5 md:px-10">
-        <div class="max-w-3xl animate-[fadeInUp_1s_ease]">
+        <div class="relative z-10 h-full flex items-center max-w-7xl mx-auto px-5 md:px-10">
+            <div class="max-w-3xl animate-[fadeInUp_1s_ease]">
 
-            <span class="inline-block mb-4 px-5 py-2 rounded-full bg-[#FACC15] text-black text-xs md:text-sm font-black shadow-lg">
-                CBSE REQUIRED DOCUMENTS
-            </span>
+                <span class="inline-block mb-4 px-5 py-2 rounded-full bg-[#FACC15] text-black text-xs md:text-sm font-black shadow-lg">
+                    CBSE REQUIRED DOCUMENTS
+                </span>
 
-            <h1 class="text-white text-3xl sm:text-4xl md:text-6xl font-black leading-tight">
-                Mandatory Public <span class="text-[#FACC15]">
-                Disclosure</span>
-            </h1>
+                <h1 class="text-white text-3xl sm:text-4xl md:text-6xl font-black leading-tight">
+                    Mandatory Public <span class="text-[#FACC15]">
+                        Disclosure</span>
+                </h1>
 
-            <p class="mt-4 text-orange-100 text-sm md:text-lg">
-                Official school documents, certificates and result information.
-            </p>
+                <p class="mt-4 text-orange-100 text-sm md:text-lg">
+                    Official school documents, certificates and result information.
+                </p>
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Content -->
-<section class="py-10 md:py-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <!-- Content -->
+    <section class="py-10 md:py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
-        <div class="text-center mb-10">
-            <h2 class="text-2xl md:text-4xl font-black text-[#AD1C21] inline-block border-b-4 border-[#FACC15] pb-3">
-                Mandatory Public Disclosure
-            </h2>
-        </div>
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-4xl font-black text-[#AD1C21] inline-block border-b-4 border-[#FACC15] pb-3">
+                    Mandatory Public Disclosure
+                </h2>
+            </div>
 
-        <div class="overflow-x-auto bg-white rounded-3xl shadow-2xl border border-orange-100">
-            <table class="w-full min-w-[650px] border-collapse">
-                <thead>
-                    <tr class="bg-[#AE1C21] text-white">
-                        <th class="text-left px-6 py-5 text-xs md:text-sm font-black uppercase">Document Name</th>
-                        <th class="text-center px-6 py-5 text-xs md:text-sm font-black uppercase">Link</th>
-                    </tr>
-                </thead>
+            <div class="overflow-x-auto bg-white rounded-3xl shadow-2xl border border-orange-100">
+                <table class="w-full min-w-[650px] border-collapse">
+                    <thead>
+                        <tr class="bg-[#AE1C21] text-white">
+                            <th class="text-left px-6 py-5 text-xs md:text-sm font-black uppercase">Document Name</th>
+                            <th class="text-center px-6 py-5 text-xs md:text-sm font-black uppercase">Link</th>
+                        </tr>
+                    </thead>
 
-                <tbody class="divide-y divide-slate-200">
+                    <tbody class="divide-y divide-slate-200">
 
-                    <tr class="hover:bg-orange-50 hover:translate-x-1 transition duration-300">
-                        <td class="px-6 py-4 font-semibold">SMC Letter</td>
-                        <td class="px-6 py-4 text-center"><a href="#" class="px-4 py-2 rounded-full bg-[#AD1C21] text-white font-bold text-xs hover:bg-[#F79D20] transition">VIEW HERE</a></td>
-                    </tr>
+                        <?php
 
-                    <tr class="hover:bg-orange-50 hover:translate-x-1 transition duration-300">
-                        <td class="px-6 py-4 font-semibold">SARAS REC. 2750</td>
-                        <td class="px-6 py-4 text-center"><a href="#" class="px-4 py-2 rounded-full bg-[#AD1C21] text-white font-bold text-xs hover:bg-[#F79D20] transition">VIEW HERE</a></td>
-                    </tr>
+                        $stmt = $pdo->query("
+        SELECT *
+        FROM mandatory_disclosures
+        ORDER BY id ASC
+    ");
 
-                    <tr class="hover:bg-orange-50 hover:translate-x-1 transition duration-300">
-                        <td class="px-6 py-4 font-semibold">SARAS REC. 1500</td>
-                        <td class="px-6 py-4 text-center"><a href="#" class="px-4 py-2 rounded-full bg-[#AD1C21] text-white font-bold text-xs hover:bg-[#F79D20] transition">VIEW HERE</a></td>
-                    </tr>
+                        $documents = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                    <tr class="hover:bg-orange-50 hover:translate-x-1 transition duration-300">
-                        <td class="px-6 py-4 font-semibold">Recognition Certificate Under RTE Act 2009</td>
-                        <td class="px-6 py-4 text-center"><a href="#" class="px-4 py-2 rounded-full bg-[#AD1C21] text-white font-bold text-xs hover:bg-[#F79D20] transition">VIEW HERE</a></td>
-                    </tr>
+                        foreach ($documents as $row) {
 
-                    <tr class="hover:bg-orange-50 hover:translate-x-1 transition duration-300">
-                        <td class="px-6 py-4 font-semibold">State NOC</td>
-                        <td class="px-6 py-4 text-center"><a href="#" class="px-4 py-2 rounded-full bg-[#AD1C21] text-white font-bold text-xs hover:bg-[#F79D20] transition">VIEW HERE</a></td>
-                    </tr>
+                        ?>
 
-                    <tr class="hover:bg-orange-50 hover:translate-x-1 transition duration-300">
-                        <td class="px-6 py-4 font-semibold">PTA Members List</td>
-                        <td class="px-6 py-4 text-center"><a href="#" class="px-4 py-2 rounded-full bg-[#AD1C21] text-white font-bold text-xs hover:bg-[#F79D20] transition">VIEW HERE</a></td>
-                    </tr>
+                            <tr class="hover:bg-orange-50 hover:translate-x-1 transition duration-300">
 
-                    <tr class="hover:bg-orange-50 hover:translate-x-1 transition duration-300">
-                        <td class="px-6 py-4 font-semibold">Fee Structure 2025-26 & 2026-27</td>
-                        <td class="px-6 py-4 text-center"><a href="#" class="px-4 py-2 rounded-full bg-[#AD1C21] text-white font-bold text-xs hover:bg-[#F79D20] transition">VIEW HERE</a></td>
-                    </tr>
+                                <td class="px-6 py-4 font-semibold">
+                                    <?php echo htmlspecialchars($row['title']); ?>
+                                </td>
 
-                    <tr class="hover:bg-orange-50 hover:translate-x-1 transition duration-300">
-                        <td class="px-6 py-4 font-semibold">Education Office NOC</td>
-                        <td class="px-6 py-4 text-center"><a href="#" class="px-4 py-2 rounded-full bg-[#AD1C21] text-white font-bold text-xs hover:bg-[#F79D20] transition">VIEW HERE</a></td>
-                    </tr>
+                                <td class="px-6 py-4 text-center">
 
-                    <tr class="hover:bg-orange-50 hover:translate-x-1 transition duration-300">
-                        <td class="px-6 py-4 font-semibold">Land Document</td>
-                        <td class="px-6 py-4 text-center"><a href="#" class="px-4 py-2 rounded-full bg-[#AD1C21] text-white font-bold text-xs hover:bg-[#F79D20] transition">VIEW HERE</a></td>
-                    </tr>
+                                    <a
+                                        href="admin/images/mandatory_disclosures/<?php echo $row['file_path']; ?>"
+                                        target="_blank"
+                                        class="px-4 py-2 rounded-full bg-[#AD1C21] text-white font-bold text-xs hover:bg-[#F79D20] transition">
 
-                    <tr class="hover:bg-orange-50 hover:translate-x-1 transition duration-300">
-                        <td class="px-6 py-4 font-semibold">CBSE Affiliation Copy</td>
-                        <td class="px-6 py-4 text-center"><a href="#" class="px-4 py-2 rounded-full bg-[#AD1C21] text-white font-bold text-xs hover:bg-[#F79D20] transition">VIEW HERE</a></td>
-                    </tr>
+                                        VIEW HERE
 
-                    <tr class="hover:bg-orange-50 hover:translate-x-1 transition duration-300">
-                        <td class="px-6 py-4 font-semibold">Sanitation Certificate</td>
-                        <td class="px-6 py-4 text-center"><a href="#" class="px-4 py-2 rounded-full bg-[#AD1C21] text-white font-bold text-xs hover:bg-[#F79D20] transition">VIEW HERE</a></td>
-                    </tr>
+                                    </a>
 
-                    <tr class="hover:bg-orange-50 hover:translate-x-1 transition duration-300">
-                        <td class="px-6 py-4 font-semibold">Transport Safety Certificate</td>
-                        <td class="px-6 py-4 text-center"><a href="#" class="px-4 py-2 rounded-full bg-[#AD1C21] text-white font-bold text-xs hover:bg-[#F79D20] transition">VIEW HERE</a></td>
-                    </tr>
+                                </td>
 
-                    <tr class="hover:bg-orange-50 hover:translate-x-1 transition duration-300">
-                        <td class="px-6 py-4 font-semibold">Building Safety Certificate</td>
-                        <td class="px-6 py-4 text-center"><a href="#" class="px-4 py-2 rounded-full bg-[#AD1C21] text-white font-bold text-xs hover:bg-[#F79D20] transition">VIEW HERE</a></td>
-                    </tr>
+                            </tr>
 
-                    <tr class="hover:bg-orange-50 hover:translate-x-1 transition duration-300">
-                        <td class="px-6 py-4 font-semibold">Fire Safety Certificate</td>
-                        <td class="px-6 py-4 text-center"><a href="#" class="px-4 py-2 rounded-full bg-[#AD1C21] text-white font-bold text-xs hover:bg-[#F79D20] transition">VIEW HERE</a></td>
-                    </tr>
+                        <?php } ?>
 
-                </tbody>
-            </table>
-        </div>
+                    </tbody>
+                </table>
+            </div>
 
-        <div class="mt-14 md:mt-20 bg-white rounded-3xl shadow-2xl border border-orange-100 p-5 md:p-8">
+            <!-- <div class="mt-14 md:mt-20 bg-white rounded-3xl shadow-2xl border border-orange-100 p-5 md:p-8">
             <h2 class="text-2xl md:text-4xl font-black text-[#AD1C21] border-b-4 border-[#FACC15] inline-block pb-3">
                 Last Three Years Result
             </h2>
@@ -186,24 +158,25 @@
                     </tbody>
                 </table>
             </div>
+        </div> -->
+
         </div>
-
-    </div>
-</section>
+    </section>
 
 
-<style>
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-</style>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 
 </body>
 <?php include 'footer.php'; ?>
