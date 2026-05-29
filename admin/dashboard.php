@@ -36,10 +36,21 @@ $totalSliders = $sliderQuery->fetchColumn();
 
 <!-- PAGE WRAPPER -->
 <div id="mainContent"
-    class="pt-20 lg:pl-60 bg-slate-100 transition-all duration-300 min-h-screen flex flex-col opacity-0 translate-y-6 scale-[0.98] ease-out">
+    class=" relative pt-20 lg:pl-60 bg-slate-100 transition-all duration-300 min-h-screen flex flex-col opacity-0 translate-y-6 scale-[0.98] ease-out">
+
+     <!-- Background Logo -->
+    <div class="absolute inset-0 pointer-events-none z-0"
+        style="
+            background-image:url('images/1779876371_IG_logo_transparent.png');
+            background-repeat:no-repeat;
+            background-position:center 350px;
+            background-size:350px;
+            margin-left: 150px;
+        ">
+    </div>
 
     <!-- MAIN -->
-    <main class="p-6 pb-10 overflow-y-auto h-[calc(100vh-140px)]">
+    <main class="relative p-6 pb-10 overflow-y-auto h-[calc(100vh-140px)]">
 
         <div class="max-w-7xl mx-auto">
 
