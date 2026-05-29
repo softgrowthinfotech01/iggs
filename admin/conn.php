@@ -1,15 +1,15 @@
 <?php
 
 $host = "localhost";
-// $dbname = "softgrow_iggs";
-// $username = "softgrow_iggs";
-// $password = 'lXpCk$s}}7V(O!VW';
+$dbname = "softgrow_iggs";
+$username = "softgrow_iggs";
+$password = 'lXpCk$s}}7V(O!VW';
 
 
 
-$dbname = "ig_school";
-$username = "root";
-$password = '';
+// $dbname = "ig_school";
+// $username = "root";
+// $password = '';
 
 try {
 
