@@ -110,8 +110,7 @@ if ($slider) {
     <div class="relative flex items-center">
 
         <div class="relative z-20 bg-[#FACC15] text-black font-black px-5 sm:px-8 py-3 mb-2 whitespace-nowrap">
-            <i class="fa-solid fa-bullhorn mr-2 animate-bounce"></i>
-            LATEST NEWS
+<i class="fa-regular fa-bell mr-2 animate-bounce"></i>            Notification
         </div>
 
         <div class="relative flex-1 overflow-hidden">
@@ -439,6 +438,115 @@ if ($slider) {
 
     </section>
 
+
+    <!-- MANAGEMENT SECTION -->
+<section class="relative py-24 overflow-hidden bg-white">
+
+    <div class="absolute top-10 left-10 opacity-[0.08] rotate-[-12deg]">
+        <i class="fa-solid fa-users-gear text-[220px] text-blue-900"></i>
+    </div>
+
+    <div class="absolute bottom-0 right-10 opacity-[0.08] rotate-[12deg]">
+        <i class="fa-solid fa-building-columns text-[220px] text-blue-900"></i>
+    </div>
+
+    <!-- <div class="absolute top-0 left-0 w-[420px] h-[420px] bg-[#FACC15]/20 blur-[120px] rounded-full"></div>
+    <div class="absolute bottom-0 right-0 w-[420px] h-[420px] bg-[#AE1C21]/20 blur-[120px] rounded-full"></div> -->
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+        <div class="text-center max-w-4xl mx-auto">
+            <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] shadow-xl text-black font-black uppercase tracking-widest text-sm">
+                <i class="fa-solid fa-crown"></i>
+                Our Leadership
+            </span>
+
+            <h2 class="mt-6 text-4xl lg:text-6xl font-black text-black leading-tight">
+                Guiding Vision Of
+                <span class="text-[#AE1C21]">Our Institution</span>
+            </h2>
+
+            <p class="mt-5 text-black text-lg leading-8">
+                Dedicated leadership shaping the future of education with values, culture and excellence.
+            </p>
+        </div>
+
+        <div class="mt-20 grid md:grid-cols-2 gap-10">
+
+            <!-- CARD 1 -->
+            <div class="group relative bg-white rounded-[40px] p-5 shadow-[0_35px_90px_rgba(15,23,42,0.12)] border border-slate-100 hover:-translate-y-4 transition duration-700 overflow-hidden">
+
+                <div class="absolute inset-x-0 top-0 h-2 bg-[#AE1C21]"></div>
+
+                <div class="relative h-[420px] rounded-[30px] overflow-hidden bg-slate-100">
+                    <img src="images/nareshbabuji-puglia.jpg"
+                         alt="Shri NareshBabuji Puglia"
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-[2000ms]">
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+
+                    <div class="absolute bottom-5 left-5 right-5">
+                        <span class="inline-flex px-4 py-2 rounded-full bg-[#FACC15] text-black font-black text-sm">
+                            President
+                        </span>
+                    </div>
+                </div>
+
+                <div class="p-6 text-center">
+                    <h3 class="text-3xl font-black text-black">
+                        Shri NareshBabuji Puglia
+                    </h3>
+
+                    <p class="mt-3 text-[#AE1C21] font-black text-lg">
+                        Ex-MP, President
+                    </p>
+
+                    <p class="mt-3 text-slate-700 font-semibold leading-7">
+                        The Education and Cultural Society, Chandrapur
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="group relative bg-white rounded-[40px] p-5 shadow-[0_35px_90px_rgba(15,23,42,0.12)] border border-slate-100 hover:-translate-y-4 transition duration-700 overflow-hidden">
+
+                <div class="absolute inset-x-0 top-0 h-2 bg-[#FACC15]"></div>
+
+                <div class="relative h-[420px] rounded-[30px] overflow-hidden bg-slate-100">
+                    <img src="images/rahulbabuji-puglia.jpg"
+                         alt="Shri Rahulbabuji Puglia"
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-[2000ms]">
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+
+                    <div class="absolute bottom-5 left-5 right-5">
+                        <span class="inline-flex px-4 py-2 rounded-full bg-[#AE1C21] text-white font-black text-sm">
+                            Vice President
+                        </span>
+                    </div>
+                </div>
+
+                <div class="p-6 text-center">
+                    <h3 class="text-3xl font-black text-black">
+                        Shri Rahulbabuji Puglia
+                    </h3>
+
+                    <p class="mt-3 text-[#AE1C21] font-black text-lg">
+                        Vice President
+                    </p>
+
+                    <p class="mt-3 text-slate-700 font-semibold leading-7">
+                        The Education and Cultural Society, Chandrapur
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
     <!-- ACADEMICS -->
     <section class="relative py-24 overflow-hidden bg-white">
 
