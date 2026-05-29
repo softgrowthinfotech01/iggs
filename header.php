@@ -49,7 +49,7 @@
         </div>
 
         <!-- NAVBAR -->
-        <nav class="igs-navbar">
+        <nav class="igs-navbar gap-4">
 
             <div class="igs-container igs-nav-inner">
 

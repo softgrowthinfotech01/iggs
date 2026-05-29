@@ -109,54 +109,29 @@ if ($slider) {
 
     <div class="relative flex items-center">
 
-        <div class="relative z-20 bg-[#FACC15] text-black font-black px-5 sm:px-8 py-3 mb-2 whitespace-nowrap">
-<i class="fa-regular fa-bell mr-2 animate-bounce"></i>            Notification
+        <div class="relative z-20 bg-[#FACC15] text-black font-black px-7 md:px-6 sm:px-8 py-4 mb-2 md:mb-2  whitespace-nowrap">
+            <i class="fa-solid fa-bell fa-shake mr-2"></i>
+            Notification
         </div>
 
-        <div class="relative flex-1 overflow-hidden">
+        <div class="flex-1 overflow-hidden">
 
-            <!-- <div class="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-[#AE1C21] to-transparent z-10"></div>
-            <div class="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-[#AE1C21] to-transparent z-10"></div> -->
+            <marquee
+                behavior="scroll"
+                direction="left"
+                scrollamount="6"
+                onmouseover="this.stop();"
+                onmouseout="this.start();"
+                class="py-4 text-white font-bold">
 
-            <div class="notification-track flex w-max whitespace-nowrap py-4 text-white font-bold">
+                📢 Admissions Open For Session 2026-27 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                🏆 Congratulations To Our School Toppers &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                📚 New Academic Session Starts From June &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                🎓 Scholarship Forms Available &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                🚌 School Bus Facility Available &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                🏫 Mandatory Public Disclosure Updated
 
-                <span class="notification-item">
-                    📢 Admissions Open For Session 2026-27
-                </span>
-
-                <span class="notification-item">
-                    🏆 Congratulations To Our School Toppers
-                </span>
-
-                <span class="notification-item">
-                    📚 New Academic Session Starts From June
-                </span>
-
-                <span class="notification-item">
-                    🎓 Scholarship Forms Available
-                </span>
-
-                <span class="notification-item">
-                    🚌 School Bus Facility Available
-                </span>
-
-                <span class="notification-item">
-                    🏫 Mandatory Public Disclosure Updated
-                </span>
-
-                <span class="notification-item">
-                    📢 Admissions Open For Session 2026-27
-                </span>
-
-                <span class="notification-item">
-                    🏆 Congratulations To Our School Toppers
-                </span>
-
-                <span class="notification-item">
-                    📚 New Academic Session Starts From June
-                </span>
-
-            </div>
+            </marquee>
 
         </div>
 
