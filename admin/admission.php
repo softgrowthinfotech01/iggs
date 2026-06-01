@@ -209,7 +209,7 @@ $enquiries = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             <?php echo date('d M Y', strtotime($enquiry['created_at'])); ?>
                                         </td>
 
-                                        <td class="px-4 py-4">
+                                        <td class="px-4 py-4"> 
 
                                             <a
                                                 href="admission.php?delete=<?php echo $enquiry['id']; ?>"
