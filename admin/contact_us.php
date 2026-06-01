@@ -10,6 +10,23 @@ if (!isset($_SESSION['admin'])) {
 
 include 'conn.php';
 
+// Delete Records
+if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
+
+    $id = (int) $_GET['delete'];
+
+    $stmt = $pdo->prepare("
+        DELETE FROM contact_us
+        WHERE id = ?
+    ");
+
+    $stmt->execute([$id]);
+
+    header("Location: contact_us.php");
+    exit;
+}
+// Delete Records
+
 $search = $_GET['search'] ?? '';
 
 $query = "
@@ -188,7 +205,8 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         <td class="px-4 py-4">
 
                                             <a
-                                                href="delete-contact.php?id=<?php echo $contact['id']; ?>"
+                                                href="contact_us.php?delete=<?php echo $contact['id']; ?>"
+                                                onclick="return confirm('Are you sure you want to delete this record?');"
                                                 class="bg-red-100 text-red-600 px-4 py-2 rounded-lg hover:bg-red-200 transition">
 
                                                 Delete
