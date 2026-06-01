@@ -72,7 +72,7 @@ $totalSliders = $sliderQuery->fetchColumn();
 
                 <a href="results">
                     <div class="bg-cyan-300 border border-slate-200 rounded-2xl p-6 shadow-xl hover:shadow-md transition">
-                        <p class="text-lg text-gray-800">Toppers</p>
+                        <p class="text-lg text-gray-800">Result Records</p>
                         <h1 class="text-4xl font-bold text-blue-900 mt-2">
                             <?= $totalResults ?>
                         </h1>

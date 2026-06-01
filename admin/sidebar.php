@@ -213,7 +213,7 @@
             </a>
 
             <!-- Mandatory Disclosures -->
-            <a href="mandatory_disclosures" id="mandatory-disclosures-link"
+            <a href="mandatory_disclosures" id="mandatory_disclosures-link"
                 class="flex items-center gap-3 hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition">
 
                 <svg xmlns="http://www.w3.org/2000/svg"
