@@ -215,9 +215,18 @@ if (isset($_POST['update_principal'])) {
 <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 
 <script>
-    ClassicEditor
-        .create(document.querySelector('#editor'))
-        .catch(error => {
-            console.error(error);
+ClassicEditor
+    .create(document.querySelector('#editor'))
+    .then(editor => {
+        editor.editing.view.change(writer => {
+            writer.setStyle(
+                'height',
+                '500px',
+                editor.editing.view.document.getRoot()
+            );
         });
+    })
+    .catch(error => {
+        console.error(error);
+    });
 </script>
