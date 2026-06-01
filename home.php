@@ -102,6 +102,17 @@ if ($slider) {
         </div>
     </div>
 
+    <?php
+
+$notificationStmt = $pdo->query("
+    SELECT notification_title
+    FROM notifications
+    ORDER BY id DESC
+");
+
+$notifications = $notificationStmt->fetchAll(PDO::FETCH_ASSOC);
+
+?>
 
 <!-- SMOOTH ANIMATED NOTIFICATION BAR -->
 <section class="relative overflow-hidden bg-[#AE1C21] shadow-xl">
@@ -118,21 +129,24 @@ if ($slider) {
         <div class="flex-1 overflow-hidden">
 
             <marquee
-                behavior="scroll"
-                direction="left"
-                scrollamount="6"
-                onmouseover="this.stop();"
-                onmouseout="this.start();"
-                class="py-4 text-white font-bold">
+    behavior="scroll"
+    direction="left"
+    scrollamount="6"
+    class="py-4 text-white font-bold">
 
-                📢 Admissions Open For Session 2026-27 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                🏆 Congratulations To Our School Toppers &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                📚 New Academic Session Starts From June &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                🎓 Scholarship Forms Available &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                🚌 School Bus Facility Available &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                🏫 Mandatory Public Disclosure Updated
+    <?php foreach ($notifications as $notification): ?>
 
-            </marquee>
+        &nbsp;&nbsp;
+        ★
+        &nbsp;&nbsp;
+
+        <span>
+             <?= htmlspecialchars($notification['notification_title']) ?>
+        </span>
+
+    <?php endforeach; ?>
+
+</marquee>
 
         </div>
 
