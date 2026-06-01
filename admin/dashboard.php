@@ -76,7 +76,7 @@ $totalSliders = $sliderQuery->fetchColumn();
                         <h1 class="text-4xl font-bold text-blue-900 mt-2">
                             <?= $totalResults ?>
                         </h1>
-                    </div>
+                    </div> 
                 </a>
 
                 <a href="admission">
