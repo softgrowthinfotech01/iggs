@@ -588,6 +588,10 @@ video {
   }
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
 .fixed {
   position: fixed;
 }
@@ -852,6 +856,10 @@ video {
 
 .z-\[9999\] {
   z-index: 9999;
+}
+
+.z-0 {
+  z-index: 0;
 }
 
 .order-1 {
@@ -4204,6 +4212,11 @@ video {
   .md\:py-3 {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
+  }
+
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .md\:text-right {

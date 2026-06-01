@@ -79,6 +79,7 @@ if ($slider) {
 
                     <?php endif; ?>
 
+                    
                     <!-- FLOATING DOTS -->
                     <div class="absolute inset-y-0 right-6 max-md:right-3 flex flex-col justify-center z-30 gap-2">
 
@@ -109,7 +110,7 @@ if ($slider) {
 
     <div class="relative flex items-center">
 
-        <div class="relative z-20 bg-[#FACC15] text-black font-black px-7 md:px-6 sm:px-8 py-4 mb-2 md:mb-2  whitespace-nowrap">
+        <div class="relative z-20 bg-[#FACC15] text-black font-black px-7 md:px-8 sm:px-8 py-4 mb-2 md:mb-2  whitespace-nowrap">
             <i class="fa-solid fa-bell fa-shake mr-2"></i>
             Notification
         </div>
