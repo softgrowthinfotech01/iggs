@@ -1,3 +1,13 @@
+<style>
+    .sidebar-scroll {
+    scrollbar-width: none;
+}
+
+.sidebar-scroll::-webkit-scrollbar {
+    display: none;
+}
+</style>
+
 <!-- MOBILE OVERLAY -->
 <div id="sidebarOverlay"
     onclick="toggleSidebar()"
@@ -12,7 +22,7 @@
 
         <!-- MENU -->
         <!-- MENU -->
-        <nav class="flex-1 p-4 space-y-2 overflow-y-auto">
+        <nav class="flex-1 p-4 space-y-2 overflow-y-auto sidebar-scroll">
 
             <!-- Dashboard -->
             <a href="dashboard" id="dashboard-link"
