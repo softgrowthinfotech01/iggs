@@ -45,7 +45,7 @@ $students = $resultStmt->fetchAll(PDO::FETCH_ASSOC);
 
    <!-- YEAR WISE RESULT UI ONLY -->
 
-<section class="relative py-24 mt-20 bg-white overflow-hidden">
+<section class="relative py-24 md:mt-20 bg-white overflow-hidden">
 
     <div class="absolute top-20 right-10 w-72 h-72 bg-[#AE1C21]/10 blur-[120px] rounded-full"></div>
     <div class="absolute bottom-10 left-10 w-80 h-80 bg-[#FACC15]/30 blur-[120px] rounded-full"></div>
