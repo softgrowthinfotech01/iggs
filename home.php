@@ -1206,7 +1206,7 @@ $vice_principal = $vice_principal ?: [
 
         <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-10 md:gap-14 items-center">
 
-            <!-- LEFT -->
+            <!-- LEFT --> 
             <div>
 
                 <span class="inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-3 rounded-full bg-[#AE1C21] backdrop-blur-xl border border-white/10 text-white font-black uppercase tracking-widest text-[10px] sm:text-xs md:text-sm">
