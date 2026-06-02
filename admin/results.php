@@ -36,18 +36,13 @@ if (isset($_GET['delete'])) {
 }
 
 /* SAVE RESULT */
+/* SAVE RESULT */
 if (isset($_POST['save_result'])) {
 
+    $result_year = trim($_POST['result_year']);
     $student_name = trim($_POST['student_name']);
     $rank_position = trim($_POST['rank_position']);
-    $roll_no = trim($_POST['roll_no']);
-    $obtained_marks = trim($_POST['obtained_marks']);
-    $total_marks = trim($_POST['total_marks']);
     $percentage = trim($_POST['percentage']);
-    $student_title = trim($_POST['student_title']);
-    $status = trim($_POST['status']);
-
-    $is_featured = isset($_POST['is_featured']) ? 1 : 0;
 
     $imageName = '';
 
@@ -58,42 +53,65 @@ if (isset($_POST['save_result'])) {
 
         $targetPath = "images/results/" . $imageName;
 
-        move_uploaded_file($_FILES['student_image']['tmp_name'], $targetPath);
+        move_uploaded_file(
+            $_FILES['student_image']['tmp_name'],
+            $targetPath
+        );
     }
 
-    // ONLY ONE FEATURED TOPPER
-    if ($is_featured == 1) {
+    // CHECK DUPLICATE RANK
+    $rankCheck = $pdo->prepare("
+        SELECT id
+        FROM results
+        WHERE result_year = ?
+        AND rank_position = ?
+    ");
 
-        $pdo->query("UPDATE results SET is_featured = 0");
+    $rankCheck->execute([
+        $result_year,
+        $rank_position
+    ]);
+
+    if ($rankCheck->fetch()) {
+
+        header("Location: results.php?error=Rank already exists for this year");
+        exit;
+    }
+
+    // MAX 3 STUDENTS PER YEAR
+    $checkStmt = $pdo->prepare("
+        SELECT COUNT(*)
+        FROM results
+        WHERE result_year = ?
+    ");
+
+    $checkStmt->execute([$result_year]);
+
+    if ($checkStmt->fetchColumn() >= 3) {
+
+        header("Location: results.php?error=Maximum 3 students allowed per year");
+        exit;
     }
 
     // INSERT
-    $stmt = $pdo->prepare("INSERT INTO results 
-    (
-        student_name,
-        rank_position,
-        roll_no,
-        obtained_marks,
-        total_marks,
-        percentage,
-        student_title,
-        status,
-        student_image,
-        is_featured
-    )
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $pdo->prepare("
+        INSERT INTO results
+        (
+            result_year,
+            student_name,
+            rank_position,
+            percentage,
+            student_image
+        )
+        VALUES (?, ?, ?, ?, ?)
+    ");
 
     $stmt->execute([
+        $result_year,
         $student_name,
         $rank_position,
-        $roll_no,
-        $obtained_marks,
-        $total_marks,
         $percentage,
-        $student_title,
-        $status,
-        $imageName,
-        $is_featured
+        $imageName
     ]);
 
     header("Location: results.php?success=Result Added Successfully");
@@ -113,422 +131,340 @@ if (isset($_POST['save_result'])) {
 
         <div class="max-w-7xl mx-auto bg-slate-300 p-4 rounded-xl">
 
-    <!-- TABS -->
-    <div class="flex justify-between mb-6 px-10">
+            <!-- TABS -->
+            <div class="flex justify-between mb-6 px-10">
 
-        <!-- RESULT ENTRY TAB -->
-        <button
-            id="entryTab"
-            onclick="showTab('entry')"
-            class="tab-btn px-10 py-3 rounded-xl bg-white text-indigo-700 font-bold shadow transition">
+                <!-- RESULT ENTRY TAB -->
+                <button
+                    id="entryTab"
+                    onclick="showTab('entry')"
+                    class="tab-btn px-10 py-3 rounded-xl bg-white text-indigo-700 font-bold shadow transition">
 
-            Result Entry
+                    Result Entry
 
-        </button>
+                </button>
 
-        <!-- RESULT TABLE TAB -->
-        <button
-            id="tableTab"
-            onclick="showTab('table')"
-            class="tab-btn px-10 py-3 rounded-xl bg-slate-200 text-slate-600 font-bold transition">
+                <!-- RESULT TABLE TAB -->
+                <button
+                    id="tableTab"
+                    onclick="showTab('table')"
+                    class="tab-btn px-10 py-3 rounded-xl bg-slate-200 text-slate-600 font-bold transition">
 
-            Result Table
+                    Result Table
 
-        </button>
-
-    </div>
-
-    <!-- ========================= -->
-    <!-- RESULT ENTRY SECTION -->
-    <!-- ========================= -->
-
-    <div id="entrySection">
-
-        <!-- PAGE CARD -->
-        <div class="p-2">
-
-            <!-- PAGE TITLE -->
-            <div class="mb-6">
-
-                <h2 class="text-2xl font-semibold text-gray-800">
-                    Add Student Result
-                </h2>
+                </button>
 
             </div>
 
-            <!-- FORM -->
-            <form action="" method="POST" enctype="multipart/form-data">
+            <!-- ========================= -->
+            <!-- RESULT ENTRY SECTION -->
+            <!-- ========================= -->
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div id="entrySection">
 
-                    <!-- STUDENT NAME -->
-                    <div>
+                <!-- PAGE CARD -->
+                <div class="p-2">
 
-                        <label class="text-sm font-medium block text-gray-700 mb-1">
-                            Student Name
-                        </label>
+                    <!-- PAGE TITLE -->
+                    <div class="mb-6">
 
-                        <input
-                            type="text"
-                            name="student_name"
-                            required
-                            placeholder="Enter student name"
-                            class="w-full border border-gray-600 rounded-xl px-4 py-3">
+                        <h2 class="text-2xl font-semibold text-gray-800">
+                            Add Student Result
+                        </h2>
 
                     </div>
 
-                    <!-- RANK -->
-                    <div>
+                    <!-- FORM -->
+                    <form action="" method="POST" enctype="multipart/form-data">
 
-                        <label class="text-sm font-medium block text-gray-700 mb-1">
-                            Rank
-                        </label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                        <input
-                            type="number"
-                            name="rank_position"
-                            required
-                            placeholder="Enter rank"
-                            class="w-full border border-gray-600 rounded-xl px-4 py-3">
+                            <!-- STUDENT NAME -->
+                            <div>
 
-                    </div>
+                                <label class="text-sm font-medium block text-gray-700 mb-1">
+                                    Student Name
+                                </label>
 
-                    <!-- ROLL NUMBER -->
-                    <div>
+                                <input
+                                    type="text"
+                                    name="student_name"
+                                    required
+                                    placeholder="Enter student name"
+                                    class="w-full border border-gray-600 rounded-xl px-4 py-3">
 
-                        <label class="text-sm font-medium block text-gray-700 mb-1">
-                            Roll Number
-                        </label>
+                            </div>
 
-                        <input
-                            type="text"
-                            name="roll_no"
-                            required
-                            placeholder="Enter roll number"
-                            class="w-full border border-gray-600 rounded-xl px-4 py-3">
+                            <!-- YEAR -->
+                            <div>
 
-                    </div>
+                                <label class="text-sm font-medium block text-gray-700 mb-1">
+                                    Year
+                                </label>
 
-                    <!-- OBTAINED MARKS -->
-                    <div>
+                                <select
+                                    name="result_year"
+                                    required
+                                    class="w-full border border-gray-600 rounded-xl px-4 py-3">
 
-                        <label class="text-sm font-medium block text-gray-700 mb-1">
-                            Obtained Marks
-                        </label>
+                                    <option value="">Select Year</option>
 
-                        <input
-                            type="text"
-                            name="obtained_marks"
-                            required
-                            placeholder="490"
-                            class="w-full border border-gray-600 rounded-xl px-4 py-3">
+                                    <?php
+                                    $currentYear = date('Y');
 
-                    </div>
+                                    for ($year = $currentYear; $year >= ($currentYear - 3); $year--) {
+                                    ?>
 
-                    <!-- TOTAL MARKS -->
-                    <div>
-
-                        <label class="text-sm font-medium block text-gray-700 mb-1">
-                            Total Marks
-                        </label>
-
-                        <input
-                            type="text"
-                            name="total_marks"
-                            required
-                            placeholder="500"
-                            class="w-full border border-gray-600 rounded-xl px-4 py-3">
-
-                    </div>
-
-                    <!-- PERCENTAGE -->
-                    <div>
-
-                        <label class="text-sm font-medium block text-gray-700 mb-1">
-                            Percentage
-                        </label>
-
-                        <input
-                            type="text"
-                            name="percentage"
-                            required
-                            placeholder="98%"
-                            class="w-full border border-gray-600 rounded-xl px-4 py-3">
-
-                    </div>
-
-                    <!-- TITLE -->
-                    <div>
-
-                        <label class="text-sm font-medium block text-gray-700 mb-1">
-                            Student Title
-                        </label>
-
-                        <input
-                            type="text"
-                            name="student_title"
-                            required
-                            placeholder="School Topper"
-                            class="w-full border border-gray-600 rounded-xl px-4 py-3">
-
-                    </div>
-
-                    <!-- STATUS -->
-                    <div>
-
-                        <label class="text-sm font-medium block text-gray-700 mb-1">
-                            Status
-                        </label>
-
-                        <select
-                            name="status"
-                            class="w-full border border-gray-600 rounded-xl px-4 py-3">
-
-                            <option value="PASS">PASS</option>
-                            <option value="FAIL">FAIL</option>
-
-                        </select>
-
-                    </div>
-
-                    <!-- IMAGE -->
-                    <div>
-
-                        <label class="text-sm font-medium block text-gray-700 mb-1">
-                            Student Image
-                        </label>
-
-                        <input
-                            type="file"
-                            name="student_image"
-                            accept="image/*"
-                            required
-                            class="w-full border border-gray-600 rounded-xl px-4 py-2 bg-white">
-
-                    </div>
-
-                    <!-- FEATURED -->
-                    <div class="flex items-center gap-3 mt-7">
-
-                        <input
-                            type="checkbox"
-                            name="is_featured"
-                            value="1"
-                            class="w-5 h-5">
-
-                        <label class="text-sm font-medium text-gray-700">
-                            Topper
-                        </label>
-
-                    </div>
-
-                </div>
-
-                <!-- SUBMIT -->
-                <div class="mt-8">
-
-                    <button
-                        type="submit"
-                        name="save_result"
-                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg transition">
-
-                        Save Result
-
-                    </button>
-
-                </div>
-
-            </form>
-
-        </div>
-
-    </div>
-
-    <!-- ========================= -->
-    <!-- RESULT TABLE SECTION -->
-    <!-- ========================= -->
-
-    <div id="tableSection" class="hidden">
-
-        <div class="bg-white rounded-xl px-6 py-2 shadow">
-
-            <h2 class="text-2xl font-semibold text-gray-800 mb-6">
-                Result Records
-            </h2>
-
-            <div class="overflow-x-auto">
-
-                <table class="w-full border border-gray-300">
-
-                    <thead class="bg-slate-200">
-
-                        <tr>
-
-                            <th class="p-3 text-left border">Sr No</th>
-                            <th class="p-3 text-left border">Image</th>
-                            <th class="p-3 text-left border">Student</th>
-                            <th class="p-3 text-left border">Rank</th>
-                            <th class="p-3 text-left border">Percentage</th>
-                            <th class="p-3 text-left border">Topper</th>
-                            <th class="p-3 text-center border">Action</th>
-
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-
-                        <?php
-
-                        $recordsPerPage = 5;
-
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-
-if ($page < 1) {
-    $page = 1;
-}
-
-$offset = ($page - 1) * $recordsPerPage;
-
-// TOTAL RECORDS
-$countStmt = $pdo->query("
-    SELECT COUNT(*) as total
-    FROM results
-");
-
-$totalRecords = $countStmt->fetch(PDO::FETCH_ASSOC)['total'];
-
-$totalPages = ceil($totalRecords / $recordsPerPage);
-
-// FETCH RECORDS
-$stmt = $pdo->prepare("
-    SELECT *
-    FROM results
-    ORDER BY rank_position ASC
-    LIMIT :limit OFFSET :offset
-");
-
-$stmt->bindValue(':limit', $recordsPerPage, PDO::PARAM_INT);
-$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
-
-$stmt->execute();
-
-$resultData = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-$count = $offset + 1;
-
-                        foreach ($resultData as $row) {
-
-                        ?>
-
-                            <tr class="hover:bg-slate-50">
-
-                                <td class="p-3 border">
-                                    <?php echo $count++; ?>
-                                </td>
-
-                                <td class="p-3 border">
-
-                                    <img
-                                        src="images/results/<?php echo $row['student_image']; ?>"
-                                        class="w-20 h-20 object-cover rounded-lg border">
-
-                                </td>
-
-                                <td class="p-3 border">
-                                    <?php echo $row['student_name']; ?>
-                                </td>
-
-                                <td class="p-3 border">
-                                    #<?php echo $row['rank_position']; ?>
-                                </td>
-
-                                <td class="p-3 border">
-                                    <?php echo $row['percentage']; ?>
-                                </td>
-
-                                <td class="p-3 border">
-
-                                    <?php if ($row['is_featured'] == 1) { ?>
-
-                                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
-                                            Yes
-                                        </span>
-
-                                    <?php } else { ?>
-
-                                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
-                                            No
-                                        </span>
+                                        <option value="<?php echo $year; ?>">
+                                            <?php echo $year; ?>
+                                        </option>
 
                                     <?php } ?>
 
-                                </td>
+                                </select>
 
-                                <td class="p-3 border text-center">
+                            </div>
 
-                                    <a
-                                        href="results.php?delete=<?php echo $row['id']; ?>"
-                                        onclick="return confirm('Delete this result?')"
-                                        class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm">
+                            <!-- RANK -->
+                            <div>
 
-                                        Delete
+                                <label class="text-sm font-medium block text-gray-700 mb-1">
+                                    Rank
+                                </label>
+
+                                <select
+                                    name="rank_position"
+                                    required
+                                    class="w-full border border-gray-600 rounded-xl px-4 py-3">
+
+                                    <option value="">Select Rank</option>
+                                    <option value="1">Rank 1</option>
+                                    <option value="2">Rank 2</option>
+                                    <option value="3">Rank 3</option>
+
+                                </select>
+
+                            </div>
+
+                            <!-- PERCENTAGE -->
+                            <div>
+
+                                <label class="text-sm font-medium block text-gray-700 mb-1">
+                                    Percentage
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="percentage"
+                                    required
+                                    placeholder="90"
+                                    class="w-full border border-gray-600 rounded-xl px-4 py-3">
+
+                            </div>
+
+                            <!-- IMAGE -->
+                            <div>
+
+                                <label class="text-sm font-medium block text-gray-700 mb-1">
+                                    Student Image
+                                </label>
+
+                                <input
+                                    type="file"
+                                    name="student_image"
+                                    accept="image/*"
+                                    required
+                                    class="w-full border border-gray-600 rounded-xl px-4 py-2 bg-white">
+
+                            </div>
+
+
+
+                        </div>
+
+                        <!-- SUBMIT -->
+                        <div class="mt-8">
+
+                            <button
+                                type="submit"
+                                name="save_result"
+                                class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg transition">
+
+                                Save Result
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- ========================= -->
+            <!-- RESULT TABLE SECTION -->
+            <!-- ========================= -->
+
+            <div id="tableSection" class="hidden">
+
+                <div class="bg-white rounded-xl px-6 py-2 shadow">
+
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-6">
+                        Result Records
+                    </h2>
+
+                    <div class="overflow-x-auto">
+
+                        <table class="w-full border border-gray-300">
+
+                            <thead class="bg-slate-200">
+
+                                <tr>
+
+                                    <th class="p-3 text-left border">Year</th>
+                                    <th class="p-3 text-left border">Rank</th>
+                                    <th class="p-3 text-left border">Image</th>
+                                    <th class="p-3 text-left border">Student</th>
+                                    <th class="p-3 text-left border">Percentage</th>
+                                    <th class="p-3 text-center border">Action</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <?php
+
+                                $recordsPerPage = 5;
+
+                                $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+                                if ($page < 1) {
+                                    $page = 1;
+                                }
+
+                                $offset = ($page - 1) * $recordsPerPage;
+
+                                $totalRecords = $pdo->query("
+    SELECT COUNT(*)
+    FROM results
+")->fetchColumn();
+
+                                $totalPages = ceil($totalRecords / $recordsPerPage);
+
+                                // TOTAL RECORDS
+                                $stmt = $pdo->prepare("
+    SELECT *
+    FROM results
+    ORDER BY result_year DESC, rank_position ASC
+    LIMIT :limit OFFSET :offset
+");
+
+                                $stmt->bindValue(':limit', $recordsPerPage, PDO::PARAM_INT);
+                                $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+
+                                $stmt->execute();
+
+                                $resultData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                                $count = $offset + 1;
+
+                                foreach ($resultData as $row) {
+
+                                ?>
+
+                                    <tr class="hover:bg-slate-50">
+
+                                        <td class="p-3 border">
+                                            <?php echo $row['result_year']; ?>
+                                        </td>
+
+                                        <td class="p-3 border">
+                                            #<?php echo $row['rank_position']; ?>
+                                        </td>
+
+                                        <td class="p-3 border">
+
+                                            <img
+                                                src="images/results/<?php echo $row['student_image']; ?>"
+                                                class="w-20 h-20 object-cover rounded-lg border">
+
+                                        </td>
+
+                                        <td class="p-3 border">
+                                            <?php echo $row['student_name']; ?>
+                                        </td>
+
+                                        <td class="p-3 border">
+                                            <?php echo $row['percentage']; ?>%
+                                        </td>
+
+                                        <td class="p-3 border text-center">
+
+                                            <a
+                                                href="results.php?delete=<?php echo $row['id']; ?>"
+                                                onclick="return confirm('Delete this result?')"
+                                                class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm">
+
+                                                Delete
+
+                                            </a>
+
+                                        </td>
+
+                                    </tr>
+
+                                <?php } ?>
+
+                            </tbody>
+
+                        </table>
+
+                        <?php if ($totalPages > 1): ?>
+
+                            <div class="flex justify-center items-center gap-2 mt-6">
+
+                                <?php if ($page > 1): ?>
+                                    <a href="?page=<?php echo $page - 1; ?>"
+                                        class="px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700">
+                                        Prev
+                                    </a>
+                                <?php endif; ?>
+
+                                <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+
+                                    <a href="?page=<?php echo $i; ?>"
+                                        class="px-4 py-2 rounded-lg
+            <?php echo ($i == $page)
+                                        ? 'bg-indigo-600 text-white'
+                                        : 'bg-slate-200 text-slate-700 hover:bg-slate-300'; ?>">
+
+                                        <?php echo $i; ?>
 
                                     </a>
 
-                                </td>
+                                <?php endfor; ?>
 
-                            </tr>
+                                <?php if ($page < $totalPages): ?>
+                                    <a href="?page=<?php echo $page + 1; ?>"
+                                        class="px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700">
+                                        Next
+                                    </a>
+                                <?php endif; ?>
 
-                        <?php } ?>
+                            </div>
 
-                    </tbody>
+                        <?php endif; ?>
 
-                </table>
+                    </div>
 
-                <?php if ($totalPages > 1): ?>
-
-<div class="flex justify-center items-center gap-2 mt-6">
-
-    <?php if ($page > 1): ?>
-        <a href="?page=<?php echo $page - 1; ?>"
-            class="px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700">
-            Prev
-        </a>
-    <?php endif; ?>
-
-    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-
-        <a href="?page=<?php echo $i; ?>"
-            class="px-4 py-2 rounded-lg
-            <?php echo ($i == $page)
-                ? 'bg-indigo-600 text-white'
-                : 'bg-slate-200 text-slate-700 hover:bg-slate-300'; ?>">
-
-            <?php echo $i; ?>
-
-        </a>
-
-    <?php endfor; ?>
-
-    <?php if ($page < $totalPages): ?>
-        <a href="?page=<?php echo $page + 1; ?>"
-            class="px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700">
-            Next
-        </a>
-    <?php endif; ?>
-
-</div>
-
-<?php endif; ?>
+                </div>
 
             </div>
 
         </div>
-
-    </div>
-
-</div>
 
     </main>
 
@@ -536,46 +472,44 @@ $count = $offset + 1;
 
 <!-- TAB SCRIPT -->
 <script>
+    function showTab(tab) {
 
-function showTab(tab) {
+        const entrySection = document.getElementById('entrySection');
+        const tableSection = document.getElementById('tableSection');
 
-    const entrySection = document.getElementById('entrySection');
-    const tableSection = document.getElementById('tableSection');
+        const entryTab = document.getElementById('entryTab');
+        const tableTab = document.getElementById('tableTab');
 
-    const entryTab = document.getElementById('entryTab');
-    const tableTab = document.getElementById('tableTab');
-
-    // RESET BOTH TABS
-    entryTab.className =
-        'tab-btn px-10 py-3 rounded-xl bg-slate-200 text-slate-600 font-bold transition';
-
-    tableTab.className =
-        'tab-btn px-10 py-3 rounded-xl bg-slate-200 text-slate-600 font-bold transition';
-
-    // SHOW ENTRY
-    if (tab === 'entry') {
-
-        entrySection.classList.remove('hidden');
-        tableSection.classList.add('hidden');
-
+        // RESET BOTH TABS
         entryTab.className =
-            'tab-btn px-10 py-3 rounded-xl bg-white text-indigo-700 font-bold shadow transition';
-
-    }
-
-    // SHOW TABLE
-    else {
-
-        tableSection.classList.remove('hidden');
-        entrySection.classList.add('hidden');
+            'tab-btn px-10 py-3 rounded-xl bg-slate-200 text-slate-600 font-bold transition';
 
         tableTab.className =
-            'tab-btn px-10 py-3 rounded-xl bg-white text-indigo-700 font-bold shadow transition';
+            'tab-btn px-10 py-3 rounded-xl bg-slate-200 text-slate-600 font-bold transition';
+
+        // SHOW ENTRY
+        if (tab === 'entry') {
+
+            entrySection.classList.remove('hidden');
+            tableSection.classList.add('hidden');
+
+            entryTab.className =
+                'tab-btn px-10 py-3 rounded-xl bg-white text-indigo-700 font-bold shadow transition';
+
+        }
+
+        // SHOW TABLE
+        else {
+
+            tableSection.classList.remove('hidden');
+            entrySection.classList.add('hidden');
+
+            tableTab.className =
+                'tab-btn px-10 py-3 rounded-xl bg-white text-indigo-700 font-bold shadow transition';
+
+        }
 
     }
-
-}
-
 </script>
 
 <?php include 'footer.php' ?>

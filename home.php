@@ -2,17 +2,11 @@
 
 include 'admin/conn.php';
 
-$sliderStmt = $pdo->query("SELECT * FROM sliders WHERE id = 17 LIMIT 1");
-$slider = $sliderStmt->fetch(PDO::FETCH_ASSOC);
-
 $images = [];
 
-if ($slider) {
-
-    $imageStmt = $pdo->prepare("
+$imageStmt = $pdo->query("
     SELECT *
     FROM slider_images
-    WHERE slider_id = ?
     ORDER BY
     CASE
         WHEN LOWER(image) LIKE '%ig_gate%' THEN 0
@@ -21,13 +15,11 @@ if ($slider) {
     image ASC
 ");
 
-    $imageStmt->execute([$slider['id']]);
-    $images = $imageStmt->fetchAll(PDO::FETCH_ASSOC);
-}
+$images = $imageStmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 
 <head>
     <meta charset="UTF-8">
