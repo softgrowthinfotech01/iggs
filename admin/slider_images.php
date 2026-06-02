@@ -10,6 +10,40 @@ if (!isset($_SESSION['admin'])) {
 
 include 'conn.php';
 
+/* DELETE IMAGE */
+if (isset($_GET['delete'])) {
+
+    $id = $_GET['delete'];
+
+    // GET IMAGE
+    $stmt = $pdo->prepare("
+        SELECT *
+        FROM slider_images
+        WHERE id = ?
+    ");
+
+    $stmt->execute([$id]);
+
+    $imageData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // DELETE IMAGE FROM FOLDER
+    if ($imageData && file_exists(__DIR__ . "/images/" . $imageData['image'])) {
+
+        unlink(__DIR__ . "/images/" . $imageData['image']);
+    }
+
+    // DELETE FROM DATABASE
+    $stmt = $pdo->prepare("
+        DELETE FROM slider_images
+        WHERE id = ?
+    ");
+
+    $stmt->execute([$id]);
+
+    header("Location: slider_images.php");
+    exit;
+}
+
 /* SAVE SLIDER */
 if (isset($_POST['title'])) {
 
