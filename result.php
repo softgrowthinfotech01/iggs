@@ -100,37 +100,61 @@ $years = $yearStmt->fetchAll(PDO::FETCH_COLUMN);
 
                             <div class="rounded-[35px] overflow-hidden bg-white border border-slate-100 shadow-[0_30px_80px_rgba(15,23,42,0.10)] hover:-translate-y-4 transition duration-500">
 
-                                <div class="relative h-[330px] overflow-hidden">
+    <!-- IMAGE -->
+    <div class="relative h-[330px] overflow-hidden">
 
-                                    <img
-                                        src="admin/images/results/<?php echo $student['student_image']; ?>"
-                                        class="w-full h-full object-cover">
+        <img
+            src="admin/images/results/<?php echo $student['student_image']; ?>"
+            class="w-full h-full object-cover">
 
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
 
-                                    <span class="absolute top-5 left-5 px-5 py-2 rounded-full bg-[#FACC15] text-black font-black">
-                                        <?php echo $student['percentage']; ?>%
-                                    </span>
+        <div class="absolute bottom-5 left-5 right-5">
 
-                                    <span class="absolute top-5 right-5 px-5 py-2 rounded-full bg-[#AE1C21] text-white font-black">
-                                        Rank <?php echo $student['rank_position']; ?>
-                                    </span>
+            <div class="inline-block bg-[#FACC15] rounded-2xl px-5 py-3 shadow-xl">
 
-                                    <div class="absolute bottom-5 left-5 right-5">
+                <h3 class="text-xl font-black text-slate-900">
+                    <?php echo $student['student_name']; ?>
+                </h3>
 
-                                        <div class="inline-block bg-[#FACC15] rounded-2xl px-5 py-3 shadow-xl">
+            </div>
 
-                                            <h3 class="text-xl font-black text-slate-900">
-                                                <?php echo $student['student_name']; ?>
-                                            </h3>
+        </div>
 
-                                        </div>
+    </div>
 
-                                    </div>
+    <!-- DETAILS BELOW IMAGE -->
+    <div class="p-6">
 
-                                </div>
+        <div class="flex items-center justify-between">
 
-                            </div>
+            <div class="text-center flex-1">
+                <p class="text-sm font-bold text-slate-500 uppercase">
+                    Percentage
+                </p>
+
+                <h4 class="text-3xl font-black text-[#AE1C21]">
+                    <?php echo $student['percentage']; ?>%
+                </h4>
+            </div>
+
+            <div class="w-px h-14 bg-slate-200"></div>
+
+            <div class="text-center flex-1">
+                <p class="text-sm font-bold text-slate-500 uppercase">
+                    Rank
+                </p>
+
+                <h4 class="text-3xl font-black text-[#AE1C21]">
+                    #<?php echo $student['rank_position']; ?>
+                </h4>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
                         <?php } ?>
 
