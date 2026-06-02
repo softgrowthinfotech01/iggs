@@ -1025,7 +1025,7 @@ $principal = $stmt->fetch(PDO::FETCH_ASSOC);
 // Vice Principal
 $stmt = $pdo->query("SELECT * FROM vice_principal_message LIMIT 1");
 $vice_principal = $stmt->fetch(PDO::FETCH_ASSOC);
-
+ 
 // Prevent warnings if table is empty
 $principal = $principal ?: [
     'image' => '',
