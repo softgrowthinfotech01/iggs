@@ -10,11 +10,16 @@ $images = [];
 if ($slider) {
 
     $imageStmt = $pdo->prepare("
-        SELECT * 
-        FROM slider_images 
-        WHERE slider_id = ?
-        ORDER BY id ASC
-    ");
+    SELECT *
+    FROM slider_images
+    WHERE slider_id = ?
+    ORDER BY
+    CASE
+        WHEN LOWER(image) LIKE '%ig_gate%' THEN 0
+        ELSE 1
+    END,
+    image ASC
+");
 
     $imageStmt->execute([$slider['id']]);
     $images = $imageStmt->fetchAll(PDO::FETCH_ASSOC);
