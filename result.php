@@ -161,7 +161,7 @@ $years = $yearStmt->fetchAll(PDO::FETCH_COLUMN);
             button.classList.remove('bg-[#FACC15]', 'text-black');
             button.classList.add('bg-[#AE1C21]', 'text-white');
 
-            window.scrollTo({
+            window.scrollTo({ 
                 top: resultSection.offsetTop - 70,
                 behavior: 'smooth'
             });
