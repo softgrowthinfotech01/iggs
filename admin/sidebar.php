@@ -105,7 +105,28 @@
 
                 </svg>
 
-                Principal's Message
+                Principal Information
+
+            </a>
+
+            <!-- Vice-Principal's Message -->
+            <a href="vice_principal_message" id="vice_principal_message-link"
+                class="flex items-center gap-3 hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.8"
+                        d="M8 10h8M8 14h5m-7 7h12a2 2 0 002-2V7l-5-5H6a2 2 0 00-2 2v15a2 2 0 002 2z" />
+
+                </svg>
+
+                Vice-Principal Information
 
             </a>
 

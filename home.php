@@ -1018,141 +1018,137 @@ $notifications = $notificationStmt->fetchAll(PDO::FETCH_ASSOC);
 
     <?php
 
-    $stmt = $pdo->query("SELECT * FROM principal_message LIMIT 1");
-    $principal = $stmt->fetch(PDO::FETCH_ASSOC);
+// Principal
+$stmt = $pdo->query("SELECT * FROM principal_message LIMIT 1");
+$principal = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    ?>
+// Vice Principal
+$stmt = $pdo->query("SELECT * FROM vice_principal_message LIMIT 1");
+$vice_principal = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// Prevent warnings if table is empty
+$principal = $principal ?: [
+    'image' => '',
+    'name' => '',
+    'designation' => '',
+    'message' => ''
+];
+
+$vice_principal = $vice_principal ?: [
+    'image' => '',
+    'name' => '',
+    'designation' => '',
+    'message' => ''
+];
+
+?>
 
     <!-- PRINCIPAL MESSAGE -->
-    <section class="relative py-24 overflow-hidden bg-white">
+    <section class="relative py-24 overflow-hidden bg-[#fffaf0]">
 
-        <!-- SOFT BACKGROUND -->
-        <div class="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-slate-100"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(250,204,21,.35),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(174,28,33,.18),transparent_35%)]"></div>
 
-        <div class="absolute bottom-0 right-0 w-[450px] max-md:w-[180px] max-md:w-[180px] max-md:w-[180px] h-[450px] bg-cyan-200/30 blur-[120px] rounded-full"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
 
-        <!-- LIGHT SKETCH ICONS -->
-        <div class="absolute top-10 right-10 opacity-[0.06] rotate-12">
-            <i class="fa-solid fa-quote-left text-[220px] text-blue-900"></i>
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#AE1C21] text-white font-black shadow-xl">
+                <i class="fa-solid fa-user-graduate"></i>
+                Leadership Message
+            </span>
+
+            <h2 class="mt-6 text-4xl md:text-6xl font-black text-black leading-tight">
+                Guiding Students With
+                <span class="text-[#AE1C21]">Vision & Values</span>
+            </h2>
         </div>
 
-        <div class="absolute bottom-0 left-10 opacity-[0.06] -rotate-12">
-            <i class="fa-solid fa-graduation-cap text-[240px] text-cyan-700"></i>
-        </div>
+        <div class="grid lg:grid-cols-2 gap-10">
 
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <!-- PRINCIPAL CARD -->
+            <div class="group relative bg-white rounded-[45px] p-5 shadow-[0_35px_100px_rgba(0,0,0,.15)] border border-white overflow-hidden">
 
-            <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-16 items-center">
+                <div class="absolute -top-20 -right-20 w-48 h-48 bg-[#FACC15]/40 rounded-full blur-3xl group-hover:scale-150 transition duration-700"></div>
 
-                <!-- IMAGE SIDE -->
-                <div class="relative">
+                <div class="relative h-[520px] rounded-[35px] overflow-hidden">
+                    <img src="admin/images/<?php echo $principal['image']; ?>"
+                         alt="Principal"
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
 
-                    <div class="absolute -top-8 -left-8 w-40 h-40 bg-blue-400/20 rounded-full blur-3xl"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
 
-                    <div class="relative rounded-[45px] overflow-hidden bg-white shadow-[0_35px_90px_rgba(15,23,42,0.14)] border border-white p-5">
-
-                        <div class="relative h-[520px] rounded-[35px] overflow-hidden bg-gradient-to-br from-blue-100 to-cyan-50">
-
-                            <img src="admin/images/<?php echo $principal['image']; ?>"
-                                alt="Principal Message"
-                                class="w-full h-full object-cover">
-
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
-
-                            <div class="absolute left-6 right-6 bottom-6 bg-white/90 backdrop-blur-xl rounded-[28px] p-6 shadow-2xl">
-
-                                <h3 class="text-2xl font-black text-black">
-                                    <?php echo $principal['name']; ?>
-                                </h3>
-
-                                <p class="mt-1 text-blue-700 font-bold">
-                                    <?php echo $principal['designation']; ?>
-                                </p>
-
-                            </div>
-
-                        </div>
-
+                    <div class="absolute top-5 left-5 px-5 py-2 rounded-full bg-[#FACC15] text-black font-black shadow-xl">
+                        Principal
                     </div>
 
-                    <!-- FLOATING BADGE -->
-                    <div class="absolute -right-5 top-14 bg-white rounded-[28px] p-5 shadow-2xl border border-blue-100 hidden sm:block">
-
-                        <div class="flex items-center gap-4">
-
-                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-700 to-cyan-500 flex items-center justify-center text-white text-2xl">
-                                <i class="fa-solid fa-award"></i>
-                            </div>
-
-                            <div>
-                                <h4 class="text-2xl font-black text-blue-700">25+</h4>
-                                <p class="text-slate-500 font-bold text-sm">Years Excellence</p>
-                            </div>
-
-                        </div>
-
+                    <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-xl rounded-[30px] p-6 shadow-2xl">
+                        <h3 class="text-3xl font-black text-black">
+                            <?php echo $principal['name']; ?>
+                        </h3>
+                        <p class="mt-1 text-[#AE1C21] font-bold">
+                            <?php echo $principal['designation']; ?>
+                        </p>
                     </div>
-
                 </div>
 
+                <div class="relative mt-7 p-7 rounded-[32px] bg-slate-50 border border-slate-100">
+                    <i class="fa-solid fa-quote-left absolute -top-5 left-7 text-5xl text-[#AE1C21]/20"></i>
 
-
-                <!-- CONTENT SIDE -->
-                <div>
-
-                    <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] border border-blue-100 shadow-xl text-black font-black uppercase tracking-widest text-sm">
-                        <i class="fa-solid fa-message"></i>
+                    <h4 class="text-2xl font-black text-black mb-4">
                         Principal Message
-                    </span>
+                    </h4>
 
-                    <h2 class="mt-7 text-4xl lg:text-6xl font-black text-black leading-tight">
-                        Education With
-                        <span class="text-[#AE1C21]">Values & Vision</span>
-                    </h2>
-
-                    <p class="mt-8 text-black leading-9 text-lg text-justify">
-                        Our aim is to create confident, responsible and successful students.
-                        We believe every child has unique talent, and our duty is to guide,
-                        support and inspire them with modern education and strong values.
-                    </p>
-
-                    <!-- QUOTE BOX -->
-                    <div class="relative mt-10 bg-white rounded-[40px] p-8 shadow-[0_30px_80px_rgba(15,23,42,0.10)] border border-slate-100 overflow-hidden">
-
-                        <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-700 to-cyan-500"></div>
-
-                        <p class="mt-3 text-xl leading-10 text-slate-700 text-justify">
-                        <h4 class="font-semibold mb-2">Principal Message: </h4>
+                    <p class="text-slate-700 leading-8 text-justify">
                         <?php echo $principal['message']; ?>
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- VICE PRINCIPAL CARD -->
+            <div class="group relative bg-white rounded-[45px] p-5 shadow-[0_35px_100px_rgba(0,0,0,.15)] border border-white overflow-hidden">
+
+                <div class="absolute -top-20 -left-20 w-48 h-48 bg-[#AE1C21]/25 rounded-full blur-3xl group-hover:scale-150 transition duration-700"></div>
+
+                <div class="relative h-[520px] rounded-[35px] overflow-hidden">
+                    <img src="admin/images/<?php echo $vice_principal['image']; ?>"
+                         alt="Vice Principal"
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+
+                    <div class="absolute top-5 left-5 px-5 py-2 rounded-full bg-[#AE1C21] text-white font-black shadow-xl">
+                        Vice Principal
+                    </div>
+
+                    <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-xl rounded-[30px] p-6 shadow-2xl">
+                        <h3 class="text-3xl font-black text-black">
+                            <?php echo $vice_principal['name']; ?>
+                        </h3>
+                        <p class="mt-1 text-[#AE1C21] font-bold">
+                            <?php echo $vice_principal['designation']; ?>
                         </p>
-
                     </div>
+                </div>
 
-                    <!-- SIGNATURE -->
-                    <div class="mt-8 flex items-center gap-5">
+                <div class="relative mt-7 p-7 rounded-[32px] bg-slate-50 border border-slate-100">
+                    <i class="fa-solid fa-quote-left absolute -top-5 left-7 text-5xl text-[#AE1C21]/20"></i>
 
-                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-700 to-cyan-500 flex items-center justify-center text-white text-2xl shadow-xl">
-                            <i class="fa-solid fa-user-tie"></i>
-                        </div>
+                    <h4 class="text-2xl font-black text-black mb-4">
+                        Vice Principal Message
+                    </h4>
 
-                        <div>
-                            <h3 class="text-2xl font-black text-black">
-                                <?php echo $principal['name']; ?>
-                            </h3>
-                            <p class="text-blue-700 font-bold">
-                                <?php echo $principal['designation']; ?>
-                            </p>
-                        </div>
-
-                    </div>
-
+                    <p class="text-slate-700 leading-8 text-justify">
+                        <?php echo $vice_principal['message']; ?>
+                    </p>
                 </div>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
     <!-- CTA -->
     <!-- ADMISSION CTA -->
