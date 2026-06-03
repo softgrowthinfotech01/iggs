@@ -9,10 +9,31 @@ if (!isset($_SESSION['admin'])) {
 
 include 'conn.php';
 
-// Delete Records
+$uploadDir = 'images/notifications/';
+
+/* DELETE */
 if (isset($_GET['delete'])) {
 
     $id = (int)$_GET['delete'];
+
+    $stmt = $pdo->prepare("
+        SELECT file_path
+        FROM notifications
+        WHERE id = ?
+    ");
+
+    $stmt->execute([$id]);
+
+    $notification = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($notification && !empty($notification['file_path'])) {
+
+        $file = $uploadDir . $notification['file_path'];
+
+        if (file_exists($file)) {
+            unlink($file);
+        }
+    }
 
     $stmt = $pdo->prepare("
         DELETE FROM notifications
@@ -25,25 +46,41 @@ if (isset($_GET['delete'])) {
     exit;
 }
 
+
 /* UPDATE NOTIFICATION */
 if (isset($_POST['update_notification'])) {
 
     $id = (int)$_POST['notification_id'];
     $title = trim($_POST['notification_title']);
+    $fileName = $_POST['existing_file'];
 
-    if (!empty($title)) {
+    if (!empty($_FILES['notification_file']['name'])) {
 
-        $stmt = $pdo->prepare("
-            UPDATE notifications
-            SET notification_title = ?
-            WHERE id = ?
-        ");
+        if (!empty($fileName) && file_exists($uploadDir . $fileName)) {
+            unlink($uploadDir . $fileName);
+        }
 
-        $stmt->execute([
-            $title,
-            $id
-        ]);
+        $fileName = time() . '_' . basename($_FILES['notification_file']['name']);
+
+        move_uploaded_file(
+            $_FILES['notification_file']['tmp_name'],
+            $uploadDir . $fileName
+        );
     }
+
+    $stmt = $pdo->prepare("
+        UPDATE notifications
+        SET
+            notification_title = ?,
+            file_path = ?
+        WHERE id = ?
+    ");
+
+    $stmt->execute([
+        $title,
+        $fileName,
+        $id
+    ]);
 
     header("Location: notifications.php");
     exit;
@@ -54,26 +91,38 @@ if (isset($_POST['update_notification'])) {
 if (isset($_POST['add_notification'])) {
 
     $title = trim($_POST['notification_title']);
+    $fileName = null;
 
-    if (!empty($title)) {
+    if (!empty($_FILES['notification_file']['name'])) {
 
-        $stmt = $pdo->prepare("
-            INSERT INTO notifications (
-                notification_title
-            )
-            VALUES (?)
-        ");
+        $fileName = time() . '_' . basename($_FILES['notification_file']['name']);
 
-        $stmt->execute([
-            $title
-        ]);
+        move_uploaded_file(
+            $_FILES['notification_file']['tmp_name'],
+            $uploadDir . $fileName
+        );
     }
+
+    $stmt = $pdo->prepare("
+        INSERT INTO notifications (
+            notification_title,
+            file_path
+        )
+        VALUES (?, ?)
+    ");
+
+    $stmt->execute([
+        $title,
+        $fileName
+    ]);
 
     header("Location: notifications.php");
     exit;
 }
 
-// Pagination
+
+/* PAGINATION */
+
 $records_per_page = 5;
 
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -84,15 +133,13 @@ if ($page < 1) {
 
 $offset = ($page - 1) * $records_per_page;
 
-// Total Records
 $total_records = $pdo->query("
-    SELECT COUNT(*) 
+    SELECT COUNT(*)
     FROM notifications
 ")->fetchColumn();
 
 $total_pages = ceil($total_records / $records_per_page);
 
-// Fetch Records
 $stmt = $pdo->prepare("
     SELECT *
     FROM notifications
@@ -129,25 +176,53 @@ $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </h2>
                 </div>
 
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
 
-                    <div class="flex gap-3 mb-8">
+                    <div class="flex flex-col md:flex-row gap-4 mb-6">
 
-                        <input
-                            type="text"
-                            name="notification_title"
-                            placeholder="Enter notification title"
-                            required
-                            class="flex-1 border border-gray-600 rounded-xl px-4 py-3">
+                        <!-- Notification Title -->
+                        <div class="flex-1">
 
-                        <button
-                            type="submit"
-                            name="add_notification"
-                            class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 rounded-xl">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Notification Title
+                            </label>
 
-                            Add
+                            <input
+                                type="text"
+                                name="notification_title"
+                                required
+                                class="w-full border border-gray-600 rounded-xl px-4 py-3">
 
-                        </button>
+                        </div>
+
+                        <!-- File Upload -->
+                        <div class="flex-1">
+
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Attachment (PDF / Word / Excel)
+                            </label>
+
+                            <input
+                                type="file"
+                                name="notification_file"
+                                accept=".pdf,.doc,.docx,.xls,.xlsx"
+                                class="w-full border border-gray-600 rounded-xl px-4 py-3">
+
+                        </div>
+
+                        <!-- Add Button -->
+                        <div class="flex items-center ">
+
+                            <button
+                                type="submit"
+                                name="add_notification"
+                                class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-4 rounded-xl">
+
+                                Add
+
+                            </button>
+
+                        </div>
 
                     </div>
 
@@ -164,6 +239,7 @@ $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <tr>
                                 <th class="border p-3 text-left">Sr No</th>
                                 <th class="border p-3 text-left">Notification Title</th>
+                                <th class="border p-3 text-left">Attachment</th>
                                 <th class="border p-3 text-left">Created At</th>
                                 <th class="border p-3 text-center">Actions</th>
                             </tr>
@@ -172,56 +248,82 @@ $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                         <tbody>
 
-                            <?php
-                            $sr = 1;
+                            <?php if (!empty($notifications)): ?>
 
-                            foreach ($notifications as $row) :
-                            ?>
+                                <?php
+                                $sr = $offset + 1;
+
+                                foreach ($notifications as $row):
+                                ?>
+
+                                    <tr>
+
+                                        <td class="border p-3">
+                                            <?= $sr++ ?>
+                                        </td>
+
+                                        <td class="border p-3">
+                                            <?= htmlspecialchars($row['notification_title']) ?>
+                                        </td>
+
+                                        <td class="border p-3">
+
+                                            <?php if (!empty($row['file_path'])): ?>
+
+                                                <a
+                                                    href="images/notifications/<?= htmlspecialchars($row['file_path']) ?>"
+                                                    target="_blank"
+                                                    class="text-blue-600 hover:underline">
+
+                                                    View File
+
+                                                </a>
+
+                                            <?php else: ?>
+
+                                                -
+
+                                            <?php endif; ?>
+
+                                        </td>
+
+                                        <td class="border p-3">
+                                            <?= date('d M Y h:i A', strtotime($row['created_at'])) ?>
+                                        </td>
+
+                                        <td class="border p-3 text-center">
+
+                                            <button
+                                                type="button"
+                                                onclick="openEditModal(
+                            <?= $row['id'] ?>,
+                            '<?= htmlspecialchars($row['notification_title'], ENT_QUOTES) ?>'
+                        )"
+                                                class="bg-indigo-500 hover:bg-indigo-600 text-white px-3 py-1 rounded">
+
+                                                Edit
+
+                                            </button>
+
+                                            <a
+                                                href="?delete=<?= $row['id'] ?>"
+                                                onclick="return confirm('Delete this notification?')"
+                                                class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded ml-2">
+
+                                                Delete
+
+                                            </a>
+
+                                        </td>
+
+                                    </tr>
+
+                                <?php endforeach; ?>
+
+                            <?php else: ?>
 
                                 <tr>
-
-                                    <td class="border p-3">
-                                        <?= $sr++ ?>
-                                    </td>
-
-                                    <td class="border p-3">
-                                        <?= htmlspecialchars($row['notification_title']) ?>
-                                    </td>
-
-                                    <td class="border p-3">
-                                        <?= date('d M Y h:i A', strtotime($row['created_at'])) ?>
-                                    </td>
-
-                                    <td class="border p-3 text-center">
-
-                                        <button
-                                            type="button"
-                                            onclick="openEditModal(
-        <?= $row['id'] ?>,
-        '<?= htmlspecialchars($row['notification_title'], ENT_QUOTES) ?>'
-    )"
-                                            class="bg-indigo-500 hover:bg-indigo-600 text-white px-3 py-1 rounded">
-
-                                            Edit
-
-                                        </button>
-
-                                        <a href="?delete=<?= $row['id'] ?>"
-                                            onclick="return confirm('Delete this notification?')"
-                                            class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md">
-                                            Delete
-                                        </a>
-
-                                    </td>
-
-                                </tr>
-
-                            <?php endforeach; ?>
-
-                            <?php if (empty($notifications)) : ?>
-
-                                <tr>
-                                    <td colspan="3" class="border p-4 text-center">
+                                    <td colspan="5" class="border p-4 text-center">
                                         No notifications found
                                     </td>
                                 </tr>
@@ -276,7 +378,7 @@ $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
     id="editModal"
     class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
 
-    <div class="bg-white rounded-lg p-6 w-full max-w-xl mx-auto">
+    <div class="bg-white rounded-lg p-6 w-full max-w-xl mx-4">
 
         <div class="flex justify-between items-center mb-4">
 
@@ -285,6 +387,7 @@ $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </h2>
 
             <button
+                type="button"
                 onclick="closeEditModal()"
                 class="text-gray-500 text-xl">
                 ✕
@@ -292,7 +395,7 @@ $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         </div>
 
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
 
             <input
                 type="hidden"
@@ -300,11 +403,56 @@ $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 id="editNotificationId">
 
             <input
-                type="text"
-                name="notification_title"
-                id="editNotificationTitle"
-                required
-                class="w-full border rounded-lg px-4 py-3 mb-4">
+                type="hidden"
+                name="existing_file"
+                id="editExistingFile">
+
+            <!-- Title -->
+
+            <div class="mb-4">
+
+                <label class="block text-sm font-medium text-gray-700 mb-2">
+                    Notification Title
+                </label>
+
+                <input
+                    type="text"
+                    name="notification_title"
+                    id="editNotificationTitle"
+                    required
+                    class="w-full border rounded-lg px-4 py-3">
+
+            </div>
+
+            <!-- Current File -->
+
+            <div class="mb-4">
+
+                <label class="block text-sm font-medium text-gray-700 mb-2">
+                    Current Attachment
+                </label>
+
+                <div id="currentFileContainer">
+                    <span class="text-gray-500">No file uploaded</span>
+                </div>
+
+            </div>
+
+            <!-- New File -->
+
+            <div class="mb-6">
+
+                <label class="block text-sm font-medium text-gray-700 mb-2">
+                    Replace Attachment (Optional)
+                </label>
+
+                <input
+                    type="file"
+                    name="notification_file"
+                    accept=".pdf,.doc,.docx,.xls,.xlsx"
+                    class="w-full border rounded-lg px-4 py-3">
+
+            </div>
 
             <div class="flex justify-end gap-2">
 
@@ -335,22 +483,18 @@ $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 <script>
+    function openEditModal(id, title) {
+        document.getElementById('editNotificationId').value = id;
+        document.getElementById('editNotificationTitle').value = title;
 
-function openEditModal(id, title)
-{
-    document.getElementById('editNotificationId').value = id;
-    document.getElementById('editNotificationTitle').value = title;
+        document.getElementById('editModal').classList.remove('hidden');
+        document.getElementById('editModal').classList.add('flex');
+    }
 
-    document.getElementById('editModal').classList.remove('hidden');
-    document.getElementById('editModal').classList.add('flex');
-}
-
-function closeEditModal()
-{
-    document.getElementById('editModal').classList.add('hidden');
-    document.getElementById('editModal').classList.remove('flex');
-}
-
+    function closeEditModal() {
+        document.getElementById('editModal').classList.add('hidden');
+        document.getElementById('editModal').classList.remove('flex');
+    }
 </script>
 
 <!-- Edit Modal -->

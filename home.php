@@ -19,7 +19,7 @@ $images = $imageStmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -51,7 +51,8 @@ $images = $imageStmt->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="relative w-full mt-10 md:mt-20 overflow-hidden rounded-[4px] shadow-[0_40px_90px_rgba(15,23,42,0.18)] border border-slate-200 p-5">
 
-<div class="relative mt-10 md:mt-10 h-[240px] sm:h-[260px] md:h-[500px] rounded-[20px] md:rounded-[35px] overflow-hidden bg-gradient-to-br from-blue-50 to-white w-full">                <div id="uniqueSlider" class="relative w-full h-full">
+            <div class="relative mt-10 md:mt-10 h-[240px] sm:h-[260px] md:h-[500px] rounded-[20px] md:rounded-[35px] overflow-hidden bg-gradient-to-br from-blue-50 to-white w-full">
+                <div id="uniqueSlider" class="relative w-full h-full">
 
                     <?php if (!empty($images)): ?>
 
@@ -76,7 +77,7 @@ $images = $imageStmt->fetchAll(PDO::FETCH_ASSOC);
 
                     <?php endif; ?>
 
-                    
+
                     <!-- FLOATING DOTS -->
                     <div class="absolute inset-y-0 right-6 max-md:right-3 flex flex-col justify-center z-30 gap-2">
 
@@ -101,55 +102,70 @@ $images = $imageStmt->fetchAll(PDO::FETCH_ASSOC);
 
     <?php
 
-$notificationStmt = $pdo->query("
-    SELECT notification_title
+    $notificationStmt = $pdo->query("
+    SELECT notification_title, file_path
     FROM notifications
     ORDER BY id DESC
 ");
 
-$notifications = $notificationStmt->fetchAll(PDO::FETCH_ASSOC);
+    $notifications = $notificationStmt->fetchAll(PDO::FETCH_ASSOC);
 
-?>
+    ?>
 
-<!-- SMOOTH ANIMATED NOTIFICATION BAR -->
-<section class="relative overflow-hidden bg-[#AE1C21] shadow-xl">
+    <!-- SMOOTH ANIMATED NOTIFICATION BAR -->
+    <section class="relative overflow-hidden bg-[#AE1C21] shadow-xl">
 
-    <div class="absolute inset-0 bg-gradient-to-r from-[#AE1C21] via-[#8f1419] to-[#AE1C21]"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#AE1C21] via-[#8f1419] to-[#AE1C21]"></div>
 
-    <div class="relative flex items-center">
+        <div class="relative flex items-center">
 
-        <div class="relative z-20 bg-[#FACC15] text-black font-black px-7 md:px-8 sm:px-8 py-4 mb-2 md:mb-2  whitespace-nowrap">
-            <i class="fa-solid fa-bell fa-shake mr-2"></i>
-            Notification
+            <div class="relative z-20 bg-[#FACC15] text-black font-black px-7 md:px-8 sm:px-8 py-4 mb-2 md:mb-2  whitespace-nowrap">
+                <i class="fa-solid fa-bell fa-shake mr-2"></i>
+                Notification
+            </div>
+
+            <div class="flex-1 overflow-hidden">
+
+                <marquee
+                    behavior="scroll"
+                    direction="left"
+                    scrollamount="6"
+                    class="py-4 text-white font-bold">
+
+                    <?php foreach ($notifications as $notification): ?>
+
+                        &nbsp;&nbsp;
+                        ★
+                        &nbsp;&nbsp;
+
+                        <?php if (!empty($notification['file_path'])): ?>
+
+                            <a
+                                href="admin/images/notifications/<?= htmlspecialchars($notification['file_path']) ?>"
+                                target="_blank"
+                                class="text-white hover:text-yellow-300 transition">
+
+                                <?= htmlspecialchars($notification['notification_title']) ?>
+
+                            </a>
+
+                        <?php else: ?>
+
+                            <span>
+                                <?= htmlspecialchars($notification['notification_title']) ?>
+                            </span>
+
+                        <?php endif; ?>
+
+                    <?php endforeach; ?>
+
+                </marquee>
+
+            </div>
+
         </div>
 
-        <div class="flex-1 overflow-hidden">
-
-            <marquee
-    behavior="scroll"
-    direction="left"
-    scrollamount="6"
-    class="py-4 text-white font-bold">
-
-    <?php foreach ($notifications as $notification): ?>
-
-        &nbsp;&nbsp;
-        ★
-        &nbsp;&nbsp;
-
-        <span>
-             <?= htmlspecialchars($notification['notification_title']) ?>
-        </span>
-
-    <?php endforeach; ?>
-
-</marquee>
-
-        </div>
-
-    </div>
-
-</section>
+    </section>
     <!-- NOTICE STRIP -->
     <!-- <section class="relative -mt-2 z-10">
         <div class="max-w-7xl mx-auto px-6">
@@ -224,91 +240,91 @@ $notifications = $notificationStmt->fetchAll(PDO::FETCH_ASSOC);
                     <div class="relative bg-white rounded-[45px] shadow-[0_35px_90px_rgba(15,23,42,0.10)] border border-white overflow-hidden">
 
                         <!-- TOP -->
-                       <div class="relative h-[350px] sm:h-[450px] md:h-[650px] overflow-hidden rounded-[24px] md:rounded-[0px]">
+                        <div class="relative h-[350px] sm:h-[450px] md:h-[650px] overflow-hidden rounded-[24px] md:rounded-[0px]">
 
-    <img src="admin/images/<?php echo $about['image']; ?>"
-        alt="About Image"
-        class="w-full h-full object-cover hover:scale-110 transition duration-[2000ms]">
+                            <img src="admin/images/<?php echo $about['image']; ?>"
+                                alt="About Image"
+                                class="w-full h-full object-cover hover:scale-110 transition duration-[2000ms]">
 
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.35),transparent_40%)]"></div>
+                            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.35),transparent_40%)]"></div>
 
-    <!-- FLOATING ICONS -->
-    <!-- <div class="absolute top-4 left-4 sm:top-6 sm:left-6 md:top-8 md:left-8 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-[#AE1C21] backdrop-blur-xl flex items-center justify-center border border-white/20"> -->
+                            <!-- FLOATING ICONS -->
+                            <!-- <div class="absolute top-4 left-4 sm:top-6 sm:left-6 md:top-8 md:left-8 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-[#AE1C21] backdrop-blur-xl flex items-center justify-center border border-white/20"> -->
 
-        <!-- <i class="fa-solid fa-book-open-reader text-white text-xl sm:text-3xl md:text-4xl"></i> -->
+                            <!-- <i class="fa-solid fa-book-open-reader text-white text-xl sm:text-3xl md:text-4xl"></i> -->
 
-    <!-- </div> -->
+                            <!-- </div> -->
 
-    <!-- <div class="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-[#AE1C21] backdrop-blur-xl flex items-center justify-center border border-white/20"> -->
+                            <!-- <div class="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-[#AE1C21] backdrop-blur-xl flex items-center justify-center border border-white/20"> -->
 
-        <!-- <i class="fa-solid fa-children text-white text-xl sm:text-3xl md:text-4xl"></i> -->
+                            <!-- <i class="fa-solid fa-children text-white text-xl sm:text-3xl md:text-4xl"></i> -->
 
-    <!-- </div> -->
+                            <!-- </div> -->
 
-    <!-- CENTER -->
-    <div class="absolute bottom-5 left-5 right-5 sm:bottom-8 sm:left-8 sm:right-8 md:bottom-10 md:left-10 md:right-10">
+                            <!-- CENTER -->
+                            <div class="absolute bottom-5 left-5 right-5 sm:bottom-8 sm:left-8 sm:right-8 md:bottom-10 md:left-10 md:right-10">
 
-        <span class="inline-flex px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-3 rounded-full bg-[#AE1C21] backdrop-blur-xl border border-white/20 text-white font-black uppercase tracking-widest text-[10px] sm:text-xs md:text-sm">
+                                <span class="inline-flex px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-3 rounded-full bg-[#AE1C21] backdrop-blur-xl border border-white/20 text-white font-black uppercase tracking-widest text-[10px] sm:text-xs md:text-sm">
 
-            Since 2005
+                                    Since 2005
 
-        </span>
+                                </span>
 
-        <h3 class="mt-3 sm:mt-4 md:mt-5 text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">
+                                <h3 class="mt-3 sm:mt-4 md:mt-5 text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">
 
-            Excellence In
-            <span class="block">Modern Education</span>
+                                    Excellence In
+                                    <span class="block">Modern Education</span>
 
-        </h3>
+                                </h3>
 
-    </div>
+                            </div>
 
-</div>
+                        </div>
 
                         <!-- BOTTOM -->
                         <div class="p-4 sm:p-6 md:p-8">
 
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
 
-        <div class="rounded-2xl md:rounded-3xl bg-blue-50 p-4 sm:p-5 text-center hover:-translate-y-2 transition duration-500">
+                                <div class="rounded-2xl md:rounded-3xl bg-blue-50 p-4 sm:p-5 text-center hover:-translate-y-2 transition duration-500">
 
-            <h4 class="text-2xl sm:text-3xl font-black text-blue-700">
-                25+
-            </h4>
+                                    <h4 class="text-2xl sm:text-3xl font-black text-blue-700">
+                                        25+
+                                    </h4>
 
-            <p class="mt-2 text-xs sm:text-sm font-bold text-slate-500">
-                Years
-            </p>
+                                    <p class="mt-2 text-xs sm:text-sm font-bold text-slate-500">
+                                        Years
+                                    </p>
 
-        </div>
+                                </div>
 
-        <div class="rounded-2xl md:rounded-3xl bg-cyan-50 p-4 sm:p-5 text-center hover:-translate-y-2 transition duration-500">
+                                <div class="rounded-2xl md:rounded-3xl bg-cyan-50 p-4 sm:p-5 text-center hover:-translate-y-2 transition duration-500">
 
-            <h4 class="text-2xl sm:text-3xl font-black text-cyan-600">
-                1200+
-            </h4>
+                                    <h4 class="text-2xl sm:text-3xl font-black text-cyan-600">
+                                        1200+
+                                    </h4>
 
-            <p class="mt-2 text-xs sm:text-sm font-bold text-slate-500">
-                Students
-            </p>
+                                    <p class="mt-2 text-xs sm:text-sm font-bold text-slate-500">
+                                        Students
+                                    </p>
 
-        </div>
+                                </div>
 
-        <div class="rounded-2xl md:rounded-3xl bg-blue-50 p-4 sm:p-5 text-center hover:-translate-y-2 transition duration-500">
+                                <div class="rounded-2xl md:rounded-3xl bg-blue-50 p-4 sm:p-5 text-center hover:-translate-y-2 transition duration-500">
 
-            <h4 class="text-2xl sm:text-3xl font-black text-blue-700">
-                45+
-            </h4>
+                                    <h4 class="text-2xl sm:text-3xl font-black text-blue-700">
+                                        45+
+                                    </h4>
 
-            <p class="mt-2 text-xs sm:text-sm font-bold text-slate-500">
-                Teachers
-            </p>
+                                    <p class="mt-2 text-xs sm:text-sm font-bold text-slate-500">
+                                        Teachers
+                                    </p>
 
-        </div>
+                                </div>
 
-    </div>
+                            </div>
 
-</div>
+                        </div>
 
                     </div>
 
@@ -427,113 +443,113 @@ $notifications = $notificationStmt->fetchAll(PDO::FETCH_ASSOC);
 
 
     <!-- MANAGEMENT SECTION -->
-<section class="relative py-24 overflow-hidden bg-white">
+    <section class="relative py-24 overflow-hidden bg-white">
 
-    <div class="absolute top-10 left-10 opacity-[0.08] rotate-[-12deg]">
-        <i class="fa-solid fa-users-gear text-[220px] text-blue-900"></i>
-    </div>
+        <div class="absolute top-10 left-10 opacity-[0.08] rotate-[-12deg]">
+            <i class="fa-solid fa-users-gear text-[220px] text-blue-900"></i>
+        </div>
 
-    <div class="absolute bottom-0 right-10 opacity-[0.08] rotate-[12deg]">
-        <i class="fa-solid fa-building-columns text-[220px] text-blue-900"></i>
-    </div>
+        <div class="absolute bottom-0 right-10 opacity-[0.08] rotate-[12deg]">
+            <i class="fa-solid fa-building-columns text-[220px] text-blue-900"></i>
+        </div>
 
-    <!-- <div class="absolute top-0 left-0 w-[420px] h-[420px] bg-[#FACC15]/20 blur-[120px] rounded-full"></div>
+        <!-- <div class="absolute top-0 left-0 w-[420px] h-[420px] bg-[#FACC15]/20 blur-[120px] rounded-full"></div>
     <div class="absolute bottom-0 right-0 w-[420px] h-[420px] bg-[#AE1C21]/20 blur-[120px] rounded-full"></div> -->
 
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
 
-        <div class="text-center max-w-4xl mx-auto">
-            <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] shadow-xl text-black font-black uppercase tracking-widest text-sm">
-                <i class="fa-solid fa-crown"></i>
-                Our Leadership
-            </span>
+            <div class="text-center max-w-4xl mx-auto">
+                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#FACC15] shadow-xl text-black font-black uppercase tracking-widest text-sm">
+                    <i class="fa-solid fa-crown"></i>
+                    Our Leadership
+                </span>
 
-            <h2 class="mt-6 text-4xl lg:text-6xl font-black text-black leading-tight">
-                Guiding Vision Of
-                <span class="text-[#AE1C21]">Our Institution</span>
-            </h2>
+                <h2 class="mt-6 text-4xl lg:text-6xl font-black text-black leading-tight">
+                    Guiding Vision Of
+                    <span class="text-[#AE1C21]">Our Institution</span>
+                </h2>
 
-            <p class="mt-5 text-black text-lg leading-8">
-                Dedicated leadership shaping the future of education with values, culture and excellence.
-            </p>
-        </div>
-
-        <div class="mt-20 grid md:grid-cols-2 gap-10">
-
-            <!-- CARD 1 -->
-            <div class="group relative bg-white rounded-[40px] p-5 shadow-[0_35px_90px_rgba(15,23,42,0.12)] border border-slate-100 hover:-translate-y-4 transition duration-700 overflow-hidden">
-
-                <div class="absolute inset-x-0 top-0 h-2 bg-[#AE1C21]"></div>
-
-                <div class="relative h-[420px] rounded-[30px] overflow-hidden bg-slate-100">
-                    <img src="images/president.png"
-                         alt="Shri NareshBabuji Puglia"
-                         class="w-full h-full object-cover group-hover:scale-110 transition duration-[2000ms]">
-
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
-
-                    <div class="absolute bottom-5 left-5 right-5">
-                        <span class="inline-flex px-4 py-2 rounded-full bg-[#FACC15] text-black font-black text-sm">
-                            President
-                        </span>
-                    </div>
-                </div>
-
-                <div class="p-6 text-center">
-                    <h3 class="text-3xl font-black text-black">
-                        Shri NareshBabuji Puglia
-                    </h3>
-
-                    <p class="mt-3 text-[#AE1C21] font-black text-lg">
-                        Ex-MP, President
-                    </p>
-
-                    <p class="mt-3 text-slate-700 font-semibold leading-7">
-                        The Education and Cultural Society, Chandrapur
-                    </p>
-                </div>
-
+                <p class="mt-5 text-black text-lg leading-8">
+                    Dedicated leadership shaping the future of education with values, culture and excellence.
+                </p>
             </div>
 
-            <!-- CARD 2 -->
-            <div class="group relative bg-white rounded-[40px] p-5 shadow-[0_35px_90px_rgba(15,23,42,0.12)] border border-slate-100 hover:-translate-y-4 transition duration-700 overflow-hidden">
+            <div class="mt-20 grid md:grid-cols-2 gap-10">
 
-                <div class="absolute inset-x-0 top-0 h-2 bg-[#FACC15]"></div>
+                <!-- CARD 1 -->
+                <div class="group relative bg-white rounded-[40px] p-5 shadow-[0_35px_90px_rgba(15,23,42,0.12)] border border-slate-100 hover:-translate-y-4 transition duration-700 overflow-hidden">
 
-                <div class="relative h-[420px] rounded-[30px] overflow-hidden bg-slate-100">
-                    <img src="images/vice_president.png"
-                         alt="Shri Rahulbabuji Puglia"
-                         class="w-full h-full object-cover group-hover:scale-110  transition duration-[2000ms]">
+                    <div class="absolute inset-x-0 top-0 h-2 bg-[#AE1C21]"></div>
 
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+                    <div class="relative h-[420px] rounded-[30px] overflow-hidden bg-slate-100">
+                        <img src="images/president.png"
+                            alt="Shri NareshBabuji Puglia"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-[2000ms]">
 
-                    <div class="absolute bottom-5 left-5 right-5">
-                        <span class="inline-flex px-4 py-2 rounded-full bg-[#AE1C21] text-white font-black text-sm">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+
+                        <div class="absolute bottom-5 left-5 right-5">
+                            <span class="inline-flex px-4 py-2 rounded-full bg-[#FACC15] text-black font-black text-sm">
+                                President
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 text-center">
+                        <h3 class="text-3xl font-black text-black">
+                            Shri NareshBabuji Puglia
+                        </h3>
+
+                        <p class="mt-3 text-[#AE1C21] font-black text-lg">
+                            Ex-MP, President
+                        </p>
+
+                        <p class="mt-3 text-slate-700 font-semibold leading-7">
+                            The Education and Cultural Society, Chandrapur
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="group relative bg-white rounded-[40px] p-5 shadow-[0_35px_90px_rgba(15,23,42,0.12)] border border-slate-100 hover:-translate-y-4 transition duration-700 overflow-hidden">
+
+                    <div class="absolute inset-x-0 top-0 h-2 bg-[#FACC15]"></div>
+
+                    <div class="relative h-[420px] rounded-[30px] overflow-hidden bg-slate-100">
+                        <img src="images/vice_president.png"
+                            alt="Shri Rahulbabuji Puglia"
+                            class="w-full h-full object-cover group-hover:scale-110  transition duration-[2000ms]">
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+
+                        <div class="absolute bottom-5 left-5 right-5">
+                            <span class="inline-flex px-4 py-2 rounded-full bg-[#AE1C21] text-white font-black text-sm">
+                                Vice President
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 text-center">
+                        <h3 class="text-3xl font-black text-black">
+                            Shri Rahulbabuji Puglia
+                        </h3>
+
+                        <p class="mt-3 text-[#AE1C21] font-black text-lg">
                             Vice President
-                        </span>
+                        </p>
+
+                        <p class="mt-3 text-slate-700 font-semibold leading-7">
+                            The Education and Cultural Society, Chandrapur
+                        </p>
                     </div>
-                </div>
 
-                <div class="p-6 text-center">
-                    <h3 class="text-3xl font-black text-black">
-                        Shri Rahulbabuji Puglia
-                    </h3>
-
-                    <p class="mt-3 text-[#AE1C21] font-black text-lg">
-                        Vice President
-                    </p>
-
-                    <p class="mt-3 text-slate-700 font-semibold leading-7">
-                        The Education and Cultural Society, Chandrapur
-                    </p>
                 </div>
 
             </div>
 
         </div>
-
-    </div>
-</section>
+    </section>
     <!-- ACADEMICS -->
     <section class="relative py-24 overflow-hidden bg-white">
 
@@ -1015,323 +1031,356 @@ $notifications = $notificationStmt->fetchAll(PDO::FETCH_ASSOC);
 
     <?php
 
-// Principal
-$stmt = $pdo->query("SELECT * FROM principal_message LIMIT 1");
-$principal = $stmt->fetch(PDO::FETCH_ASSOC);
+    // Principal
+    $stmt = $pdo->query("SELECT * FROM principal_message LIMIT 1");
+    $principal = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Vice Principal
-$stmt = $pdo->query("SELECT * FROM vice_principal_message LIMIT 1");
-$vice_principal = $stmt->fetch(PDO::FETCH_ASSOC);
- 
-// Prevent warnings if table is empty
-$principal = $principal ?: [
-    'image' => '',
-    'name' => '',
-    'designation' => '',
-    'message' => ''
-];
+    // Vice Principal
+    $stmt = $pdo->query("SELECT * FROM vice_principal_message LIMIT 1");
+    $vice_principal = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$vice_principal = $vice_principal ?: [
-    'image' => '',
-    'name' => '',
-    'designation' => '',
-    'message' => ''
-];
+    // Prevent warnings if table is empty
+    $principal = $principal ?: [
+        'image' => '',
+        'name' => '',
+        'designation' => '',
+        'message' => ''
+    ];
 
-?>
+    $vice_principal = $vice_principal ?: [
+        'image' => '',
+        'name' => '',
+        'designation' => '',
+        'message' => ''
+    ];
+
+    ?>
 
     <!-- PRINCIPAL MESSAGE -->
     <section class="relative py-24 overflow-hidden bg-[#fffaf0]">
 
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(250,204,21,.35),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(174,28,33,.18),transparent_35%)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(250,204,21,.35),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(174,28,33,.18),transparent_35%)]"></div>
 
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
 
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#AE1C21] text-white font-black shadow-xl">
-                <i class="fa-solid fa-user-graduate"></i>
-                Leadership Message
-            </span>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#AE1C21] text-white font-black shadow-xl">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    Leadership Message
+                </span>
 
-            <h2 class="mt-6 text-4xl md:text-6xl font-black text-black leading-tight">
-                Guiding Students With
-                <span class="text-[#AE1C21]">Vision & Values</span>
-            </h2>
-        </div>
+                <h2 class="mt-6 text-4xl md:text-6xl font-black text-black leading-tight">
+                    Guiding Students With
+                    <span class="text-[#AE1C21]">Vision & Values</span>
+                </h2>
+            </div>
 
-        <div class="grid lg:grid-cols-2 gap-10">
+            <div class="grid lg:grid-cols-2 gap-10">
 
-            <!-- PRINCIPAL CARD -->
-            <div class="group relative bg-white rounded-[45px] p-5 shadow-[0_35px_100px_rgba(0,0,0,.15)] border border-white overflow-hidden">
+                <!-- PRINCIPAL CARD -->
+                <div class="group relative bg-white rounded-[45px] p-5 shadow-[0_35px_100px_rgba(0,0,0,.15)] border border-white overflow-hidden">
 
-                <div class="absolute -top-20 -right-20 w-48 h-48 bg-[#FACC15]/40 rounded-full blur-3xl group-hover:scale-150 transition duration-700"></div>
+                    <div class="absolute -top-20 -right-20 w-48 h-48 bg-[#FACC15]/40 rounded-full blur-3xl group-hover:scale-150 transition duration-700"></div>
 
-                <div class="relative h-[520px] rounded-[35px] overflow-hidden">
-                    <img src="admin/images/<?php echo $principal['image']; ?>"
-                         alt="Principal"
-                         class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="relative h-[520px] rounded-[35px] overflow-hidden">
+                        <img src="admin/images/<?php echo $principal['image']; ?>"
+                            alt="Principal"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
 
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
 
-                    <div class="absolute top-5 left-5 px-5 py-2 rounded-full bg-[#FACC15] text-black font-black shadow-xl">
-                        Principal
+                        <div class="absolute top-5 left-5 px-5 py-2 rounded-full bg-[#FACC15] text-black font-black shadow-xl">
+                            Principal
+                        </div>
+
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-xl rounded-[30px] p-6 shadow-2xl">
+                            <h3 class="text-3xl font-black text-black">
+                                <?php echo $principal['name']; ?>
+                            </h3>
+                            <p class="mt-1 text-[#AE1C21] font-bold">
+                                <?php echo $principal['designation']; ?>
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-xl rounded-[30px] p-6 shadow-2xl">
-                        <h3 class="text-3xl font-black text-black">
-                            <?php echo $principal['name']; ?>
-                        </h3>
-                        <p class="mt-1 text-[#AE1C21] font-bold">
-                            <?php echo $principal['designation']; ?>
+                    <div class="relative mt-7 p-7 rounded-[32px] bg-slate-50 border border-slate-100">
+                        <i class="fa-solid fa-quote-left absolute -top-5 left-7 text-5xl text-[#AE1C21]/20"></i>
+
+                        <h4 class="text-2xl font-black text-black mb-4">
+                            Principal Message
+                        </h4>
+
+                        <p class="text-slate-700 leading-8 text-justify">
+                            <?php echo $principal['message']; ?>
                         </p>
                     </div>
+
                 </div>
 
-                <div class="relative mt-7 p-7 rounded-[32px] bg-slate-50 border border-slate-100">
-                    <i class="fa-solid fa-quote-left absolute -top-5 left-7 text-5xl text-[#AE1C21]/20"></i>
+                <!-- VICE PRINCIPAL CARD -->
+                <div class="group relative bg-white rounded-[45px] p-5 shadow-[0_35px_100px_rgba(0,0,0,.15)] border border-white overflow-hidden">
 
-                    <h4 class="text-2xl font-black text-black mb-4">
-                        Principal Message
-                    </h4>
+                    <div class="absolute -top-20 -left-20 w-48 h-48 bg-[#AE1C21]/25 rounded-full blur-3xl group-hover:scale-150 transition duration-700"></div>
 
-                    <p class="text-slate-700 leading-8 text-justify">
-                        <?php echo $principal['message']; ?>
-                    </p>
+                    <div class="relative h-[520px] rounded-[35px] overflow-hidden">
+                        <img src="admin/images/<?php echo $vice_principal['image']; ?>"
+                            alt="Vice Principal"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+
+                        <div class="absolute top-5 left-5 px-5 py-2 rounded-full bg-[#AE1C21] text-white font-black shadow-xl">
+                            Vice Principal
+                        </div>
+
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-xl rounded-[30px] p-6 shadow-2xl">
+                            <h3 class="text-3xl font-black text-black">
+                                <?php echo $vice_principal['name']; ?>
+                            </h3>
+                            <p class="mt-1 text-[#AE1C21] font-bold">
+                                <?php echo $vice_principal['designation']; ?>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative mt-7 p-7 rounded-[32px] bg-slate-50 border border-slate-100">
+                        <i class="fa-solid fa-quote-left absolute -top-5 left-7 text-5xl text-[#AE1C21]/20"></i>
+
+                        <h4 class="text-2xl font-black text-black mb-4">
+                            Vice Principal Message
+                        </h4>
+
+                        <p class="text-slate-700 leading-8 text-justify">
+                            <?php echo $vice_principal['message']; ?>
+                        </p>
+                    </div>
+
                 </div>
 
             </div>
 
-            <!-- VICE PRINCIPAL CARD -->
-            <div class="group relative bg-white rounded-[45px] p-5 shadow-[0_35px_100px_rgba(0,0,0,.15)] border border-white overflow-hidden">
-
-                <div class="absolute -top-20 -left-20 w-48 h-48 bg-[#AE1C21]/25 rounded-full blur-3xl group-hover:scale-150 transition duration-700"></div>
-
-                <div class="relative h-[520px] rounded-[35px] overflow-hidden">
-                    <img src="admin/images/<?php echo $vice_principal['image']; ?>"
-                         alt="Vice Principal"
-                         class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-
-                    <div class="absolute top-5 left-5 px-5 py-2 rounded-full bg-[#AE1C21] text-white font-black shadow-xl">
-                        Vice Principal
-                    </div>
-
-                    <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-xl rounded-[30px] p-6 shadow-2xl">
-                        <h3 class="text-3xl font-black text-black">
-                            <?php echo $vice_principal['name']; ?>
-                        </h3>
-                        <p class="mt-1 text-[#AE1C21] font-bold">
-                            <?php echo $vice_principal['designation']; ?>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative mt-7 p-7 rounded-[32px] bg-slate-50 border border-slate-100">
-                    <i class="fa-solid fa-quote-left absolute -top-5 left-7 text-5xl text-[#AE1C21]/20"></i>
-
-                    <h4 class="text-2xl font-black text-black mb-4">
-                        Vice Principal Message
-                    </h4>
-
-                    <p class="text-slate-700 leading-8 text-justify">
-                        <?php echo $vice_principal['message']; ?>
-                    </p>
-                </div>
-
-            </div>
-
         </div>
 
-    </div>
-
-</section>
+    </section>
 
     <!-- CTA -->
     <!-- ADMISSION CTA -->
     <section class="relative py-16 md:py-28 overflow-hidden bg-[#FACC15]">
 
-    <!-- BACKGROUND -->
-    <div class="absolute inset-0 overflow-hidden opacity-[0.07]">
+        <!-- BACKGROUND -->
+        <div class="absolute inset-0 overflow-hidden opacity-[0.07]">
 
-        <!-- BIG CIRCLE -->
-        <div class="absolute -top-10 -left-10 md:-top-20 md:-left-20 w-[180px] h-[180px] md:w-[420px] md:h-[420px] border-[10px] md:border-[18px] border-white rounded-full"></div>
+            <!-- BIG CIRCLE -->
+            <div class="absolute -top-10 -left-10 md:-top-20 md:-left-20 w-[180px] h-[180px] md:w-[420px] md:h-[420px] border-[10px] md:border-[18px] border-white rounded-full"></div>
 
-        <!-- DIAGONAL LINES -->
-        <div class="hidden md:block absolute top-32 left-1/4 w-[500px] h-[2px] bg-white rotate-[18deg]"></div>
+            <!-- DIAGONAL LINES -->
+            <div class="hidden md:block absolute top-32 left-1/4 w-[500px] h-[2px] bg-white rotate-[18deg]"></div>
 
-        <div class="hidden md:block absolute top-52 right-0 w-[420px] h-[2px] bg-white -rotate-[22deg]"></div>
+            <div class="hidden md:block absolute top-52 right-0 w-[420px] h-[2px] bg-white -rotate-[22deg]"></div>
 
-        <div class="hidden md:block absolute bottom-32 left-0 w-[380px] h-[2px] bg-white rotate-[12deg]"></div>
+            <div class="hidden md:block absolute bottom-32 left-0 w-[380px] h-[2px] bg-white rotate-[12deg]"></div>
 
-        <!-- ABSTRACT BOX -->
-        <div class="absolute top-10 right-4 md:top-16 md:right-16 w-28 h-28 md:w-64 md:h-64 border-[8px] md:border-[14px] border-white rotate-12 rounded-[25px] md:rounded-[55px]"></div>
+            <!-- ABSTRACT BOX -->
+            <div class="absolute top-10 right-4 md:top-16 md:right-16 w-28 h-28 md:w-64 md:h-64 border-[8px] md:border-[14px] border-white rotate-12 rounded-[25px] md:rounded-[55px]"></div>
 
-        <div class="absolute bottom-5 left-1/3 w-36 h-36 md:w-80 md:h-80 border-[8px] md:border-[16px] border-white -rotate-[18deg] rounded-[35px] md:rounded-[70px]"></div>
+            <div class="absolute bottom-5 left-1/3 w-36 h-36 md:w-80 md:h-80 border-[8px] md:border-[16px] border-white -rotate-[18deg] rounded-[35px] md:rounded-[70px]"></div>
 
-        <!-- DOT GRID -->
-        <div class="hidden md:grid absolute top-20 left-1/2 grid-cols-6 gap-3">
+            <!-- DOT GRID -->
+            <div class="hidden md:grid absolute top-20 left-1/2 grid-cols-6 gap-3">
 
-            <span class="w-3 h-3 bg-white rounded-full"></span>
-            <span class="w-3 h-3 bg-white rounded-full"></span>
-            <span class="w-3 h-3 bg-white rounded-full"></span>
-            <span class="w-3 h-3 bg-white rounded-full"></span>
-            <span class="w-3 h-3 bg-white rounded-full"></span>
-            <span class="w-3 h-3 bg-white rounded-full"></span>
+                <span class="w-3 h-3 bg-white rounded-full"></span>
+                <span class="w-3 h-3 bg-white rounded-full"></span>
+                <span class="w-3 h-3 bg-white rounded-full"></span>
+                <span class="w-3 h-3 bg-white rounded-full"></span>
+                <span class="w-3 h-3 bg-white rounded-full"></span>
+                <span class="w-3 h-3 bg-white rounded-full"></span>
 
-            <span class="w-3 h-3 bg-white rounded-full"></span>
-            <span class="w-3 h-3 bg-white rounded-full"></span>
-            <span class="w-3 h-3 bg-white rounded-full"></span>
-            <span class="w-3 h-3 bg-white rounded-full"></span>
-            <span class="w-3 h-3 bg-white rounded-full"></span>
-            <span class="w-3 h-3 bg-white rounded-full"></span>
-
-        </div>
-
-        <!-- WAVE -->
-        <div class="absolute bottom-0 right-5 md:right-20 w-[120px] h-[120px] md:w-[320px] md:h-[320px] border-[6px] md:border-[14px] border-dashed border-white rounded-full"></div>
-
-    </div>
-
-    <!-- GLOW -->
-    <div class="absolute top-0 left-0 w-[220px] h-[220px] md:w-[500px] md:h-[500px] bg-cyan-300/20 blur-[80px] md:blur-[120px] rounded-full"></div>
-
-    <div class="absolute bottom-0 right-0 w-[220px] h-[220px] md:w-[500px] md:h-[500px] bg-blue-300/20 blur-[80px] md:blur-[120px] rounded-full"></div>
-
-    <!-- CONTENT -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-
-        <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-10 md:gap-14 items-center">
-
-            <!-- LEFT --> 
-            <div>
-
-                <span class="inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-3 rounded-full bg-[#AE1C21] backdrop-blur-xl border border-white/10 text-white font-black uppercase tracking-widest text-[10px] sm:text-xs md:text-sm">
-
-                    <i class="fa-solid fa-user-graduate"></i>
-
-                    Admissions Open 2026-27
-
-                </span>
-
-                <h2 class="mt-5 md:mt-7 text-3xl sm:text-5xl lg:text-7xl font-black text-black leading-tight">
-
-                    Start Your
-                    <span class="block text-[#AE1C21]">Child’s Journey</span>
-
-                </h2>
-
-                <p class="mt-5 md:mt-8 text-black text-sm sm:text-base md:text-lg leading-7 md:leading-9 text-justify max-w-2xl">
-
-                    Give your child the opportunity to learn, grow and succeed
-                    in a modern educational environment focused on values,
-                    confidence and academic excellence.
-
-                </p>
-
-                <!-- BUTTONS -->
-                <div class="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 md:gap-5">
-
-                    <a href="admission" class="group inline-flex justify-center items-center gap-3 px-6 py-4  rounded-2xl md:rounded-2xl bg-white text-blue-700 font-black shadow-[0_25px_70px_rgba(255,255,255,0.25)] hover:-translate-y-2 transition duration-700">
-
-                        Apply Now
-
-                        <span class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center group-hover:translate-x-1 transition">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-
-                    </a>
-
-                    <a href="contact" class="inline-flex justify-center items-center gap-3 px-6  py-4  rounded-2xl md:rounded-2xl border border-white/20 bg-black backdrop-blur-xl text-white font-black hover:bg-white hover:text-blue-700 transition duration-700">
-
-                        <i class="fa-solid fa-phone"></i>
-
-                        Contact Office
-
-                    </a>
-
-                </div>
-
-                <!-- STATS -->
-                <div class="mt-8 md:mt-14 grid grid-cols-3 gap-3 md:gap-5 max-w-2xl">
-
-                    <div class="bg-[#AE1C21] backdrop-blur-xl rounded-2xl md:rounded-2xl p-3 sm:p-4 md:p-5 border border-white/10 text-center">
-
-                        <h3 class="text-xl sm:text-2xl md:text-4xl font-black text-white leading-none">
-                            25+
-                        </h3>
-
-                        <p class="mt-1 md:mt-2 text-[11px] sm:text-sm md:text-base text-blue-100 font-bold">
-                            Years
-                        </p>
-
-                    </div>
-
-                    <div class="bg-[#AE1C21] backdrop-blur-xl rounded-2xl md:rounded-2xl p-3 sm:p-4 md:p-5 border border-white/10 text-center">
-
-                        <h3 class="text-xl sm:text-2xl md:text-4xl font-black text-white leading-none">
-                            1200+
-                        </h3>
-
-                        <p class="mt-1 md:mt-2 text-[11px] sm:text-sm md:text-base text-blue-100 font-bold">
-                            Students
-                        </p>
-
-                    </div>
-
-                    <div class="bg-[#AE1C21] backdrop-blur-xl rounded-2xl md:rounded-2xl p-3 sm:p-4 md:p-5 border border-white/10 text-center">
-
-                        <h3 class="text-xl sm:text-2xl md:text-4xl font-black text-white leading-none">
-                            45+
-                        </h3>
-
-                        <p class="mt-1 md:mt-2 text-[11px] sm:text-sm md:text-base text-blue-100 font-bold">
-                            Teachers
-                        </p>
-
-                    </div>
-
-                </div>
+                <span class="w-3 h-3 bg-white rounded-full"></span>
+                <span class="w-3 h-3 bg-white rounded-full"></span>
+                <span class="w-3 h-3 bg-white rounded-full"></span>
+                <span class="w-3 h-3 bg-white rounded-full"></span>
+                <span class="w-3 h-3 bg-white rounded-full"></span>
+                <span class="w-3 h-3 bg-white rounded-full"></span>
 
             </div>
 
-            <!-- RIGHT IMAGE -->
-            <div class="relative mt-10 md:ml-5 lg:mt-0">
+            <!-- WAVE -->
+            <div class="absolute bottom-0 right-5 md:right-20 w-[120px] h-[120px] md:w-[320px] md:h-[320px] border-[6px] md:border-[14px] border-dashed border-white rounded-full"></div>
 
-                <!-- GLOW -->
-                <div class="absolute inset-0 bg-cyan-300/20 blur-3xl rounded-full"></div>
+        </div>
 
-                <!-- MAIN IMAGE -->
-                <div class="relative bg-white/10 backdrop-blur-xl border border-white/10 rounded-[25px] md:rounded-[45px] p-3 md:p-5 shadow-[0_35px_90px_rgba(15,23,42,0.25)] overflow-hidden">
+        <!-- GLOW -->
+        <div class="absolute top-0 left-0 w-[220px] h-[220px] md:w-[500px] md:h-[500px] bg-cyan-300/20 blur-[80px] md:blur-[120px] rounded-full"></div>
 
-                    <div class="relative rounded-[20px] md:rounded-[35px] overflow-hidden h-[320px] sm:h-[420px] md:h-[560px]">
+        <div class="absolute bottom-0 right-0 w-[220px] h-[220px] md:w-[500px] md:h-[500px] bg-blue-300/20 blur-[80px] md:blur-[120px] rounded-full"></div>
 
-                        <img src="images/ig_boyscertificate.png"
-                            class="w-full h-full object-cover hover:scale-110 transition duration-[2000ms]"
-                            alt="School Students">
+        <!-- CONTENT -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
-                        <!-- OVERLAY -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent"></div>
+            <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-10 md:gap-14 items-center">
 
-                        <!-- FLOATING CONTENT -->
-                        <div class="absolute left-3 right-3 bottom-3 md:left-6 md:right-6 md:bottom-6 bg-white/90 backdrop-blur-xl rounded-[20px] md:rounded-[30px] p-4 md:p-6 shadow-2xl">
+                <!-- LEFT -->
+                <div>
 
-                            <div class="flex items-center gap-3 md:gap-5">
+                    <span class="inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-3 rounded-full bg-[#AE1C21] backdrop-blur-xl border border-white/10 text-white font-black uppercase tracking-widest text-[10px] sm:text-xs md:text-sm">
 
-                                <div class="w-14 h-14 md:w-20 md:h-20 rounded-[18px] md:rounded-[24px] bg-gradient-to-br from-blue-700 to-cyan-500 flex items-center justify-center text-white text-2xl md:text-4xl shadow-xl">
+                        <i class="fa-solid fa-user-graduate"></i>
 
-                                    <i class="fa-solid fa-school"></i>
+                        Admissions Open 2026-27
+
+                    </span>
+
+                    <h2 class="mt-5 md:mt-7 text-3xl sm:text-5xl lg:text-7xl font-black text-black leading-tight">
+
+                        Start Your
+                        <span class="block text-[#AE1C21]">Child’s Journey</span>
+
+                    </h2>
+
+                    <p class="mt-5 md:mt-8 text-black text-sm sm:text-base md:text-lg leading-7 md:leading-9 text-justify max-w-2xl">
+
+                        Give your child the opportunity to learn, grow and succeed
+                        in a modern educational environment focused on values,
+                        confidence and academic excellence.
+
+                    </p>
+
+                    <!-- BUTTONS -->
+                    <div class="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 md:gap-5">
+
+                        <a href="admission" class="group inline-flex justify-center items-center gap-3 px-6 py-4  rounded-2xl md:rounded-2xl bg-white text-blue-700 font-black shadow-[0_25px_70px_rgba(255,255,255,0.25)] hover:-translate-y-2 transition duration-700">
+
+                            Apply Now
+
+                            <span class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center group-hover:translate-x-1 transition">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+
+                        </a>
+
+                        <a href="contact" class="inline-flex justify-center items-center gap-3 px-6  py-4  rounded-2xl md:rounded-2xl border border-white/20 bg-black backdrop-blur-xl text-white font-black hover:bg-white hover:text-blue-700 transition duration-700">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            Contact Office
+
+                        </a>
+
+                    </div>
+
+                    <!-- STATS -->
+                    <div class="mt-8 md:mt-14 grid grid-cols-3 gap-3 md:gap-5 max-w-2xl">
+
+                        <div class="bg-[#AE1C21] backdrop-blur-xl rounded-2xl md:rounded-2xl p-3 sm:p-4 md:p-5 border border-white/10 text-center">
+
+                            <h3 class="text-xl sm:text-2xl md:text-4xl font-black text-white leading-none">
+                                25+
+                            </h3>
+
+                            <p class="mt-1 md:mt-2 text-[11px] sm:text-sm md:text-base text-blue-100 font-bold">
+                                Years
+                            </p>
+
+                        </div>
+
+                        <div class="bg-[#AE1C21] backdrop-blur-xl rounded-2xl md:rounded-2xl p-3 sm:p-4 md:p-5 border border-white/10 text-center">
+
+                            <h3 class="text-xl sm:text-2xl md:text-4xl font-black text-white leading-none">
+                                1200+
+                            </h3>
+
+                            <p class="mt-1 md:mt-2 text-[11px] sm:text-sm md:text-base text-blue-100 font-bold">
+                                Students
+                            </p>
+
+                        </div>
+
+                        <div class="bg-[#AE1C21] backdrop-blur-xl rounded-2xl md:rounded-2xl p-3 sm:p-4 md:p-5 border border-white/10 text-center">
+
+                            <h3 class="text-xl sm:text-2xl md:text-4xl font-black text-white leading-none">
+                                45+
+                            </h3>
+
+                            <p class="mt-1 md:mt-2 text-[11px] sm:text-sm md:text-base text-blue-100 font-bold">
+                                Teachers
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- RIGHT IMAGE -->
+                <div class="relative mt-10 md:ml-5 lg:mt-0">
+
+                    <!-- GLOW -->
+                    <div class="absolute inset-0 bg-cyan-300/20 blur-3xl rounded-full"></div>
+
+                    <!-- MAIN IMAGE -->
+                    <div class="relative bg-white/10 backdrop-blur-xl border border-white/10 rounded-[25px] md:rounded-[45px] p-3 md:p-5 shadow-[0_35px_90px_rgba(15,23,42,0.25)] overflow-hidden">
+
+                        <div class="relative rounded-[20px] md:rounded-[35px] overflow-hidden h-[320px] sm:h-[420px] md:h-[560px]">
+
+                            <img src="images/ig_boyscertificate.png"
+                                class="w-full h-full object-cover hover:scale-110 transition duration-[2000ms]"
+                                alt="School Students">
+
+                            <!-- OVERLAY -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent"></div>
+
+                            <!-- FLOATING CONTENT -->
+                            <div class="absolute left-3 right-3 bottom-3 md:left-6 md:right-6 md:bottom-6 bg-white/90 backdrop-blur-xl rounded-[20px] md:rounded-[30px] p-4 md:p-6 shadow-2xl">
+
+                                <div class="flex items-center gap-3 md:gap-5">
+
+                                    <div class="w-14 h-14 md:w-20 md:h-20 rounded-[18px] md:rounded-[24px] bg-gradient-to-br from-blue-700 to-cyan-500 flex items-center justify-center text-white text-2xl md:text-4xl shadow-xl">
+
+                                        <i class="fa-solid fa-school"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <h3 class="text-lg sm:text-2xl md:text-3xl font-black text-black">
+                                            Admissions Open
+                                        </h3>
+
+                                        <p class="mt-1 md:mt-2 text-xs sm:text-sm md:text-base text-black font-semibold">
+                                            Limited seats available for the new academic session.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- FLOATING CARD -->
+                    <div class="absolute -left-6 top-10 hidden lg:block">
+
+                        <div class="bg-white rounded-[28px] p-5 shadow-[0_25px_70px_rgba(15,23,42,0.18)] border border-white">
+
+                            <div class="flex items-center gap-4">
+
+                                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-400 flex items-center justify-center text-white text-2xl shadow-xl">
+
+                                    <i class="fa-solid fa-award"></i>
 
                                 </div>
 
                                 <div>
 
-                                    <h3 class="text-lg sm:text-2xl md:text-3xl font-black text-black">
-                                        Admissions Open
-                                    </h3>
+                                    <h4 class="text-2xl font-black text-black">
+                                        Excellence
+                                    </h4>
 
-                                    <p class="mt-1 md:mt-2 text-xs sm:text-sm md:text-base text-black font-semibold">
-                                        Limited seats available for the new academic session.
+                                    <p class="text-slate-500 font-semibold text-sm">
+                                        Modern Education
                                     </p>
 
                                 </div>
@@ -1344,49 +1393,16 @@ $vice_principal = $vice_principal ?: [
 
                 </div>
 
-                <!-- FLOATING CARD -->
-                <div class="absolute -left-6 top-10 hidden lg:block">
-
-                    <div class="bg-white rounded-[28px] p-5 shadow-[0_25px_70px_rgba(15,23,42,0.18)] border border-white">
-
-                        <div class="flex items-center gap-4">
-
-                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-400 flex items-center justify-center text-white text-2xl shadow-xl">
-
-                                <i class="fa-solid fa-award"></i>
-
-                            </div>
-
-                            <div>
-
-                                <h4 class="text-2xl font-black text-black">
-                                    Excellence
-                                </h4>
-
-                                <p class="text-slate-500 font-semibold text-sm">
-                                    Modern Education
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
 
-                <!-- RIGHT IMAGE -->
-              
+    <!-- RIGHT IMAGE -->
+
 
     <!-- FOOTER -->
     <?php include 'footer.php' ?>
@@ -1400,23 +1416,23 @@ $vice_principal = $vice_principal ?: [
 
         let currentSlide = 0;
 
-  function showSlide(index) {
+        function showSlide(index) {
 
-    slides.forEach((slide, i) => {
+            slides.forEach((slide, i) => {
 
-        slide.classList.remove('opacity-100', 'scale-100');
-        slide.classList.add('opacity-0', 'scale-95');
+                slide.classList.remove('opacity-100', 'scale-100');
+                slide.classList.add('opacity-0', 'scale-95');
 
-        dots[i].classList.remove('bg-red-700', 'h-10');
-        dots[i].classList.add('bg-slate-300', 'h-2');
-    });
+                dots[i].classList.remove('bg-red-700', 'h-10');
+                dots[i].classList.add('bg-slate-300', 'h-2');
+            });
 
-    slides[index].classList.remove('opacity-0', 'scale-95');
-    slides[index].classList.add('opacity-100', 'scale-100');
+            slides[index].classList.remove('opacity-0', 'scale-95');
+            slides[index].classList.add('opacity-100', 'scale-100');
 
-    dots[index].classList.remove('bg-slate-300', 'h-2');
-    dots[index].classList.add('bg-red-700', 'h-10');
-}
+            dots[index].classList.remove('bg-slate-300', 'h-2');
+            dots[index].classList.add('bg-red-700', 'h-10');
+        }
 
         setInterval(() => {
             currentSlide++;
